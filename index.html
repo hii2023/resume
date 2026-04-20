@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Altaf Simavatwala | Operations, Data & Automation</title>
+  <meta name="description" content="Personal website for Altaf Simavatwala, focused on operations, healthcare data, automation, delivery, and measurable business impact." />
+  <meta property="og:title" content="Altaf Simavatwala | Operations, Program, Data & Automation Leader" />
+  <meta property="og:description" content="Operations, program, data, and automation leader with 15+ years of experience turning operational complexity into measurable business value." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://altafsimavatwala.com/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Altaf Simavatwala | Operations, Program, Data & Automation Leader" />
+  <meta name="twitter:description" content="Personal website focused on healthcare operations, automation, analytics, and ROI-driven execution." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231f6f70'/%3E%3Cpath d='M19 47 28 17h8l9 30h-7l-2-7H28l-2 7Zm10-13h7l-3-12h-.3Z' fill='%23fff7ef'/%3E%3C/svg%3E" />
+  <style>
+    :root {
+      --bg: #f4eadf;
+      --bg-deep: #e4d0bb;
+      --paper: rgba(255, 249, 242, 0.82);
+      --paper-strong: #fffaf4;
+      --ink: #181310;
+      --muted: #66584b;
+      --line: rgba(24, 19, 16, 0.1);
+      --coral: #df6f4f;
+      --teal: #1f6f70;
+      --gold: #d6a03d;
+      --plum: #8c4e66;
+      --navy: #223550;
+      --shadow-lg: 0 28px 60px rgba(62, 44, 27, 0.12);
+      --shadow-md: 0 18px 34px rgba(62, 44, 27, 0.08);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 18px;
+      --max: 1180px;
+      --shiftX: 0px;
+      --shiftY: 0px;
+      --shiftX2: 0px;
+      --shiftY2: 0px;
+      --cardLift: 0px;
+      --cardTilt: 0deg;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Avenir Next", "Segoe UI", sans-serif;
+      color: var(--ink);
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 8% 10%, rgba(223, 111, 79, 0.18), transparent 20%),
+        radial-gradient(circle at 92% 14%, rgba(31, 111, 112, 0.16), transparent 18%),
+        radial-gradient(circle at 50% 110%, rgba(214, 160, 61, 0.14), transparent 24%),
+        linear-gradient(145deg, #fff7f0, var(--bg) 50%, var(--bg-deep));
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(48px);
+      pointer-events: none;
+      opacity: 0.5;
+      z-index: 0;
+    }
+
+    body::before {
+      width: 260px;
+      height: 260px;
+      top: 120px;
+      left: -80px;
+      background: rgba(223, 111, 79, 0.16);
+    }
+
+    body::after {
+      width: 320px;
+      height: 320px;
+      top: 420px;
+      right: -120px;
+      background: rgba(31, 111, 112, 0.14);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 24px 18px 72px;
+    }
+
+    .nav {
+      position: sticky;
+      top: 14px;
+      z-index: 20;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 18px;
+      margin-bottom: 22px;
+      border-radius: 999px;
+      border: 1px solid rgba(24, 19, 16, 0.08);
+      background: rgba(255, 251, 246, 0.62);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+
+    .nav::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(223, 111, 79, 0.08), rgba(31, 111, 112, 0.06), rgba(214, 160, 61, 0.05));
+      pointer-events: none;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      font-size: 0.94rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: flex-end;
+      position: relative;
+      z-index: 1;
+    }
+
+    .availability-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(24, 19, 16, 0.08);
+      box-shadow: var(--shadow-md);
+      color: var(--navy);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+    }
+
+    .availability-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #2cc56f, #17a75c);
+      box-shadow: 0 0 0 4px rgba(44, 197, 111, 0.16);
+    }
+
+    .nav-links a {
+      padding: 7px 11px;
+      border-radius: 999px;
+      transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+    }
+
+    .nav-links a:hover {
+      background: rgba(31, 111, 112, 0.1);
+      color: var(--teal);
+      transform: translateY(-1px);
+    }
+
+    .nav-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      border: 1px solid rgba(24, 19, 16, 0.08);
+      background: rgba(255,255,255,0.7);
+      box-shadow: var(--shadow-md);
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+      color: var(--navy);
+    }
+
+    .nav-action:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 28px rgba(62, 44, 27, 0.12);
+    }
+
+    .nav-action.email:hover {
+      border-color: rgba(223, 111, 79, 0.28);
+      color: var(--coral);
+    }
+
+    .nav-action.linkedin:hover {
+      border-color: rgba(10, 102, 194, 0.28);
+      color: #0a66c2;
+    }
+
+    .nav-action.whatsapp:hover {
+      border-color: rgba(37, 211, 102, 0.3);
+      color: #25d366;
+    }
+
+    .nav-action svg {
+      width: 18px;
+      height: 18px;
+      display: block;
+    }
+
+    .hero,
+    .panel,
+    .impact-band,
+    .case-card,
+    .skill-card,
+    .timeline-card {
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-lg);
+      backdrop-filter: blur(12px);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 36px;
+      padding: 36px;
+      background:
+        linear-gradient(140deg, rgba(255, 250, 245, 0.92), rgba(255, 235, 214, 0.78)),
+        var(--paper);
+      isolation: isolate;
+      box-shadow:
+        var(--shadow-lg),
+        inset 0 1px 0 rgba(255,255,255,0.35);
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+      transition: transform 240ms ease;
+    }
+
+    .hero::before {
+      width: 380px;
+      height: 380px;
+      top: -120px;
+      right: -120px;
+      background: radial-gradient(circle, rgba(223, 111, 79, 0.18), rgba(223, 111, 79, 0) 72%);
+      transform: translate3d(var(--shiftX), var(--shiftY), 0);
+    }
+
+    .hero::after {
+      width: 320px;
+      height: 320px;
+      left: -110px;
+      bottom: -120px;
+      background: radial-gradient(circle, rgba(31, 111, 112, 0.16), rgba(31, 111, 112, 0) 72%);
+      transform: translate3d(var(--shiftX2), var(--shiftY2), 0);
+    }
+
+    .hero-grid,
+    .summary-grid,
+    .why-grid,
+    .timeline-grid,
+    .case-grid,
+    .skill-grid,
+    .footer-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+      align-items: start;
+    }
+
+    .hero-stack {
+      display: grid;
+      gap: 16px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: rgba(223, 111, 79, 0.1);
+      color: var(--coral);
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      box-shadow: inset 0 0 0 1px rgba(223, 111, 79, 0.08);
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.01;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 8vw, 6.3rem);
+      max-width: 9ch;
+      margin: 16px 0 14px;
+      letter-spacing: -0.03em;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      margin-bottom: 12px;
+      letter-spacing: -0.03em;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+
+    .hero-title {
+      max-width: 7.5ch;
+    }
+
+    .hero-role {
+      font-size: clamp(1.1rem, 2vw, 1.34rem);
+      color: var(--navy);
+      font-weight: 700;
+      max-width: 34ch;
+      margin-bottom: 14px;
+    }
+
+    .status-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0 0 10px;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(24, 19, 16, 0.08);
+      color: var(--navy);
+      font-size: 0.82rem;
+      font-weight: 800;
+      box-shadow: var(--shadow-md);
+    }
+
+    .role-targets {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0 0 18px;
+    }
+
+    .target-pill {
+      padding: 8px 11px;
+      border-radius: 999px;
+      background: rgba(255, 251, 246, 0.84);
+      border: 1px solid rgba(24, 19, 16, 0.08);
+      color: var(--navy);
+      font-size: 0.86rem;
+      font-weight: 800;
+      box-shadow: var(--shadow-md);
+    }
+
+    .hero-copy,
+    .section-copy,
+    .case-card p,
+    .timeline-card p,
+    .skill-card p,
+    .footer-copy {
+      color: var(--muted);
+      line-height: 1.66;
+    }
+
+    .hero-copy {
+      max-width: 58ch;
+      font-size: 1.03rem;
+    }
+
+    .hero-lead-panel {
+      padding: 18px 18px 16px;
+      border-radius: 22px;
+      background: linear-gradient(160deg, rgba(255,255,255,0.62), rgba(255, 246, 235, 0.42));
+      border: 1px solid rgba(24, 19, 16, 0.08);
+      box-shadow: var(--shadow-md);
+    }
+
+    .cta-row,
+    .contact-strip,
+    .meta-row,
+    .resume-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .cta-row {
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+      will-change: transform;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--coral), #f29161);
+      color: #fffaf3;
+      box-shadow: 0 16px 30px rgba(223, 111, 79, 0.25);
+    }
+
+    .btn.secondary {
+      background: rgba(255, 251, 246, 0.86);
+      border: 1px solid rgba(24, 19, 16, 0.1);
+      box-shadow: var(--shadow-md);
+    }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      gap: 18px;
+      padding: 24px;
+      border-radius: 28px;
+      background:
+        linear-gradient(160deg, rgba(24, 43, 74, 0.96), rgba(25, 92, 92, 0.96)),
+        linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0));
+      color: #eef6f6;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: var(--shadow-lg);
+      min-height: 100%;
+      transform: translateY(var(--cardLift)) rotateZ(var(--cardTilt));
+      transition: transform 220ms ease, box-shadow 220ms ease;
+    }
+
+    .hero-card:hover {
+      box-shadow: 0 30px 52px rgba(24, 43, 74, 0.2);
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 0 42%, rgba(255,255,255,0.06) 52%, transparent 64%);
+      transform: translateX(-120%);
+      animation: sheen 9s linear infinite;
+      pointer-events: none;
+    }
+
+    .card-label {
+      display: inline-flex;
+      width: fit-content;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #ffe2d3;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .metric-tile {
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: transform 180ms ease, background 180ms ease;
+    }
+
+    .metric-tile:hover {
+      transform: translateY(-3px);
+      background: rgba(255,255,255,0.12);
+    }
+
+    .metric-tile strong {
+      display: block;
+      font-size: 1.9rem;
+      line-height: 0.95;
+      margin-bottom: 8px;
+      color: #fff9ee;
+    }
+
+    .metric-tile span {
+      display: block;
+      color: rgba(255, 247, 238, 0.86);
+      line-height: 1.45;
+      font-size: 0.92rem;
+    }
+
+    .contact-strip {
+      color: rgba(255, 247, 238, 0.84);
+      font-size: 0.92rem;
+    }
+
+    .contact-strip a {
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      transition: transform 180ms ease, background 180ms ease;
+    }
+
+    a[aria-disabled="true"] {
+      opacity: 0.72;
+      cursor: default;
+    }
+
+    .contact-strip a:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.14);
+    }
+
+    .contact-icons,
+    .contact-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-icons {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .contact-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .contact-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 12px;
+      min-height: 58px;
+      padding: 12px 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(24, 19, 16, 0.08);
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .contact-icons .contact-action {
+      background: rgba(255,255,255,0.08);
+      color: #f3f7f6;
+    }
+
+    .contact-grid .contact-action {
+      background: rgba(255,255,255,0.56);
+      box-shadow: var(--shadow-md);
+      color: var(--ink);
+    }
+
+    .contact-action:hover {
+      transform: translateY(-3px);
+      border-color: rgba(223, 111, 79, 0.2);
+      box-shadow: 0 18px 28px rgba(62, 44, 27, 0.12);
+    }
+
+    .contact-action.email:hover {
+      border-color: rgba(223, 111, 79, 0.26);
+    }
+
+    .contact-action.linkedin:hover {
+      border-color: rgba(10, 102, 194, 0.26);
+    }
+
+    .contact-action.whatsapp:hover {
+      border-color: rgba(37, 211, 102, 0.28);
+    }
+
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+    }
+
+    .contact-icon svg {
+      width: 20px;
+      height: 20px;
+      display: block;
+    }
+
+    .contact-icons .contact-icon {
+      background: linear-gradient(135deg, rgba(255,255,255,0.16), rgba(255,255,255,0.06));
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12);
+    }
+
+    .contact-grid .contact-icon {
+      background: linear-gradient(135deg, rgba(223, 111, 79, 0.14), rgba(31, 111, 112, 0.14));
+      color: var(--navy);
+      box-shadow: inset 0 0 0 1px rgba(24, 19, 16, 0.06);
+    }
+
+    .contact-action.email .contact-icon {
+      color: var(--coral);
+    }
+
+    .contact-action.linkedin .contact-icon {
+      color: #0a66c2;
+    }
+
+    .contact-action.whatsapp .contact-icon {
+      color: #25d366;
+    }
+
+    .contact-button-copy {
+      display: grid;
+      gap: 2px;
+      min-width: 0;
+    }
+
+    .contact-button-label {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      opacity: 0.76;
+    }
+
+    .contact-button-value {
+      font-size: 0.94rem;
+      font-weight: 800;
+      line-height: 1.3;
+      word-break: break-word;
+    }
+
+    .summary-grid {
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: stretch;
+      margin-top: 26px;
+    }
+
+    .panel {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      padding: 28px;
+      background: var(--paper);
+    }
+
+    .panel::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(223, 111, 79, 0.26), rgba(31, 111, 112, 0));
+    }
+
+    .section-kicker {
+      margin-bottom: 8px;
+      color: var(--plum);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .resume-snapshot {
+      display: grid;
+      gap: 14px;
+    }
+
+    .snapshot-row {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 14px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(24, 19, 16, 0.08);
+    }
+
+    .snapshot-row:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .snapshot-key {
+      color: var(--muted);
+      font-size: 0.84rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .snapshot-value {
+      color: var(--ink);
+      line-height: 1.55;
+      font-weight: 600;
+    }
+
+    .impact-band {
+      position: relative;
+      overflow: hidden;
+      margin-top: 28px;
+      padding: 24px;
+      border-radius: 28px;
+      background:
+        linear-gradient(135deg, rgba(255, 248, 241, 0.86), rgba(255, 233, 213, 0.68)),
+        var(--paper);
+      box-shadow:
+        var(--shadow-lg),
+        inset 0 1px 0 rgba(255,255,255,0.32);
+    }
+
+    .why-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 18px;
+    }
+
+    .why-card {
+      padding: 22px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.62), rgba(255, 247, 238, 0.46));
+      border: 1px solid rgba(24, 19, 16, 0.08);
+      box-shadow: var(--shadow-md);
+      transition: transform 180ms ease, border-color 180ms ease;
+    }
+
+    .why-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(223, 111, 79, 0.2);
+    }
+
+    .why-card strong {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--navy);
+      font-size: 1.08rem;
+    }
+
+    .why-card span {
+      display: block;
+      color: var(--muted);
+      line-height: 1.58;
+    }
+
+    .impact-band::after {
+      content: "";
+      position: absolute;
+      inset: auto -40px -50px auto;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(31, 111, 112, 0.12), rgba(31, 111, 112, 0) 70%);
+      pointer-events: none;
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .impact-item {
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.62);
+      border: 1px solid rgba(24, 19, 16, 0.08);
+      box-shadow: var(--shadow-md);
+      transition: transform 180ms ease, border-color 180ms ease;
+    }
+
+    .impact-item:hover {
+      transform: translateY(-4px);
+      border-color: rgba(223, 111, 79, 0.22);
+    }
+
+    .section-header-band {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+
+    .section-accent {
+      width: 92px;
+      height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--coral), var(--gold), var(--teal));
+      box-shadow: 0 10px 20px rgba(223, 111, 79, 0.16);
+      flex: 0 0 auto;
+    }
+
+    .impact-item strong {
+      display: block;
+      font-size: 2rem;
+      line-height: 0.95;
+      margin-bottom: 10px;
+      color: var(--navy);
+    }
+
+    .impact-item span {
+      display: block;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+
+    .timeline-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 18px;
+    }
+
+    .timeline-card {
+      padding: 22px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.62), rgba(255, 247, 238, 0.46));
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    }
+
+    .timeline-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 44px rgba(62, 44, 27, 0.14);
+      border-color: rgba(31, 111, 112, 0.22);
+    }
+
+    .timeline-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .timeline-role {
+      color: var(--navy);
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .case-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 18px;
+    }
+
+    .case-card {
+      position: relative;
+      overflow: hidden;
+      padding: 24px;
+      border-radius: 24px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.64), rgba(255, 246, 236, 0.46)),
+        var(--paper);
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+      will-change: transform;
+      box-shadow: var(--shadow-md);
+    }
+
+    .case-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--coral), var(--gold));
+    }
+
+    .case-card:nth-child(2)::before {
+      background: linear-gradient(90deg, var(--teal), var(--gold));
+    }
+
+    .case-card:nth-child(3)::before {
+      background: linear-gradient(90deg, var(--plum), var(--coral));
+    }
+
+    .case-card:nth-child(4)::before {
+      background: linear-gradient(90deg, var(--navy), var(--teal));
+    }
+
+    .case-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 28px 48px rgba(62, 44, 27, 0.14);
+      border-color: rgba(223, 111, 79, 0.2);
+    }
+
+    .case-tag {
+      display: inline-flex;
+      width: fit-content;
+      margin-bottom: 10px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(31, 111, 112, 0.08);
+      color: var(--teal);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .case-result {
+      margin-top: 14px;
+      color: var(--coral);
+      font-weight: 800;
+      line-height: 1.5;
+    }
+
+    .search-shell {
+      margin-top: 22px;
+      padding: 20px;
+      border-radius: 24px;
+      background: linear-gradient(160deg, rgba(255,255,255,0.62), rgba(255, 245, 234, 0.5));
+      border: 1px solid rgba(24, 19, 16, 0.08);
+      box-shadow: var(--shadow-md);
+    }
+
+    .search-bar {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .search-input {
+      width: 100%;
+      min-height: 52px;
+      padding: 0 18px;
+      border-radius: 16px;
+      border: 1px solid rgba(24, 19, 16, 0.1);
+      background: rgba(255,255,255,0.86);
+      color: var(--ink);
+      font: inherit;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+    }
+
+    .search-input:focus {
+      outline: 2px solid rgba(31, 111, 112, 0.18);
+      border-color: rgba(31, 111, 112, 0.24);
+    }
+
+    .search-note {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.56;
+    }
+
+    .search-results-meta {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .library-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .library-card {
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.66);
+      border: 1px solid rgba(24, 19, 16, 0.08);
+      box-shadow: var(--shadow-md);
+      transition: transform 180ms ease, border-color 180ms ease;
+    }
+
+    .library-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(31, 111, 112, 0.22);
+    }
+
+    .library-card.is-hidden {
+      display: none;
+    }
+
+    .library-tag {
+      display: inline-flex;
+      padding: 5px 9px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      background: rgba(140, 78, 102, 0.08);
+      color: var(--plum);
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .library-result {
+      margin-top: 12px;
+      color: var(--teal);
+      font-weight: 800;
+      line-height: 1.5;
+    }
+
+    .skill-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 18px;
+    }
+
+    .skill-card {
+      padding: 22px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255, 247, 238, 0.42));
+      transition: transform 180ms ease, border-color 180ms ease;
+      box-shadow: var(--shadow-md);
+    }
+
+    .skill-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(140, 78, 102, 0.22);
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .pill {
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.68);
+      border: 1px solid rgba(24, 19, 16, 0.08);
+      color: var(--ink);
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+
+    .footer-grid {
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: start;
+      margin-top: 18px;
+    }
+
+    .footer-card {
+      display: grid;
+      gap: 14px;
+    }
+
+    .footer-copy {
+      margin: 0;
+    }
+
+    .footer-note {
+      color: var(--muted);
+      line-height: 1.58;
+    }
+
+    .availability {
+      display: inline-flex;
+      width: fit-content;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(31, 111, 112, 0.08);
+      color: var(--teal);
+      font-size: 0.84rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .remote-note {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(24, 19, 16, 0.08);
+      box-shadow: var(--shadow-md);
+      color: var(--navy);
+      font-size: 0.84rem;
+      font-weight: 800;
+    }
+
+    .resume-actions {
+      margin-top: 6px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 720ms ease, transform 720ms cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .delay-1 { transition-delay: 90ms; }
+    .delay-2 { transition-delay: 160ms; }
+    .delay-3 { transition-delay: 220ms; }
+
+    @keyframes sheen {
+      from { transform: translateX(-120%); }
+      to { transform: translateX(120%); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .summary-grid,
+      .why-grid,
+      .footer-grid,
+      .case-grid,
+      .skill-grid,
+      .timeline-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .impact-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .library-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        padding: 18px 14px 52px;
+      }
+
+      .nav {
+        position: static;
+        border-radius: 24px;
+        align-items: flex-start;
+      }
+
+      .nav-actions,
+      .nav-links {
+        justify-content: flex-start;
+      }
+
+      .availability-pill {
+        order: -1;
+      }
+
+      .hero,
+      .panel,
+      .impact-band {
+        padding: 22px;
+      }
+
+      .impact-grid,
+      .hero-metrics,
+      .contact-icons,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .search-bar {
+        grid-template-columns: 1fr;
+      }
+
+      .snapshot-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav class="nav">
+      <div class="brand">ALTAF SIMAVATWALA</div>
+      <div class="nav-actions">
+        <div class="availability-pill">
+          <span class="availability-dot"></span>
+          Open to Remote Roles
+        </div>
+        <div class="nav-links">
+          <a href="#summary">Summary</a>
+          <a href="#experience">Experience</a>
+          <a href="#impact">Impact</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <a class="nav-action email" href="mailto:altafsimavatwala1991@gmail.com" aria-label="Email Altaf">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M4 7.5 12 13l8-5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="3.25" y="5.25" width="17.5" height="13.5" rx="3" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </a>
+        <a class="nav-action whatsapp" href="https://wa.me/918905196948" target="_blank" rel="noreferrer" aria-label="Message Altaf on WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.05 4.94A9.86 9.86 0 0 0 12.03 2C6.56 2 2.1 6.45 2.1 11.92c0 1.75.46 3.46 1.33 4.97L2 22l5.26-1.38a9.9 9.9 0 0 0 4.75 1.21h.01c5.47 0 9.92-4.45 9.92-9.92a9.86 9.86 0 0 0-2.89-6.97Zm-7.03 15.2h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.12.82.84-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.36c0-4.52 3.69-8.2 8.23-8.2 2.2 0 4.26.85 5.82 2.41a8.16 8.16 0 0 1 2.4 5.8c0 4.53-3.69 8.21-8.22 8.21Zm4.5-6.16c-.25-.13-1.47-.73-1.7-.81-.22-.08-.39-.12-.55.13-.17.25-.64.8-.79.96-.15.17-.3.19-.55.06-.25-.13-1.06-.39-2.01-1.24-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.3.37-.45.12-.15.16-.25.25-.42.08-.17.04-.32-.02-.45-.06-.13-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.41h-.47c-.17 0-.45.06-.69.32-.23.25-.89.87-.89 2.12s.91 2.45 1.03 2.62c.13.17 1.78 2.72 4.31 3.81.6.26 1.07.41 1.44.53.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.22-.16-.47-.29Z"/>
+          </svg>
+        </a>
+        <a class="nav-action linkedin" href="https://www.linkedin.com/in/altaf-simavatwala-20a46160" target="_blank" rel="noreferrer" aria-label="Open Altaf's LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A1.97 1.97 0 1 0 5.3 6.94 1.97 1.97 0 0 0 5.25 3Zm14.19 9.83c0-3.45-1.84-5.05-4.29-5.05-1.98 0-2.86 1.09-3.36 1.86V8.5H8.42c.05.76 0 11.5 0 11.5h3.37v-6.42c0-.34.02-.68.13-.92.27-.68.88-1.38 1.92-1.38 1.35 0 1.89 1.03 1.89 2.54V20h3.37v-7.17Z"/>
+          </svg>
+        </a>
+      </div>
+    </nav>
+
+    <header class="hero reveal">
+      <div class="hero-grid">
+        <div class="hero-stack">
+          <span class="eyebrow">Operations x Data x Automation</span>
+          <h1 class="hero-title">Altaf Simavatwala</h1>
+          <div class="hero-role">Operations, program, data, and automation leader driving measurable ROI in healthcare delivery.</div>
+          <div class="status-row">
+            <span class="status-pill">Ahmedabad, India</span>
+            <span class="status-pill">Open to Remote Roles</span>
+            <span class="status-pill">Healthcare + Process Systems</span>
+          </div>
+          <div class="role-targets">
+            <span class="target-pill">Operations Leadership</span>
+            <span class="target-pill">Program / Delivery Management</span>
+            <span class="target-pill">Healthcare Data Operations</span>
+            <span class="target-pill">Automation & Process Improvement</span>
+          </div>
+          <div class="hero-lead-panel">
+            <p class="hero-copy">
+              I work where business friction, data complexity, and execution gaps collide. Across 15+ years in US healthcare operations, project delivery, product ownership, analytics, and AI-enabled workflows, I’ve built a reputation for turning ambiguous operational problems into structured systems, faster throughput, and visible financial value.
+            </p>
+          </div>
+
+          <div class="cta-row">
+            <a class="btn primary" href="https://www.linkedin.com/in/altaf-simavatwala-20a46160" target="_blank" rel="noreferrer">View LinkedIn</a>
+            <a class="btn secondary" href="#impact">See My Work</a>
+            <a class="btn secondary" href="#contact">Contact</a>
+          </div>
+        </div>
+
+        <aside class="hero-card reveal delay-1">
+          <span class="card-label">Quick Snapshot</span>
+          <div class="hero-metrics">
+            <div class="metric-tile">
+              <strong>15+</strong>
+              <span>Years across operations, quality, project delivery, product ownership, and analytics.</span>
+            </div>
+            <div class="metric-tile">
+              <strong>70 → 42</strong>
+              <span>Days of A/R aging after redesigning reconciliation and client communication.</span>
+            </div>
+            <div class="metric-tile">
+              <strong>20–25%</strong>
+              <span>Capacity unlocked without additional headcount by testing and removing false constraints.</span>
+            </div>
+            <div class="metric-tile">
+              <strong>90–95%</strong>
+              <span>Projection accuracy from manual forecasting models built on ignored operational data.</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <section id="summary" class="summary-grid">
+      <div class="panel reveal">
+        <div class="section-header-band">
+          <div class="section-kicker">About</div>
+          <div class="section-accent"></div>
+        </div>
+        <h2>I translate operational mess into systems teams can trust.</h2>
+        <p class="section-copy">
+          My strongest work happens in high-friction environments where teams are overloaded, requirements are unclear, and money leaks through process gaps nobody has fully mapped. I bring together operational context, data logic, stakeholder alignment, and delivery rigor so that work gets prioritized correctly and outcomes become measurable.
+        </p>
+        <p class="section-copy">
+          I work as a hybrid operator: part program leader, part product translator, part analytics-minded systems thinker. I’m especially effective in healthcare-adjacent, process-heavy, and cross-functional environments where speed alone is not enough and accuracy has direct business consequences.
+        </p>
+      </div>
+
+      <div class="panel reveal delay-1">
+        <div class="section-header-band">
+          <div class="section-kicker">Profile Snapshot</div>
+          <div class="section-accent"></div>
+        </div>
+        <div class="resume-snapshot">
+          <div class="snapshot-row">
+            <div class="snapshot-key">Current focus</div>
+            <div class="snapshot-value">Data account management, AI-enabled workflow design, product thinking, dashboard visibility, and ROI-based process redesign.</div>
+          </div>
+          <div class="snapshot-row">
+            <div class="snapshot-key">Domain</div>
+            <div class="snapshot-value">US healthcare operations, Risk Adjustment, HCC, HEDIS, PHA workflows, billing/revenue cycle, and cross-functional service delivery.</div>
+          </div>
+          <div class="snapshot-row">
+            <div class="snapshot-key">Strength</div>
+            <div class="snapshot-value">Business-to-technology translation, root-cause discovery, KPI design, automation prioritization, and execution under ambiguity.</div>
+          </div>
+          <div class="snapshot-row">
+            <div class="snapshot-key">Location</div>
+            <div class="snapshot-value">Ahmedabad, Gujarat, India</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="impact-band reveal delay-1">
+      <div class="section-header-band">
+        <div class="section-kicker">Signature Metrics</div>
+        <div class="section-accent"></div>
+      </div>
+      <div class="impact-grid">
+        <div class="impact-item">
+          <strong>₹ Crores</strong>
+          <span>Shifted client performance from recurring penalties to incentive payouts by focusing teams on milestone-critical outcomes.</span>
+        </div>
+        <div class="impact-item">
+          <strong>$25K</strong>
+          <span>Saved in a single month after identifying vendor billing tied to failed automation output.</span>
+        </div>
+        <div class="impact-item">
+          <strong>10 Teams</strong>
+          <span>Interviewed to turn backend request noise into an ROI-based Jira prioritization map.</span>
+        </div>
+        <div class="impact-item">
+          <strong>Translator</strong>
+          <span>Bridges leadership intent, operational reality, and what technical teams actually build.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel reveal delay-1">
+      <div class="section-header-band">
+        <div class="section-kicker">Why Hire Altaf</div>
+        <div class="section-accent"></div>
+      </div>
+      <h2>Three reasons this work stands out quickly.</h2>
+      <div class="why-grid">
+        <article class="why-card">
+          <strong>He turns messy operations into measurable systems.</strong>
+          <span>Not just process cleanup. The work gets tied to throughput, revenue, cost, or avoided risk so leadership can clearly see value.</span>
+        </article>
+        <article class="why-card">
+          <strong>He bridges business, ops, and technical teams.</strong>
+          <span>Requirements do not get lost in translation. Altaf consistently turns business pain into clearer workflows, better prioritization, and buildable implementation logic.</span>
+        </article>
+        <article class="why-card">
+          <strong>He improves execution without adding unnecessary complexity.</strong>
+          <span>The pattern across his work is leverage: better visibility, smarter decisions, fewer false assumptions, and higher performance without wasteful overhead.</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience" class="panel reveal">
+      <div class="section-header-band">
+        <div class="section-kicker">Career Progression</div>
+        <div class="section-accent"></div>
+      </div>
+      <h2>Built from frontline operations into delivery, product, data, and automation leadership.</h2>
+      <p class="section-copy">
+        The arc matters. I started close to execution, moved through quality and project management, then into product ownership and data account leadership. That means I understand the workflow on the ground, the reporting layer above it, and the strategic expectations sitting on top of both.
+      </p>
+
+      <div class="timeline-grid">
+        <article class="timeline-card">
+          <div class="timeline-meta">
+            <span>2021 – Present</span>
+            <span>Advantmed India LLP</span>
+          </div>
+          <div class="timeline-role">Data Account Manager / Product & Workflow Owner</div>
+          <p>Led AI-enabled workflow design, analytics visibility, automation tooling, and stakeholder-facing delivery across healthcare data operations. Built dashboards, translated requirements, and improved reporting speed without relying on external technical hand-holding.</p>
+        </article>
+
+        <article class="timeline-card">
+          <div class="timeline-meta">
+            <span>2018 – 2021</span>
+            <span>Advantmed India LLP</span>
+          </div>
+          <div class="timeline-role">Product Owner</div>
+          <p>Owned backlog prioritization, requirements shaping, workflow implementation, and product delivery for operational tools. Focused development effort on highest-value functionality tied to real client and team needs.</p>
+        </article>
+
+        <article class="timeline-card">
+          <div class="timeline-meta">
+            <span>2016 – 2018</span>
+            <span>Advantmed India LLP</span>
+          </div>
+          <div class="timeline-role">Associate Project Manager</div>
+          <p>Managed project scope, timelines, cost control, checkpoints, and risk planning across healthcare operations. Built methodologies that reduced delays and made delivery status more legible to leadership.</p>
+        </article>
+
+        <article class="timeline-card">
+          <div class="timeline-meta">
+            <span>2009 – 2016</span>
+            <span>Vodafone / Medusind / Advantmed</span>
+          </div>
+          <div class="timeline-role">Operations, Client Service, and Quality Foundations</div>
+          <p>Built the operational instincts that still shape my work today: quality control, service delivery, root-cause analysis, training, team calibration, and direct exposure to where process breakdowns actually occur.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="impact" class="panel reveal delay-1">
+      <div class="section-header-band">
+        <div class="section-kicker">Selected Impact</div>
+        <div class="section-accent"></div>
+      </div>
+      <h2>Four flagship examples that show how I think, not just what I delivered.</h2>
+      <p class="section-copy">
+        These are the most recruiter-useful stories from my background. Each one demonstrates a repeatable pattern: identify hidden economics, reduce translation loss, redesign the system, and prove the value with real outcomes.
+      </p>
+
+      <div class="case-grid">
+        <article class="case-card">
+          <div class="case-tag">ROI Prioritization</div>
+          <h3>Turned Jira request overload into a business-value roadmap.</h3>
+          <p>I audited six months of requests, grouped them by functional impact and manual effort saved, and interviewed ten departments to find which items were truly worth technical investment.</p>
+          <div class="case-result">Result: backend noise dropped, software effort focused on high-value work, and operations gained a prioritization model grounded in ROI instead of volume.</div>
+        </article>
+
+        <article class="case-card">
+          <div class="case-tag">Revenue Cycle Redesign</div>
+          <h3>Reduced A/R aging from 70 days to 42 days.</h3>
+          <p>I rebuilt reconciliation visibility using Power BI, removed slow communication layers, and updated commercial terms so late payment behavior had consequences.</p>
+          <div class="case-result">Result: faster collections, cleaner accountability, and stronger upstream implementation guidance that reduced preventable rejections.</div>
+        </article>
+
+        <article class="case-card">
+          <div class="case-tag">Operational Leverage</div>
+          <h3>Increased capacity by 20–25% without hiring.</h3>
+          <p>I challenged a long-standing calling-hours assumption, ran a pilot, and proved that a “forbidden” time block performed just as well as standard hours.</p>
+          <div class="case-result">Result: one more productive hour per time zone, higher throughput, and meaningful output gains without headcount expansion.</div>
+        </article>
+
+        <article class="case-card">
+          <div class="case-tag">Forecasting + Automation</div>
+          <h3>Built forward-looking visibility and protected teams from costly surprises.</h3>
+          <p>I combined ignored operational reports, historical patterns, anomalies, and external variables into forecasting logic that predicted slippage before it showed up in normal status reporting.</p>
+          <div class="case-result">Result: 90–95% projection accuracy, better planning, earlier intervention, and higher trust in reporting.</div>
+        </article>
+      </div>
+
+      <div class="search-shell">
+        <div class="search-bar">
+          <input id="caseSearch" class="search-input" type="search" placeholder="Search all case studies by topic, outcome, tool, or challenge..." aria-label="Search all case studies" />
+          <a class="btn secondary" href="#contact">Discuss My Work</a>
+        </div>
+        <p class="search-note">Want the broader story set? Search across the rest of the examples you shared, including QA transformation, portal recovery, implementation design, vendor auditing, and more.</p>
+        <p id="searchResultsMeta" class="search-results-meta">Showing 7 additional case studies.</p>
+
+        <div id="caseLibrary" class="library-grid">
+          <article class="library-card" data-search="implementation design client operations source of truth requirements sign off translation handoff repository">
+            <div class="library-tag">Implementation Design</div>
+            <h3>Created a source of truth between clients and operations.</h3>
+            <p>I helped build a Data Project Implementation function and introduced a six-page implementation document with both client and internal sign-off before delivery began.</p>
+            <div class="library-result">Result: fewer translation failures, cleaner handoffs, and no room for “we didn’t know” during execution.</div>
+          </article>
+
+          <article class="library-card" data-search="financial auditing vendor automation billing eligibility engine failure cost savings claims denial anomaly ability">
+            <div class="library-tag">Financial Auditing</div>
+            <h3>Caught automation failure and saved $25,000 in a month.</h3>
+            <p>While reviewing vendor invoices, I found charges tied to failed automation output and later identified a full engine outage that would have triggered widespread eligibility failures.</p>
+            <div class="library-result">Result: immediate cost savings, avoided client-facing financial damage, and a larger failure prevented in time.</div>
+          </article>
+
+          <article class="library-card" data-search="quality assurance qa process engineering error reduction training workshop refresher root cause clusters prevention">
+            <div class="library-tag">Quality Assurance</div>
+            <h3>Shifted QA from error policing to process engineering.</h3>
+            <p>I built tracking around recurring error clusters and turned that insight into targeted documents, workshops, and refreshers so teams could fix the source of mistakes.</p>
+            <div class="library-result">Result: stronger accuracy, more durable learning, and a culture focused on prevention rather than blame.</div>
+          </article>
+
+          <article class="library-card" data-search="project recovery portal mapping crisis data sync sub category jira root cause automation trust">
+            <div class="library-tag">Project Recovery</div>
+            <h3>Stabilized a client portal during a mapping crisis.</h3>
+            <p>I audited every Jira ticket and requirement from the start, found broken sub-category mapping and data lag, and introduced stop-gap automation plus a mandatory sync before reports.</p>
+            <div class="library-result">Result: client trust was restored immediately while engineering bought time to fix the deeper architecture.</div>
+          </article>
+
+          <article class="library-card" data-search="roi methodology measurement system project type documentation error reduction revenue loss cost of rework waste leadership value">
+            <div class="library-tag">Measurement System</div>
+            <h3>Defined an ROI methodology for every project type.</h3>
+            <p>I standardized how improvements were valued across error reduction, documentation, and process change so leaders could see the real dollars behind performance shifts.</p>
+            <div class="library-result">Result: teams could separate vanity wins from value-generating work and redirect effort to the highest-return initiatives.</div>
+          </article>
+
+          <article class="library-card" data-search="incentive turnaround penalties providers milestone bottleneck records client performance season crores">
+            <div class="library-tag">Incentive Turnaround</div>
+            <h3>Converted three years of penalties into crores in incentives.</h3>
+            <p>I shifted the performance strategy from raw volume to milestone-critical outcomes, isolated bottleneck providers, built a targeted task force, and negotiated directly to accelerate record collection.</p>
+            <div class="library-result">Result: the economics of the project flipped from recurring penalties to incentive-tier performance.</div>
+          </article>
+
+          <article class="library-card" data-search="automation leadership master log departments developers criticality frequency brd validation resource savings">
+            <div class="library-tag">Automation Leadership</div>
+            <h3>Bridged departments and developers with a Master Automation Log.</h3>
+            <p>I documented current-state workflows, ranked tasks by criticality and frequency, wrote BRDs, and validated output against real user needs rather than technical assumptions.</p>
+            <div class="library-result">Result: automation work consistently delivered measurable hours saved, dollar impact, and stakeholder confidence.</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="panel reveal delay-2">
+      <div class="section-header-band">
+        <div class="section-kicker">Skills and Domain Depth</div>
+        <div class="section-accent"></div>
+      </div>
+      <h2>What I bring to the table, beyond job titles.</h2>
+      <div class="skill-grid">
+        <article class="skill-card">
+          <h3>Operations and Delivery</h3>
+          <p>I lead through ambiguity, create structure around cross-functional execution, and keep teams aligned on what matters commercially and operationally.</p>
+          <div class="skill-list">
+            <span class="pill">Project Management</span>
+            <span class="pill">Program Delivery</span>
+            <span class="pill">RCA</span>
+            <span class="pill">Risk Management</span>
+            <span class="pill">Workforce Logic</span>
+          </div>
+        </article>
+
+        <article class="skill-card">
+          <h3>Data and Product Thinking</h3>
+          <p>I use data logic to improve visibility, prioritize correctly, and convert fuzzy requests into decision-ready systems and requirements.</p>
+          <div class="skill-list">
+            <span class="pill">SQL Thinking</span>
+            <span class="pill">Power BI</span>
+            <span class="pill">Reporting Design</span>
+            <span class="pill">Backlog Prioritization</span>
+            <span class="pill">BRDs</span>
+          </div>
+        </article>
+
+        <article class="skill-card">
+          <h3>Automation and Healthcare Domain</h3>
+          <p>I connect AI, automation, and lightweight tooling to real operational workflows, especially in US healthcare environments where accuracy and throughput both matter.</p>
+          <div class="skill-list">
+            <span class="pill">LLM Workflows</span>
+            <span class="pill">REST APIs</span>
+            <span class="pill">Flask/Python</span>
+            <span class="pill">Risk Adjustment</span>
+            <span class="pill">HCC / HEDIS / PHA</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="panel reveal delay-3">
+      <div class="section-header-band">
+        <div class="section-kicker">Contact</div>
+        <div class="section-accent"></div>
+      </div>
+      <div class="footer-grid">
+        <div class="footer-card">
+          <div class="availability">Operations, Program, Product, and Data Leadership</div>
+          <div class="remote-note">
+            <span class="availability-dot"></span>
+            Available for Remote Opportunities
+          </div>
+          <h2>If your team has friction hiding inside process, data, or delivery, that’s the kind of work I’m built for.</h2>
+          <p class="footer-copy">
+            This site is designed to show how I think, where I create leverage, and the kinds of outcomes I’ve delivered across operations, data, automation, and cross-functional execution.
+          </p>
+        </div>
+
+        <div class="footer-card">
+          <div class="footer-note">Ahmedabad, Gujarat, India</div>
+          <div class="contact-grid">
+            <a class="contact-action email" href="mailto:altafsimavatwala1991@gmail.com">
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M4 7.5 12 13l8-5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  <rect x="3.25" y="5.25" width="17.5" height="13.5" rx="3" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+              </span>
+              <span class="contact-button-copy">
+                <span class="contact-button-label">Email</span>
+                <span class="contact-button-value">Send Mail</span>
+              </span>
+            </a>
+            <a class="contact-action whatsapp" href="https://wa.me/918905196948" target="_blank" rel="noreferrer">
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19.05 4.94A9.86 9.86 0 0 0 12.03 2C6.56 2 2.1 6.45 2.1 11.92c0 1.75.46 3.46 1.33 4.97L2 22l5.26-1.38a9.9 9.9 0 0 0 4.75 1.21h.01c5.47 0 9.92-4.45 9.92-9.92a9.86 9.86 0 0 0-2.89-6.97Zm-7.03 15.2h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.12.82.84-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.36c0-4.52 3.69-8.2 8.23-8.2 2.2 0 4.26.85 5.82 2.41a8.16 8.16 0 0 1 2.4 5.8c0 4.53-3.69 8.21-8.22 8.21Zm4.5-6.16c-.25-.13-1.47-.73-1.7-.81-.22-.08-.39-.12-.55.13-.17.25-.64.8-.79.96-.15.17-.3.19-.55.06-.25-.13-1.06-.39-2.01-1.24-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.3.37-.45.12-.15.16-.25.25-.42.08-.17.04-.32-.02-.45-.06-.13-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.41h-.47c-.17 0-.45.06-.69.32-.23.25-.89.87-.89 2.12s.91 2.45 1.03 2.62c.13.17 1.78 2.72 4.31 3.81.6.26 1.07.41 1.44.53.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.22-.16-.47-.29Z"/>
+                </svg>
+              </span>
+              <span class="contact-button-copy">
+                <span class="contact-button-label">WhatsApp</span>
+                <span class="contact-button-value">Message Altaf</span>
+              </span>
+            </a>
+            <a class="contact-action linkedin" href="https://www.linkedin.com/in/altaf-simavatwala-20a46160" target="_blank" rel="noreferrer">
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A1.97 1.97 0 1 0 5.3 6.94 1.97 1.97 0 0 0 5.25 3Zm14.19 9.83c0-3.45-1.84-5.05-4.29-5.05-1.98 0-2.86 1.09-3.36 1.86V8.5H8.42c.05.76 0 11.5 0 11.5h3.37v-6.42c0-.34.02-.68.13-.92.27-.68.88-1.38 1.92-1.38 1.35 0 1.89 1.03 1.89 2.54V20h3.37v-7.17Z"/>
+                </svg>
+              </span>
+              <span class="contact-button-copy">
+                <span class="contact-button-label">LinkedIn</span>
+                <span class="contact-button-value">View Profile</span>
+              </span>
+            </a>
+          </div>
+          <div class="resume-actions">
+            <a class="btn primary" href="mailto:altafsimavatwala1991@gmail.com">Email</a>
+            <a class="btn secondary" href="https://www.linkedin.com/in/altaf-simavatwala-20a46160" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="btn secondary" href="tel:+918905196948">Call</a>
+            <a class="btn secondary" href="#summary">About</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const revealItems = document.querySelectorAll(".reveal");
+    const hero = document.querySelector(".hero");
+    const placeholders = document.querySelectorAll('[aria-disabled="true"]');
+    const caseSearch = document.querySelector("#caseSearch");
+    const caseLibrary = document.querySelectorAll(".library-card");
+    const searchResultsMeta = document.querySelector("#searchResultsMeta");
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    placeholders.forEach((link) => {
+      link.addEventListener("click", (event) => event.preventDefault());
+    });
+
+    if (caseSearch && caseLibrary.length && searchResultsMeta) {
+      const renderSearch = () => {
+        const query = caseSearch.value.trim().toLowerCase();
+        let visibleCount = 0;
+
+        caseLibrary.forEach((card) => {
+          const haystack = `${card.textContent} ${card.dataset.search || ""}`.toLowerCase();
+          const isVisible = !query || haystack.includes(query);
+          card.classList.toggle("is-hidden", !isVisible);
+          if (isVisible) visibleCount += 1;
+        });
+
+        searchResultsMeta.textContent = query
+          ? `Showing ${visibleCount} matching case stud${visibleCount === 1 ? "y" : "ies"} for "${caseSearch.value.trim()}".`
+          : `Showing ${visibleCount} additional case studies.`;
+      };
+
+      caseSearch.addEventListener("input", renderSearch);
+      renderSearch();
+    }
+
+    if (!prefersReducedMotion) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+          }
+        });
+      }, { threshold: 0.16 });
+
+      revealItems.forEach((item) => observer.observe(item));
+
+      if (hero) {
+        hero.addEventListener("pointermove", (event) => {
+          const bounds = hero.getBoundingClientRect();
+          const px = (event.clientX - bounds.left) / bounds.width;
+          const py = (event.clientY - bounds.top) / bounds.height;
+          hero.style.setProperty("--mx", `${(px - 0.5) * 18}px`);
+          hero.style.setProperty("--my", `${(py - 0.5) * 18}px`);
+          hero.style.transform = `translate3d(0, 0, 0)`;
+          hero.style.backgroundPosition = `${50 + (px - 0.5) * 6}% ${50 + (py - 0.5) * 4}%`;
+          hero.style.setProperty("--shiftX", `${(px - 0.5) * 24}px`);
+          hero.style.setProperty("--shiftY", `${(py - 0.5) * 20}px`);
+          hero.style.setProperty("--shiftX2", `${(0.5 - px) * 22}px`);
+          hero.style.setProperty("--shiftY2", `${(0.5 - py) * 18}px`);
+          hero.style.setProperty("--cardLift", `${(0.5 - py) * 8}px`);
+          hero.style.setProperty("--cardTilt", `${(px - 0.5) * 4}deg`);
+        });
+
+        hero.addEventListener("pointerleave", () => {
+          hero.style.removeProperty("--mx");
+          hero.style.removeProperty("--my");
+          hero.style.removeProperty("--shiftX");
+          hero.style.removeProperty("--shiftY");
+          hero.style.removeProperty("--shiftX2");
+          hero.style.removeProperty("--shiftY2");
+          hero.style.removeProperty("--cardLift");
+          hero.style.removeProperty("--cardTilt");
+          hero.style.backgroundPosition = "";
+        });
+      }
+    } else {
+      revealItems.forEach((item) => item.classList.add("is-visible"));
+    }
+  </script>
+</body>
+</html>
