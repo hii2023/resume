@@ -413,6 +413,142 @@
       font-size: 1.03rem;
     }
 
+    .lens-shell {
+      margin-top: 28px;
+      padding: 24px;
+      border-radius: 30px;
+      background: linear-gradient(155deg, rgba(255,255,255,0.74), rgba(255, 240, 224, 0.56));
+      border: 1px solid rgba(24, 19, 16, 0.08);
+      box-shadow: var(--shadow-lg);
+      backdrop-filter: blur(12px);
+    }
+
+    .lens-layout {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .lens-controls {
+      display: grid;
+      gap: 12px;
+    }
+
+    .lens-button {
+      width: 100%;
+      text-align: left;
+      border: 1px solid rgba(24, 19, 16, 0.08);
+      background: rgba(255,255,255,0.72);
+      border-radius: 20px;
+      padding: 16px;
+      font: inherit;
+      color: var(--ink);
+      cursor: pointer;
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+      box-shadow: var(--shadow-md);
+    }
+
+    .lens-button:hover,
+    .lens-button.is-active {
+      transform: translateY(-3px);
+      border-color: rgba(31, 111, 112, 0.22);
+      box-shadow: 0 22px 34px rgba(62, 44, 27, 0.12);
+    }
+
+    .lens-button.is-active {
+      background: linear-gradient(135deg, rgba(31, 111, 112, 0.12), rgba(223, 111, 79, 0.12));
+    }
+
+    .lens-button strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--navy);
+      font-size: 1rem;
+    }
+
+    .lens-button span {
+      display: block;
+      color: var(--muted);
+      line-height: 1.48;
+      font-size: 0.92rem;
+    }
+
+    .lens-panel {
+      display: grid;
+      gap: 16px;
+      padding: 20px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.68);
+      border: 1px solid rgba(24, 19, 16, 0.08);
+      box-shadow: var(--shadow-md);
+      min-height: 100%;
+    }
+
+    .lens-title {
+      margin: 0;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      color: var(--navy);
+    }
+
+    .lens-copy {
+      color: var(--muted);
+      line-height: 1.68;
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    .lens-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .lens-pill {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.8);
+      border: 1px solid rgba(24, 19, 16, 0.08);
+      font-size: 0.84rem;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .lens-example-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .lens-example {
+      padding: 18px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.78), rgba(255, 247, 239, 0.62));
+      border: 1px solid rgba(24, 19, 16, 0.08);
+      box-shadow: var(--shadow-md);
+      transition: transform 180ms ease, border-color 180ms ease;
+    }
+
+    .lens-example:hover {
+      transform: translateY(-4px);
+      border-color: rgba(223, 111, 79, 0.22);
+    }
+
+    .lens-example .case-tag {
+      margin-bottom: 12px;
+    }
+
+    .lens-example h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .lens-example p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
     .hero-lead-panel {
       padding: 18px 18px 16px;
       border-radius: 22px;
@@ -1176,6 +1312,7 @@
 
     @media (max-width: 980px) {
       .hero-grid,
+      .lens-layout,
       .summary-grid,
       .why-grid,
       .footer-grid,
@@ -1190,6 +1327,10 @@
       }
 
       .library-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .lens-example-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -1325,6 +1466,40 @@
         </aside>
       </div>
     </header>
+
+    <section class="lens-shell reveal delay-1" id="explore">
+      <div class="section-header-band">
+        <div class="section-kicker">Choose Your Lens</div>
+        <div class="section-accent"></div>
+      </div>
+      <div class="lens-layout">
+        <div class="lens-controls">
+          <button class="lens-button is-active" type="button" data-lens="strategy">
+            <strong>Data Strategy</strong>
+            <span>See how I think about prioritization, visibility, ROI frameworks, and forward-looking decisions.</span>
+          </button>
+          <button class="lens-button" type="button" data-lens="implementation">
+            <strong>Implementation</strong>
+            <span>See how I turn requirements into delivery systems, cross-team alignment, and execution clarity.</span>
+          </button>
+          <button class="lens-button" type="button" data-lens="domain">
+            <strong>Domain Knowledge</strong>
+            <span>See the healthcare, operations, and workflow depth behind the delivery and analytics work.</span>
+          </button>
+          <button class="lens-button" type="button" data-lens="risk">
+            <strong>Risk Adjustment</strong>
+            <span>See the most relevant signals around MA, ACA, HCC, RADV readiness, coding quality, and compliance-sensitive work.</span>
+          </button>
+        </div>
+
+        <div class="lens-panel">
+          <h2 id="lensTitle" class="lens-title">Data strategy that translates operational noise into clear decisions.</h2>
+          <p id="lensCopy" class="lens-copy">I use reporting logic, prioritization frameworks, dashboards, and forecasting to show what matters, what is waste, and where teams should focus first.</p>
+          <div id="lensMeta" class="lens-meta"></div>
+          <div id="lensExamples" class="lens-example-grid"></div>
+        </div>
+      </div>
+    </section>
 
     <section id="summary" class="summary-grid">
       <div class="panel reveal">
@@ -1687,14 +1862,122 @@
     const revealItems = document.querySelectorAll(".reveal");
     const hero = document.querySelector(".hero");
     const placeholders = document.querySelectorAll('[aria-disabled="true"]');
+    const lensButtons = document.querySelectorAll(".lens-button");
+    const lensTitle = document.querySelector("#lensTitle");
+    const lensCopy = document.querySelector("#lensCopy");
+    const lensMeta = document.querySelector("#lensMeta");
+    const lensExamples = document.querySelector("#lensExamples");
     const caseSearch = document.querySelector("#caseSearch");
     const caseLibrary = document.querySelectorAll(".library-card");
     const searchResultsMeta = document.querySelector("#searchResultsMeta");
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+    const lensContent = {
+      strategy: {
+        title: "Data strategy that translates operational noise into clear decisions.",
+        copy: "I use reporting logic, prioritization frameworks, dashboards, KPI design, and forecasting to show what matters, what is waste, and where teams should focus first.",
+        meta: ["ROI prioritization", "Forecasting models", "Power BI visibility"],
+        examples: [
+          {
+            tag: "Prioritization",
+            title: "Converted six months of Jira noise into an ROI roadmap",
+            body: "Mapped technical requests by functional impact and manual effort saved, then used department interviews to separate real business leverage from request volume."
+          },
+          {
+            tag: "Forecasting",
+            title: "Built 90–95% accurate forward-looking projections",
+            body: "Used ignored reports, historical anomalies, and operational patterns to predict delays before they showed up in standard reporting."
+          }
+        ]
+      },
+      implementation: {
+        title: "Implementation systems that reduce translation loss and execution drag.",
+        copy: "I’m strongest when requirements are messy, ownership is fragmented, and delivery risks are hiding inside handoffs. I create the structure that lets execution move cleanly.",
+        meta: ["BRDs and sign-off", "Cross-functional delivery", "Execution clarity"],
+        examples: [
+          {
+            tag: "Implementation Design",
+            title: "Created a source of truth between clients and operations",
+            body: "Built a six-page implementation framework with client and internal sign-off so new projects started with aligned requirements instead of assumptions."
+          },
+          {
+            tag: "Project Recovery",
+            title: "Stabilized a broken portal rollout under client pressure",
+            body: "Audited tickets, corrected mapping logic, and introduced a stop-gap sync protocol that restored trust while engineering fixed the core system."
+          }
+        ]
+      },
+      domain: {
+        title: "Domain knowledge grounded in real healthcare workflows, not surface terminology.",
+        copy: "The work is backed by deep US healthcare operations exposure, from billing and reconciliation to HEDIS, PHA, coding-sensitive workflows, and large-scale carrier-facing execution.",
+        meta: ["US healthcare", "Billing and claims", "20+ carrier relationships"],
+        examples: [
+          {
+            tag: "Revenue Cycle",
+            title: "Reduced A/R aging from 70 days to 42 days",
+            body: "Redesigned reconciliation flow, exposed stuck claims through Power BI, and tightened communication and commercial accountability."
+          },
+          {
+            tag: "Operations",
+            title: "Increased capacity by 20–25% without hiring",
+            body: "Validated a more productive outreach window, challenged an inherited constraint, and unlocked more throughput without increasing headcount."
+          }
+        ]
+      },
+      risk: {
+        title: "Risk Adjustment depth across MA, ACA, coding quality, and compliance-sensitive delivery.",
+        copy: "I bring operational and analytical depth across Medicare Advantage, ACA Risk Adjustment, HCC coding, concurrent coding, RADV readiness, 837 submissions, and CMS-aligned workflows.",
+        meta: ["MA + ACA", "HCC / concurrent coding", "RADV / 837 workflows"],
+        examples: [
+          {
+            tag: "Risk Adjustment",
+            title: "Managed MA and ACA-aligned workflows across 20+ carrier relationships",
+            body: "Worked across coding-sensitive, compliance-sensitive, and reporting-heavy environments where accuracy, encounter quality, and operational rigor directly affected outcomes."
+          },
+          {
+            tag: "Audit Readiness",
+            title: "Built execution practices around coding quality and readiness",
+            body: "Supported workflows requiring strong documentation, process clarity, KPI visibility, and audit-sensitive delivery in healthcare environments."
+          }
+        ]
+      }
+    };
+
     placeholders.forEach((link) => {
       link.addEventListener("click", (event) => event.preventDefault());
     });
+
+    if (lensButtons.length && lensTitle && lensCopy && lensMeta && lensExamples) {
+      const renderLens = (key) => {
+        const lens = lensContent[key];
+        if (!lens) return;
+
+        lensButtons.forEach((button) => {
+          button.classList.toggle("is-active", button.dataset.lens === key);
+        });
+
+        lensTitle.textContent = lens.title;
+        lensCopy.textContent = lens.copy;
+        lensMeta.innerHTML = lens.meta
+          .map((item) => `<span class="lens-pill">${item}</span>`)
+          .join("");
+        lensExamples.innerHTML = lens.examples
+          .map((example) => `
+            <article class="lens-example">
+              <div class="case-tag">${example.tag}</div>
+              <h3>${example.title}</h3>
+              <p>${example.body}</p>
+            </article>
+          `)
+          .join("");
+      };
+
+      lensButtons.forEach((button) => {
+        button.addEventListener("click", () => renderLens(button.dataset.lens));
+      });
+
+      renderLens("strategy");
+    }
 
     if (caseSearch && caseLibrary.length && searchResultsMeta) {
       const renderSearch = () => {
