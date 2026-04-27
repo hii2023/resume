@@ -15,10 +15,10 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231f6f70'/%3E%3Cpath d='M19 47 28 17h8l9 30h-7l-2-7H28l-2 7Zm10-13h7l-3-12h-.3Z' fill='%23fff7ef'/%3E%3C/svg%3E" />
   <style>
     :root {
-      --bg: #f4eadf;
-      --bg-deep: #e4d0bb;
-      --paper: rgba(255, 249, 242, 0.82);
-      --paper-strong: #fffaf4;
+      --bg: #fbf5ee;
+      --bg-deep: #f1e4d3;
+      --paper: rgba(255, 252, 248, 0.9);
+      --paper-strong: #fffdf8;
       --ink: #181310;
       --muted: #66584b;
       --line: rgba(24, 19, 16, 0.1);
@@ -27,9 +27,9 @@
       --gold: #d6a03d;
       --plum: #8c4e66;
       --navy: #223550;
-      --shadow-lg: 0 28px 60px rgba(62, 44, 27, 0.12);
-      --shadow-md: 0 18px 34px rgba(62, 44, 27, 0.08);
-      --shadow-xl: 0 34px 78px rgba(44, 31, 18, 0.16);
+      --shadow-lg: 0 26px 54px rgba(83, 62, 42, 0.1);
+      --shadow-md: 0 16px 30px rgba(83, 62, 42, 0.07);
+      --shadow-xl: 0 30px 68px rgba(58, 43, 28, 0.12);
       --glow-coral: rgba(223, 111, 79, 0.22);
       --glow-teal: rgba(31, 111, 112, 0.2);
       --radius-xl: 30px;
@@ -58,11 +58,11 @@
       color: var(--ink);
       min-height: 100vh;
       background:
-        linear-gradient(115deg, rgba(255,255,255,0.35), transparent 26%),
-        radial-gradient(circle at 8% 10%, rgba(223, 111, 79, 0.18), transparent 20%),
-        radial-gradient(circle at 92% 14%, rgba(31, 111, 112, 0.16), transparent 18%),
-        radial-gradient(circle at 50% 110%, rgba(214, 160, 61, 0.14), transparent 24%),
-        linear-gradient(145deg, #fff7f0, var(--bg) 50%, var(--bg-deep));
+        linear-gradient(115deg, rgba(255,255,255,0.5), transparent 28%),
+        radial-gradient(circle at 8% 10%, rgba(223, 111, 79, 0.12), transparent 22%),
+        radial-gradient(circle at 92% 14%, rgba(31, 111, 112, 0.11), transparent 20%),
+        radial-gradient(circle at 50% 110%, rgba(214, 160, 61, 0.1), transparent 26%),
+        linear-gradient(145deg, #fffdfa, var(--bg) 52%, var(--bg-deep));
       position: relative;
       overflow-x: hidden;
     }
@@ -74,7 +74,7 @@
       border-radius: 50%;
       filter: blur(48px);
       pointer-events: none;
-      opacity: 0.5;
+      opacity: 0.38;
       z-index: 0;
     }
 
@@ -145,7 +145,7 @@
       margin-bottom: 22px;
       border-radius: 999px;
       border: 1px solid rgba(24, 19, 16, 0.08);
-      background: rgba(255, 251, 246, 0.62);
+      background: rgba(255, 253, 249, 0.82);
       backdrop-filter: blur(12px);
       box-shadow: var(--shadow-md);
       overflow: hidden;
@@ -314,7 +314,7 @@
       border-radius: 36px;
       padding: 38px;
       background:
-        linear-gradient(140deg, rgba(255, 252, 248, 0.96), rgba(255, 235, 214, 0.78)),
+        linear-gradient(140deg, rgba(255, 253, 250, 0.98), rgba(255, 241, 227, 0.86)),
         var(--paper);
       isolation: isolate;
       box-shadow:
@@ -640,8 +640,8 @@
       padding: 24px;
       border-radius: 28px;
       background:
-        linear-gradient(165deg, rgba(255,255,255,0.82), rgba(255, 246, 236, 0.68)),
-        rgba(255,255,255,0.68);
+        linear-gradient(165deg, rgba(255,255,255,0.9), rgba(255, 248, 240, 0.78)),
+        rgba(255,255,255,0.74);
       border: 1px solid rgba(24, 19, 16, 0.08);
       box-shadow: var(--shadow-lg);
       min-height: 100%;
@@ -740,7 +740,7 @@
     .hero-lead-panel {
       padding: 20px 20px 18px;
       border-radius: 24px;
-      background: linear-gradient(160deg, rgba(255,255,255,0.62), rgba(255, 246, 235, 0.42));
+      background: linear-gradient(160deg, rgba(255,255,255,0.78), rgba(255, 248, 240, 0.58));
       border: 1px solid rgba(24, 19, 16, 0.08);
       box-shadow: var(--shadow-md);
       position: relative;
@@ -816,10 +816,10 @@
       padding: 26px;
       border-radius: 30px;
       background:
-        linear-gradient(160deg, rgba(24, 43, 74, 0.98), rgba(25, 92, 92, 0.97)),
-        linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0));
-      color: #eef6f6;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+        linear-gradient(160deg, rgba(255, 252, 248, 0.96), rgba(239, 248, 247, 0.9)),
+        linear-gradient(90deg, rgba(255,255,255,0.2), rgba(255,255,255,0));
+      color: var(--ink);
+      border: 1px solid rgba(24, 19, 16, 0.08);
       box-shadow: var(--shadow-xl);
       min-height: 100%;
       transform: translateY(var(--cardLift)) rotateZ(var(--cardTilt));
@@ -827,14 +827,14 @@
     }
 
     .hero-card:hover {
-      box-shadow: 0 30px 52px rgba(24, 43, 74, 0.2);
+      box-shadow: 0 24px 48px rgba(58, 43, 28, 0.12);
     }
 
     .hero-card::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(120deg, transparent 0 42%, rgba(255,255,255,0.06) 52%, transparent 64%);
+      background: linear-gradient(120deg, transparent 0 42%, rgba(255,255,255,0.32) 52%, transparent 64%);
       transform: translateX(-120%);
       animation: sheen 9s linear infinite;
       pointer-events: none;
@@ -849,8 +849,8 @@
       font-weight: 800;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: #ffe2d3;
-      background: rgba(255,255,255,0.08);
+      color: var(--coral);
+      background: rgba(223, 111, 79, 0.08);
     }
 
     .hero-card::after {
@@ -861,7 +861,7 @@
       width: 180px;
       height: 180px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,255,255,0.1), transparent 72%);
+      background: radial-gradient(circle, rgba(31, 111, 112, 0.08), transparent 72%);
       pointer-events: none;
     }
 
@@ -874,8 +874,8 @@
     .metric-tile {
       padding: 14px;
       border-radius: 18px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.7);
+      border: 1px solid rgba(24, 19, 16, 0.06);
       transition: transform 180ms ease, background 180ms ease;
       position: relative;
       overflow: hidden;
@@ -883,23 +883,23 @@
 
     .metric-tile:hover {
       transform: translateY(-3px);
-      background: rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.9);
     }
 
     .metric-tile:nth-child(1) {
-      background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(223, 111, 79, 0.1));
+      background: linear-gradient(180deg, rgba(255,255,255,0.86), rgba(223, 111, 79, 0.12));
     }
 
     .metric-tile:nth-child(2) {
-      background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(31, 111, 112, 0.1));
+      background: linear-gradient(180deg, rgba(255,255,255,0.86), rgba(31, 111, 112, 0.12));
     }
 
     .metric-tile:nth-child(3) {
-      background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(140, 78, 102, 0.1));
+      background: linear-gradient(180deg, rgba(255,255,255,0.86), rgba(140, 78, 102, 0.1));
     }
 
     .metric-tile:nth-child(4) {
-      background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(214, 160, 61, 0.1));
+      background: linear-gradient(180deg, rgba(255,255,255,0.86), rgba(214, 160, 61, 0.12));
     }
 
     .metric-tile strong {
@@ -907,12 +907,12 @@
       font-size: 1.9rem;
       line-height: 0.95;
       margin-bottom: 8px;
-      color: #fff9ee;
+      color: var(--navy);
     }
 
     .metric-tile span {
       display: block;
-      color: rgba(255, 247, 238, 0.86);
+      color: var(--muted);
       line-height: 1.45;
       font-size: 0.92rem;
     }
@@ -1139,8 +1139,8 @@
       padding: 28px;
       border-radius: 28px;
       background:
-        linear-gradient(135deg, rgba(25, 44, 74, 0.96), rgba(31, 111, 112, 0.92)),
-        linear-gradient(135deg, rgba(255, 248, 241, 0.16), rgba(255, 233, 213, 0.08));
+        linear-gradient(135deg, rgba(255, 249, 243, 0.94), rgba(236, 248, 246, 0.92)),
+        linear-gradient(135deg, rgba(223, 111, 79, 0.08), rgba(31, 111, 112, 0.08));
       box-shadow:
         var(--shadow-lg),
         inset 0 1px 0 rgba(255,255,255,0.32);
@@ -1150,11 +1150,11 @@
     .impact-band h2,
     .impact-band .impact-item strong,
     .impact-band .impact-item span {
-      color: #f6efe8;
+      color: var(--navy);
     }
 
     .impact-band .section-kicker {
-      color: #ffd8bf;
+      color: var(--plum);
     }
 
     .why-grid {
@@ -1211,16 +1211,16 @@
     .impact-item {
       padding: 18px;
       border-radius: 22px;
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(24, 19, 16, 0.08);
       box-shadow: var(--shadow-md);
       transition: transform 180ms ease, border-color 180ms ease;
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(10px);
     }
 
     .impact-item:hover {
       transform: translateY(-4px);
-      border-color: rgba(255,255,255,0.28);
+      border-color: rgba(31, 111, 112, 0.18);
     }
 
     .section-header-band {
@@ -1790,13 +1790,13 @@
           </div>
           <div class="hero-lead-panel">
             <p class="hero-copy">
-              I work where business friction, data complexity, and execution gaps collide. Across 15+ years in US healthcare operations, Medicare Advantage, ACA Risk Adjustment, project delivery, product ownership, analytics, and AI-enabled workflows, I’ve built a reputation for turning ambiguous operational problems into structured systems, faster throughput, and visible financial value.
+              I work where business friction, data complexity, and execution gaps collide. Across 15+ years in US healthcare operations, Medicare Advantage, ACA Risk Adjustment, project delivery, product ownership, analytics, and AI-enabled workflows, I’ve built a reputation for turning ambiguous operational problems into structured systems, faster throughput, and visible financial value. My work has included direct collaboration with major US insurance carrier teams, high-volume patient, provider, and diagnosis data, and end-to-end claims operations tied to multi-million-dollar books of business.
             </p>
           </div>
           <div class="hero-proof-row">
-            <span class="proof-pill">20+ payer and carrier relationships</span>
-            <span class="proof-pill">CMS-aligned workflow depth</span>
-            <span class="proof-pill">Execution built around ROI</span>
+            <span class="proof-pill">Worked directly with 20+ major US insurance carriers</span>
+            <span class="proof-pill">Millions of patient, provider, and Dx records</span>
+            <span class="proof-pill">Execution built around ROI and claims outcomes</span>
           </div>
 
           <div class="cta-row">
@@ -1814,8 +1814,8 @@
               <span>Years across operations, Risk Adjustment delivery, quality, product ownership, and analytics.</span>
             </div>
             <div class="metric-tile">
-              <strong>70 → 42</strong>
-              <span>Days of A/R aging after redesigning reconciliation and client communication.</span>
+              <strong>72 → 42</strong>
+              <span>Days to close the claims cycle after redesigning reconciliation and client communication.</span>
             </div>
             <div class="metric-tile">
               <strong>20–25%</strong>
@@ -1899,7 +1899,15 @@
           </div>
           <div class="snapshot-row">
             <div class="snapshot-key">Scale</div>
-            <div class="snapshot-value">Managed delivery, compliance-sensitive workflows, and reporting across 20+ US insurance carrier relationships.</div>
+            <div class="snapshot-value">Worked directly with teams across 20+ major US insurance carriers while managing compliance-sensitive workflows, reporting, and operational delivery.</div>
+          </div>
+          <div class="snapshot-row">
+            <div class="snapshot-key">Data volume</div>
+            <div class="snapshot-value">Worked with millions of patient, provider, and diagnosis data points across healthcare operations, reporting, and claims-sensitive workflows.</div>
+          </div>
+          <div class="snapshot-row">
+            <div class="snapshot-key">Claims cycle</div>
+            <div class="snapshot-value">Handled end-to-end claims and reconciliation workflows tied to multi-million-dollar operations and helped reduce cycle closure time from 72 days to 42 days.</div>
           </div>
           <div class="snapshot-row">
             <div class="snapshot-key">Location</div>
@@ -1924,12 +1932,12 @@
           <span>Saved in a single month after identifying vendor billing tied to failed automation output.</span>
         </div>
         <div class="impact-item">
-          <strong>10 Teams</strong>
-          <span>Interviewed to turn backend request noise into an ROI-based Jira prioritization map.</span>
+          <strong>20+</strong>
+          <span>Major US insurance carrier relationships handled through direct team collaboration and delivery ownership.</span>
         </div>
         <div class="impact-item">
-          <strong>Translator</strong>
-          <span>Bridges leadership intent, operational reality, and what technical teams actually build.</span>
+          <strong>Millions</strong>
+          <span>Patient, provider, diagnosis, and claims-sensitive records worked across operations, reporting, and workflow redesign.</span>
         </div>
       </div>
     </section>
@@ -2025,9 +2033,9 @@
 
         <article class="case-card">
           <div class="case-tag">Revenue Cycle Redesign</div>
-          <h3>Reduced A/R aging from 70 days to 42 days.</h3>
-          <p>I rebuilt reconciliation visibility using Power BI, removed slow communication layers, and updated commercial terms so late payment behavior had consequences.</p>
-          <div class="case-result">Result: faster collections, cleaner accountability, and stronger upstream implementation guidance that reduced preventable rejections.</div>
+          <h3>Reduced claims-cycle closure time from 72 days to 42 days.</h3>
+          <p>I rebuilt reconciliation visibility using Power BI, removed slow communication layers, and updated commercial terms so late payment behavior had consequences across a multi-million-dollar claims environment.</p>
+          <div class="case-result">Result: claims-cycle closure improved from 72 days to 42 days, with faster collections, cleaner accountability, and stronger upstream implementation guidance that reduced preventable rejections.</div>
         </article>
 
         <article class="case-card">
@@ -2168,7 +2176,7 @@
           </div>
           <h2>If your team has friction hiding inside process, data, or delivery, that’s the kind of work I’m built for.</h2>
           <p class="footer-copy">
-            This site is designed to show how I think, where I create leverage, and the kinds of outcomes I’ve delivered across operations, data, automation, and cross-functional execution.
+            This site is designed to show how I think, where I create leverage, and the kinds of outcomes I’ve delivered across operations, data, automation, claims workflows, and cross-functional execution with major US insurance teams.
           </p>
         </div>
 
@@ -2266,18 +2274,18 @@
       },
       domain: {
         title: "Domain knowledge grounded in real healthcare workflows, not surface terminology.",
-        copy: "The work is backed by deep US healthcare operations exposure, from billing and reconciliation to HEDIS, PHA, coding-sensitive workflows, and large-scale carrier-facing execution.",
+        copy: "The work is backed by deep US healthcare operations exposure, from billing and reconciliation to HEDIS, PHA, coding-sensitive workflows, direct collaboration with major US insurance teams, and data environments involving millions of patient, provider, and diagnosis records.",
         meta: ["US healthcare", "Billing and claims", "20+ carrier relationships"],
         examples: [
           {
             tag: "Revenue Cycle",
-            title: "Reduced A/R aging from 70 days to 42 days",
-            body: "Redesigned reconciliation flow, exposed stuck claims through Power BI, and tightened communication and commercial accountability."
+            title: "Reduced claims-cycle closure time from 72 days to 42 days",
+            body: "Redesigned reconciliation flow, exposed stuck claims through Power BI, and tightened communication and commercial accountability across a multi-million-dollar claims environment."
           },
           {
             tag: "Operations",
-            title: "Increased capacity by 20–25% without hiring",
-            body: "Validated a more productive outreach window, challenged an inherited constraint, and unlocked more throughput without increasing headcount."
+            title: "Worked across major carrier relationships and high-volume healthcare data",
+            body: "Supported direct team collaboration with 20+ major US insurance carriers while operating in workflows tied to millions of patient, provider, and Dx records."
           }
         ]
       },
@@ -2289,7 +2297,7 @@
           {
             tag: "Risk Adjustment",
             title: "Managed MA and ACA-aligned workflows across 20+ carrier relationships",
-            body: "Worked across coding-sensitive, compliance-sensitive, and reporting-heavy environments where accuracy, encounter quality, and operational rigor directly affected outcomes."
+            body: "Worked directly with major US insurance teams in coding-sensitive, compliance-sensitive, and reporting-heavy environments where accuracy, encounter quality, and operational rigor directly affected outcomes."
           },
           {
             tag: "Audit Readiness",
