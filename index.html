@@ -373,7 +373,7 @@
     .hero-grid {
       position: relative;
       z-index: 1;
-      grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+      grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
       align-items: start;
     }
 
@@ -457,31 +457,6 @@
       backdrop-filter: blur(8px);
     }
 
-    .role-targets {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 0 0 18px;
-    }
-
-    .target-pill {
-      padding: 8px 11px;
-      border-radius: 999px;
-      background: rgba(255, 251, 246, 0.84);
-      border: 1px solid rgba(24, 19, 16, 0.08);
-      color: var(--navy);
-      font-size: 0.86rem;
-      font-weight: 800;
-      box-shadow: var(--shadow-md);
-      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
-    }
-
-    .target-pill:hover {
-      transform: translateY(-2px);
-      border-color: rgba(31, 111, 112, 0.2);
-      box-shadow: 0 16px 28px rgba(62, 44, 27, 0.1);
-    }
-
     .hero-copy,
     .section-copy,
     .case-card p,
@@ -498,8 +473,8 @@
     }
 
     .hero-proof-row {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 10px;
     }
 
@@ -865,56 +840,65 @@
       pointer-events: none;
     }
 
+    .operator-intro {
+      display: grid;
+      gap: 8px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(24, 19, 16, 0.08);
+    }
+
+    .operator-intro strong {
+      font-size: 1.35rem;
+      color: var(--navy);
+      line-height: 1.1;
+      max-width: 15ch;
+    }
+
+    .operator-intro span {
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
     .hero-metrics {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
+      gap: 8px;
     }
 
     .metric-tile {
-      padding: 14px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.7);
-      border: 1px solid rgba(24, 19, 16, 0.06);
-      transition: transform 180ms ease, background 180ms ease;
-      position: relative;
-      overflow: hidden;
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(24, 19, 16, 0.08);
     }
 
-    .metric-tile:hover {
-      transform: translateY(-3px);
-      background: rgba(255,255,255,0.9);
-    }
-
-    .metric-tile:nth-child(1) {
-      background: linear-gradient(180deg, rgba(255,255,255,0.86), rgba(223, 111, 79, 0.12));
-    }
-
-    .metric-tile:nth-child(2) {
-      background: linear-gradient(180deg, rgba(255,255,255,0.86), rgba(31, 111, 112, 0.12));
-    }
-
-    .metric-tile:nth-child(3) {
-      background: linear-gradient(180deg, rgba(255,255,255,0.86), rgba(140, 78, 102, 0.1));
-    }
-
-    .metric-tile:nth-child(4) {
-      background: linear-gradient(180deg, rgba(255,255,255,0.86), rgba(214, 160, 61, 0.12));
+    .metric-tile:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
     }
 
     .metric-tile strong {
       display: block;
-      font-size: 1.9rem;
+      font-size: 1.55rem;
       line-height: 0.95;
-      margin-bottom: 8px;
       color: var(--navy);
+      letter-spacing: -0.04em;
     }
 
     .metric-tile span {
       display: block;
       color: var(--muted);
       line-height: 1.45;
-      font-size: 0.92rem;
+      font-size: 0.94rem;
+    }
+
+    .operator-note {
+      padding-top: 14px;
+      border-top: 1px solid rgba(24, 19, 16, 0.08);
+      color: var(--navy);
+      font-weight: 700;
+      line-height: 1.5;
     }
 
     .contact-strip {
@@ -1057,7 +1041,7 @@
     }
 
     .summary-grid {
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: 1.28fr 0.72fr;
       align-items: stretch;
       margin-top: 30px;
     }
@@ -1158,35 +1142,44 @@
     }
 
     .why-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: 1fr;
       margin-top: 18px;
+      gap: 0;
     }
 
     .why-card {
-      padding: 22px;
-      border-radius: 22px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.62), rgba(255, 247, 238, 0.46));
-      border: 1px solid rgba(24, 19, 16, 0.08);
-      box-shadow: var(--shadow-md);
-      transition: transform 180ms ease, border-color 180ms ease;
+      display: grid;
+      grid-template-columns: minmax(0, 0.72fr) minmax(0, 1fr);
+      gap: 18px;
+      padding: 22px 0;
+      border-bottom: 1px solid rgba(24, 19, 16, 0.08);
+      background: transparent;
+      border-radius: 0;
+      box-shadow: none;
+      transition: none;
     }
 
-    .why-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(223, 111, 79, 0.2);
+    .why-card:first-child {
+      padding-top: 6px;
+    }
+
+    .why-card:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
     }
 
     .why-card strong {
       display: block;
-      margin-bottom: 10px;
       color: var(--navy);
       font-size: 1.08rem;
+      line-height: 1.3;
     }
 
     .why-card span {
       display: block;
       color: var(--muted);
-      line-height: 1.58;
+      line-height: 1.62;
+      max-width: 58ch;
     }
 
     .impact-band::after {
@@ -1202,13 +1195,14 @@
 
     .impact-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(12, minmax(0, 1fr));
       gap: 14px;
       position: relative;
       z-index: 1;
     }
 
     .impact-item {
+      grid-column: span 4;
       padding: 18px;
       border-radius: 22px;
       background: rgba(255,255,255,0.72);
@@ -1221,6 +1215,11 @@
     .impact-item:hover {
       transform: translateY(-4px);
       border-color: rgba(31, 111, 112, 0.18);
+    }
+
+    .impact-item:first-child,
+    .impact-item:nth-child(2) {
+      grid-column: span 6;
     }
 
     .section-header-band {
@@ -1318,6 +1317,10 @@
     .case-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
       margin-top: 18px;
+    }
+
+    .case-card:first-child {
+      grid-column: span 2;
     }
 
     .case-card {
@@ -1668,11 +1671,22 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
+      .impact-item,
+      .impact-item:first-child,
+      .impact-item:nth-child(2),
+      .case-card:first-child {
+        grid-column: auto;
+      }
+
       .library-grid {
         grid-template-columns: 1fr;
       }
 
       .lens-example-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-proof-row {
         grid-template-columns: 1fr;
       }
     }
@@ -1713,9 +1727,13 @@
       }
 
       .impact-grid,
-      .hero-metrics,
       .contact-icons,
       .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .metric-tile,
+      .why-card {
         grid-template-columns: 1fr;
       }
 
@@ -1782,12 +1800,6 @@
             <span class="status-pill">Ahmedabad, India</span>
             <span class="status-pill">Medicare Advantage + ACA Risk Adjustment</span>
           </div>
-          <div class="role-targets">
-            <span class="target-pill">Operations Leadership</span>
-            <span class="target-pill">Program / Delivery Management</span>
-            <span class="target-pill">Healthcare Data Operations</span>
-            <span class="target-pill">Automation & Process Improvement</span>
-          </div>
           <div class="hero-lead-panel">
             <p class="hero-copy">
               I work at the intersection of client trust, operational rigor, and financial performance. Across 15+ years in US healthcare operations, Medicare Advantage, ACA Risk Adjustment, project delivery, product ownership, analytics, and AI-enabled workflows, I’ve been trusted to bring structure to high-stakes environments where accuracy, speed, and alignment matter at the same time. My work has included direct collaboration with major US insurance carrier teams including UHC, Cambia, BCBS, Humana, and Centene, stewardship of high-volume patient, provider, and diagnosis data, and ownership of end-to-end claims processing tied to multi-million-dollar books of business.
@@ -1809,6 +1821,10 @@
 
         <aside class="hero-card reveal delay-1">
           <span class="card-label">Quick Snapshot</span>
+          <div class="operator-intro">
+            <strong>Founder-trusted execution for messy, high-stakes systems.</strong>
+            <span>I help leadership move from operational drag to clearer control, stronger client confidence, and measurable outcomes.</span>
+          </div>
           <div class="hero-metrics">
             <div class="metric-tile">
               <strong>15+</strong>
@@ -1831,6 +1847,7 @@
               <span>Cross-functional teams aligned to keep the full claims lifecycle moving without breakdowns.</span>
             </div>
           </div>
+          <div class="operator-note">Best used where leadership needs someone who can align clients, teams, workflows, and financial outcomes without losing execution speed.</div>
         </aside>
       </div>
     </header>
