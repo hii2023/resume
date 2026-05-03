@@ -474,31 +474,42 @@
 
     .hero-proof-row {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0;
+      margin-top: 6px;
+      border-top: 1px solid rgba(24, 19, 16, 0.08);
+      border-bottom: 1px solid rgba(24, 19, 16, 0.08);
+      background: rgba(255, 255, 255, 0.54);
+      backdrop-filter: blur(10px);
     }
 
     .proof-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 13px;
-      border-radius: 999px;
-      background: rgba(255, 251, 246, 0.84);
-      border: 1px solid rgba(24, 19, 16, 0.08);
-      box-shadow: var(--shadow-md);
+      display: grid;
+      gap: 6px;
+      padding: 16px 18px;
+      border-right: 1px solid rgba(24, 19, 16, 0.08);
       color: var(--navy);
-      font-size: 0.85rem;
-      font-weight: 800;
     }
 
-    .proof-pill::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--coral), var(--gold));
-      box-shadow: 0 0 0 4px rgba(223, 111, 79, 0.12);
+    .proof-pill:last-child {
+      border-right: 0;
+    }
+
+    .proof-value {
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      color: var(--ink);
+    }
+
+    .proof-label {
+      font-size: 0.78rem;
+      line-height: 1.45;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 800;
     }
 
     .lens-shell {
@@ -1806,10 +1817,22 @@
             </p>
           </div>
           <div class="hero-proof-row">
-            <span class="proof-pill">Worked directly with 20+ major US insurance carriers</span>
-            <span class="proof-pill">5000+ end-to-end claims processed monthly</span>
-            <span class="proof-pill">Millions of patient, provider, and Dx records</span>
-            <span class="proof-pill">End-to-end claims processing and close-loop ownership</span>
+            <div class="proof-pill">
+              <span class="proof-value">20+</span>
+              <span class="proof-label">Major US insurance carriers handled directly</span>
+            </div>
+            <div class="proof-pill">
+              <span class="proof-value">5000+</span>
+              <span class="proof-label">End-to-end claims processed monthly</span>
+            </div>
+            <div class="proof-pill">
+              <span class="proof-value">Millions</span>
+              <span class="proof-label">Patient, provider, and diagnosis records</span>
+            </div>
+            <div class="proof-pill">
+              <span class="proof-value">72 to 42</span>
+              <span class="proof-label">Days from visit to payment closure</span>
+            </div>
           </div>
 
           <div class="cta-row">
