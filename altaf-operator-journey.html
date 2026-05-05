@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Altaf Simavatwala | Founder-Trusted Operator</title>
+  <meta name="description" content="A solution-led view of how Altaf Simavatwala helps founders, VPs, and operators bring structure, speed, and financial discipline to healthcare and data-heavy systems.">
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --surface: #ffffff;
+      --surface-2: #f8fbff;
+      --ink: #102033;
+      --muted: #63758b;
+      --line: rgba(16, 32, 51, 0.09);
+      --line-strong: rgba(16, 32, 51, 0.16);
+      --navy: #102033;
+      --slate: #1d3552;
+      --teal: #0f7b7c;
+      --cyan: #1ea7a9;
+      --coral: #e35535;
+      --gold: #d09a3d;
+      --green: #1cb56e;
+      --shadow-sm: 0 8px 24px rgba(13, 22, 38, 0.06);
+      --shadow-md: 0 16px 40px rgba(13, 22, 38, 0.09);
+      --shadow-lg: 0 24px 60px rgba(13, 22, 38, 0.12);
+      --radius-sm: 14px;
+      --radius-md: 22px;
+      --radius-lg: 32px;
+      --radius-xl: 42px;
+      --max: 1180px;
+      --font-serif: Georgia, "Times New Roman", serif;
+      --font-sans: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font-sans);
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(30,167,169,0.09), transparent 24%),
+        radial-gradient(circle at top right, rgba(227,85,53,0.08), transparent 20%),
+        linear-gradient(180deg, #fbfdff, var(--bg));
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .page {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 20px 18px 96px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 700ms cubic-bezier(.22,.68,0,1), transform 700ms cubic-bezier(.22,.68,0,1);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .delay-1 { transition-delay: 100ms; }
+    .delay-2 { transition-delay: 180ms; }
+    .delay-3 { transition-delay: 260ms; }
+
+    .nav {
+      position: sticky;
+      top: 14px;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.75);
+      background: rgba(255,255,255,0.84);
+      box-shadow: var(--shadow-sm);
+      backdrop-filter: blur(16px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      background: linear-gradient(135deg, var(--navy), var(--teal));
+      box-shadow: 0 10px 24px rgba(16,32,51,0.16);
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+    }
+
+    .brand-copy {
+      display: grid;
+      gap: 2px;
+    }
+
+    .brand-copy small {
+      color: var(--muted);
+      font-size: 0.62rem;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .nav-center,
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-center a {
+      padding: 8px 12px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 700;
+      transition: background .18s ease, color .18s ease;
+    }
+
+    .nav-center a:hover {
+      background: rgba(15,123,124,0.08);
+      color: var(--teal);
+    }
+
+    .nav-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(28,181,110,0.09);
+      border: 1px solid rgba(28,181,110,0.18);
+      color: #118857;
+      font-size: 0.78rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .nav-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 4px rgba(28,181,110,0.14);
+      animation: pulse 2.3s ease infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 4px rgba(28,181,110,0.14); }
+      50% { box-shadow: 0 0 0 8px rgba(28,181,110,0.06); }
+    }
+
+    .nav-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      transition: transform .18s ease, box-shadow .18s ease, color .18s ease, border-color .18s ease;
+    }
+
+    .nav-icon:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-icon svg {
+      width: 16px;
+      height: 16px;
+      display: block;
+    }
+
+    .hero {
+      position: relative;
+      margin-top: 18px;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      padding: 48px 42px 28px;
+      background:
+        radial-gradient(circle at 84% 14%, rgba(30,167,169,0.25), transparent 24%),
+        radial-gradient(circle at 8% 82%, rgba(227,85,53,0.16), transparent 20%),
+        linear-gradient(145deg, #102033, #14263b 42%, #17314a);
+      color: #f5f9ff;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+      background-size: 36px 36px;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) 340px;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .hero-left {
+      display: grid;
+      gap: 22px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #b4d9ff;
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero-title {
+      margin: 0;
+      font-family: var(--font-serif);
+      font-size: clamp(3rem, 7vw, 5.4rem);
+      line-height: 0.96;
+      letter-spacing: -0.045em;
+      max-width: 8ch;
+    }
+
+    .hero-role {
+      max-width: 30ch;
+      font-size: clamp(1.16rem, 2.1vw, 1.4rem);
+      line-height: 1.34;
+      color: rgba(245,249,255,0.88);
+      font-weight: 700;
+    }
+
+    .hero-copy {
+      max-width: 60ch;
+      color: rgba(233,241,252,0.78);
+      line-height: 1.72;
+      font-size: 1rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 800;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(135deg, var(--coral), #f07a58);
+      box-shadow: 0 14px 30px rgba(227,85,53,0.28);
+    }
+
+    .btn-secondary {
+      color: #ebf4ff;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .cred-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0;
+      margin-top: 6px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(10px);
+    }
+
+    .cred-item {
+      display: grid;
+      gap: 6px;
+      padding: 18px 18px 16px;
+      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .cred-item:last-child {
+      border-right: 0;
+    }
+
+    .cred-value {
+      font-size: 1.24rem;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .cred-label {
+      font-size: 0.75rem;
+      line-height: 1.5;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(226,236,248,0.72);
+      font-weight: 800;
+    }
+
+    .hero-visual {
+      position: relative;
+      display: grid;
+      gap: 14px;
+      padding: 18px;
+      border-radius: 28px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+      overflow: hidden;
+    }
+
+    .hero-visual::before {
+      content: "";
+      position: absolute;
+      inset: auto -20% -26% auto;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(30,167,169,0.28), transparent 70%);
+      pointer-events: none;
+    }
+
+    .visual-label {
+      display: inline-flex;
+      width: fit-content;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      color: #d7ebff;
+      font-size: 0.73rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .flow-stage {
+      position: relative;
+      display: grid;
+      gap: 10px;
+      padding: 14px 14px 14px 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      transform: translateX(0);
+      animation: stageFloat 5.4s ease-in-out infinite;
+    }
+
+    .flow-stage:nth-child(2) { animation-delay: .2s; }
+    .flow-stage:nth-child(3) { animation-delay: .45s; }
+    .flow-stage:nth-child(4) { animation-delay: .7s; }
+
+    @keyframes stageFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+
+    .flow-stage::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 14px;
+      bottom: 14px;
+      width: 4px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--coral), var(--gold), var(--cyan));
+    }
+
+    .flow-stage strong {
+      font-size: 0.92rem;
+      color: #ffffff;
+      font-weight: 800;
+    }
+
+    .flow-stage span {
+      color: rgba(226,236,248,0.74);
+      line-height: 1.48;
+      font-size: 0.88rem;
+    }
+
+    .stage-meter {
+      position: relative;
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      overflow: hidden;
+    }
+
+    .stage-meter::after {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: var(--fill, 60%);
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--coral), var(--gold), var(--cyan));
+      animation: meterPulse 2.2s ease-in-out infinite;
+    }
+
+    @keyframes meterPulse {
+      0%, 100% { opacity: 0.92; }
+      50% { opacity: 0.65; }
+    }
+
+    .section {
+      margin-top: 28px;
+      padding: 30px;
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,0.8);
+      border: 1px solid rgba(255,255,255,0.84);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .section-label {
+      color: var(--teal);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .section-accent {
+      width: 92px;
+      height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--coral), var(--gold), var(--cyan));
+      box-shadow: 0 10px 20px rgba(227,85,53,0.16);
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1;
+      letter-spacing: -0.035em;
+      color: var(--navy);
+    }
+
+    .section-copy {
+      max-width: 65ch;
+      color: var(--muted);
+      line-height: 1.72;
+    }
+
+    .solution-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .solution-card {
+      position: relative;
+      overflow: hidden;
+      padding: 22px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(248,251,255,0.9));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    .solution-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(15,123,124,0.18);
+    }
+
+    .solution-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -22px -26px auto;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(30,167,169,0.12), transparent 72%);
+      pointer-events: none;
+    }
+
+    .solution-kicker {
+      display: inline-flex;
+      margin-bottom: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(16,32,51,0.06);
+      color: var(--navy);
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .solution-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.16rem;
+      line-height: 1.25;
+      color: var(--navy);
+    }
+
+    .solution-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.62;
+    }
+
+    .journey-shell {
+      display: grid;
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .journey-line {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .journey-line::before {
+      content: "";
+      position: absolute;
+      left: 5%;
+      right: 5%;
+      top: 28px;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(227,85,53,0.18), rgba(30,167,169,0.32), rgba(208,154,61,0.18));
+      z-index: 0;
+    }
+
+    .journey-card {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 12px;
+      align-content: start;
+      padding: 18px;
+      border-radius: 22px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+
+    .journey-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .journey-step {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--coral), var(--cyan));
+      box-shadow: 0 0 0 6px rgba(30,167,169,0.12);
+    }
+
+    .journey-card strong {
+      color: var(--navy);
+      font-size: 1rem;
+      line-height: 1.28;
+    }
+
+    .journey-card p {
+      color: var(--muted);
+      line-height: 1.58;
+      font-size: 0.93rem;
+    }
+
+    .journey-help {
+      display: inline-flex;
+      width: fit-content;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(15,123,124,0.08);
+      color: var(--teal);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 20px;
+      margin-top: 22px;
+    }
+
+    .proof-panel {
+      padding: 24px;
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(248,251,255,0.94));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .proof-metrics {
+      display: grid;
+      gap: 14px;
+    }
+
+    .proof-row {
+      display: grid;
+      grid-template-columns: 88px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .proof-row:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .proof-row strong {
+      font-size: 1.4rem;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      color: var(--navy);
+    }
+
+    .proof-row span {
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .coverage-card {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(150deg, #102033, #15324f);
+      color: #eff7ff;
+      border: 0;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .coverage-card::before {
+      content: "";
+      position: absolute;
+      inset: auto -10% -12% auto;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(30,167,169,0.24), transparent 72%);
+    }
+
+    .coverage-card h3 {
+      margin: 0 0 12px;
+      font-size: 1.2rem;
+    }
+
+    .coverage-card p {
+      margin: 0 0 14px;
+      line-height: 1.62;
+      color: rgba(235,244,255,0.78);
+    }
+
+    .coverage-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .coverage-list div {
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .where-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .where-card {
+      padding: 22px;
+      border-radius: 24px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .where-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .where-card strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.08rem;
+      color: var(--navy);
+    }
+
+    .where-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.62;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 18px;
+      align-items: start;
+    }
+
+    .contact-card {
+      padding: 24px;
+      border-radius: 28px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .contact-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.18rem;
+      color: var(--navy);
+    }
+
+    .contact-card p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      line-height: 1.64;
+    }
+
+    .contact-actions {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-action {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: rgba(248,251,255,0.82);
+      font-weight: 800;
+      color: var(--navy);
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+
+    .contact-action:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .contact-action svg {
+      width: 18px;
+      height: 18px;
+      display: block;
+      color: var(--teal);
+      flex: 0 0 auto;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid,
+      .proof-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .journey-line,
+      .solution-grid,
+      .where-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .cred-strip {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        padding: 16px 14px 64px;
+      }
+
+      .nav {
+        position: static;
+        border-radius: 26px;
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+
+      .nav-center,
+      .nav-right {
+        flex-wrap: wrap;
+      }
+
+      .hero {
+        padding: 32px 22px 22px;
+      }
+
+      .journey-line,
+      .solution-grid,
+      .where-grid,
+      .cred-strip,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cred-item {
+        border-right: 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+      }
+
+      .cred-item:last-child {
+        border-bottom: 0;
+      }
+
+      .journey-line::before {
+        display: none;
+      }
+
+      .section {
+        padding: 22px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav class="nav reveal">
+      <div class="brand">
+        <span class="brand-mark">AS</span>
+        <span class="brand-copy">
+          <span>ALTAF SIMAVATWALA</span>
+          <small>Founder-Trusted Operator</small>
+        </span>
+      </div>
+      <div class="nav-center">
+        <a href="#solutions">Solutions</a>
+        <a href="#journey">Journey</a>
+        <a href="#proof">Proof</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="nav-right">
+        <div class="nav-pill">
+          <span class="nav-dot"></span>
+          Open to Remote Roles
+        </div>
+        <a class="nav-icon email" href="mailto:altafsimavatwala1991@gmail.com" aria-label="Email Altaf">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M4 7.5 12 13l8-5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="3.25" y="5.25" width="17.5" height="13.5" rx="3" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </a>
+        <a class="nav-icon whatsapp" href="https://wa.me/918905196948" target="_blank" rel="noreferrer" aria-label="Message Altaf on WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.05 4.94A9.86 9.86 0 0 0 12.03 2C6.56 2 2.1 6.45 2.1 11.92c0 1.75.46 3.46 1.33 4.97L2 22l5.26-1.38a9.9 9.9 0 0 0 4.75 1.21h.01c5.47 0 9.92-4.45 9.92-9.92a9.86 9.86 0 0 0-2.89-6.97Zm-7.03 15.2h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.12.82.84-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.36c0-4.52 3.69-8.2 8.23-8.2 2.2 0 4.26.85 5.82 2.41a8.16 8.16 0 0 1 2.4 5.8c0 4.53-3.69 8.21-8.22 8.21Zm4.5-6.16c-.25-.13-1.47-.73-1.7-.81-.22-.08-.39-.12-.55.13-.17.25-.64.8-.79.96-.15.17-.3.19-.55.06-.25-.13-1.06-.39-2.01-1.24-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.3.37-.45.12-.15.16-.25.25-.42.08-.17.04-.32-.02-.45-.06-.13-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.41h-.47c-.17 0-.45.06-.69.32-.23.25-.89.87-.89 2.12s.91 2.45 1.03 2.62c.13.17 1.78 2.72 4.31 3.81.6.26 1.07.41 1.44.53.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.22-.16-.47-.29Z"/>
+          </svg>
+        </a>
+        <a class="nav-icon linkedin" href="https://www.linkedin.com/in/altaf-simavatwala-20a46160" target="_blank" rel="noreferrer" aria-label="Open Altaf's LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A1.97 1.97 0 1 0 5.3 6.94 1.97 1.97 0 0 0 5.25 3Zm14.19 9.83c0-3.45-1.84-5.05-4.29-5.05-1.98 0-2.86 1.09-3.36 1.86V8.5H8.42c.05.76 0 11.5 0 11.5h3.37v-6.42c0-.34.02-.68.13-.92.27-.68.88-1.38 1.92-1.38 1.35 0 1.89 1.03 1.89 2.54V20h3.37v-7.17Z"/>
+          </svg>
+        </a>
+      </div>
+    </nav>
+
+    <header class="hero reveal delay-1">
+      <div class="hero-grid">
+        <div class="hero-left">
+          <span class="eyebrow">Healthcare x Data x Execution</span>
+          <h1 class="hero-title">I help leadership bring control to complex operating systems.</h1>
+          <div class="hero-role">Trusted where implementation is messy, claims are critical, teams are fragmented, and the business cannot afford slow execution.</div>
+          <p class="hero-copy">
+            I work across high-stakes healthcare and data-heavy environments to tighten execution, reduce friction, and bring visibility to systems that directly affect revenue, trust, and delivery performance. The value I create is not in titles. It is in turning complexity into a cleaner operating model that founders, VPs, and client teams can rely on.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://www.linkedin.com/in/altaf-simavatwala-20a46160" target="_blank" rel="noreferrer">View LinkedIn</a>
+            <a class="btn btn-secondary" href="#journey">See the Project Journey</a>
+          </div>
+          <div class="cred-strip">
+            <div class="cred-item">
+              <span class="cred-value">20+</span>
+              <span class="cred-label">Major US carrier relationships handled directly</span>
+            </div>
+            <div class="cred-item">
+              <span class="cred-value">5000+</span>
+              <span class="cred-label">End-to-end claims processed monthly</span>
+            </div>
+            <div class="cred-item">
+              <span class="cred-value">Millions</span>
+              <span class="cred-label">Patient, provider, and diagnosis records worked through</span>
+            </div>
+            <div class="cred-item">
+              <span class="cred-value">72 to 42</span>
+              <span class="cred-label">Days from visit to payment closure after redesign</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-visual reveal delay-2">
+          <span class="visual-label">How I Run The System</span>
+          <div class="flow-stage">
+            <strong>Signal the real bottleneck</strong>
+            <span>Separate surface noise from the process step that is actually slowing speed, trust, or payment flow.</span>
+            <div class="stage-meter" style="--fill:78%;"></div>
+          </div>
+          <div class="flow-stage">
+            <strong>Align client goals with execution logic</strong>
+            <span>Translate requirements into working rules that teams, data, coding, and implementation can all follow.</span>
+            <div class="stage-meter" style="--fill:84%;"></div>
+          </div>
+          <div class="flow-stage">
+            <strong>Make the journey visible</strong>
+            <span>Use dashboards, workflow checkpoints, and operating rhythm to expose hidden delays before they become client problems.</span>
+            <div class="stage-meter" style="--fill:72%;"></div>
+          </div>
+          <div class="flow-stage">
+            <strong>Close the loop with proof</strong>
+            <span>Push toward measurable improvement in throughput, implementation speed, denial prevention, and payment outcomes.</span>
+            <div class="stage-meter" style="--fill:88%;"></div>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <section id="solutions" class="section reveal">
+      <div class="section-header">
+        <div class="section-label">Where I Help</div>
+        <div class="section-accent"></div>
+      </div>
+      <h2>Not a list of roles. A map of the problems I solve.</h2>
+      <p class="section-copy">
+        The common pattern across my work is simple: when the system is under stress, I create the operating clarity that lets leadership move faster without losing accuracy, control, or client confidence.
+      </p>
+      <div class="solution-grid">
+        <article class="solution-card reveal delay-1">
+          <div class="solution-kicker">Execution</div>
+          <h3>When teams are moving, but the work still feels stuck</h3>
+          <p>I design a cleaner operating rhythm across client teams, internal functions, and implementation dependencies so that execution becomes visible, accountable, and easier to move.</p>
+        </article>
+        <article class="solution-card reveal delay-2">
+          <div class="solution-kicker">Revenue</div>
+          <h3>When claims, payments, and reconciliation start leaking value</h3>
+          <p>I tighten the path from intake to closure by improving claims flow, denial prevention, payment mapping, and the visibility needed to keep money from getting trapped in process gaps.</p>
+        </article>
+        <article class="solution-card reveal delay-3">
+          <div class="solution-kicker">Trust</div>
+          <h3>When leadership needs client confidence and internal discipline at once</h3>
+          <p>I help turn client intent into operational reality so that delivery feels sharper externally and more aligned internally, especially in compliance-sensitive or coding-heavy environments.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="journey" class="section reveal">
+      <div class="section-header">
+        <div class="section-label">Project Journey</div>
+        <div class="section-accent"></div>
+      </div>
+      <h2>How I move a project or product from confusion to reliable execution.</h2>
+      <p class="section-copy">
+        This is the operating journey I’m strongest in. It applies to implementation work, workflow redesign, claims-sensitive operations, and client-facing data programs.
+      </p>
+      <div class="journey-shell">
+        <div class="journey-line">
+          <article class="journey-card reveal delay-1">
+            <div class="journey-step"></div>
+            <strong>1. Intake and truth-finding</strong>
+            <p>I audit the incoming ask, the real dependency map, and the data quality issues hiding underneath the request.</p>
+            <span class="journey-help">I help here</span>
+          </article>
+          <article class="journey-card reveal delay-1">
+            <div class="journey-step"></div>
+            <strong>2. Requirement shaping</strong>
+            <p>I turn stakeholder intent into concrete implementation logic, process rules, and execution checkpoints teams can actually use.</p>
+            <span class="journey-help">I help here</span>
+          </article>
+          <article class="journey-card reveal delay-2">
+            <div class="journey-step"></div>
+            <strong>3. Workflow alignment</strong>
+            <p>I connect coding, claims, reconciliation, reporting, and client coordination so execution works as one system instead of disconnected teams.</p>
+            <span class="journey-help">I help here</span>
+          </article>
+          <article class="journey-card reveal delay-2">
+            <div class="journey-step"></div>
+            <strong>4. Risk and leakage control</strong>
+            <p>I surface denial patterns, stale eligibility, broken handoffs, and payment-mapping gaps before they turn into downstream business damage.</p>
+            <span class="journey-help">I help here</span>
+          </article>
+          <article class="journey-card reveal delay-3">
+            <div class="journey-step"></div>
+            <strong>5. Close-loop visibility</strong>
+            <p>I drive the operating rhythm toward measurable outcomes, from throughput and implementation speed to claims closure and payment confidence.</p>
+            <span class="journey-help">I help here</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="proof" class="section reveal">
+      <div class="section-header">
+        <div class="section-label">Proof</div>
+        <div class="section-accent"></div>
+      </div>
+      <h2>The numbers matter because they represent better operating control.</h2>
+      <div class="proof-grid">
+        <div class="proof-panel reveal delay-1">
+          <div class="proof-metrics">
+            <div class="proof-row">
+              <strong>72 to 42</strong>
+              <span>Reduced visit-to-payment closure time by tightening reconciliation visibility, client communication, and payment accountability.</span>
+            </div>
+            <div class="proof-row">
+              <strong>20+</strong>
+              <span>Worked directly with major US insurance carrier teams including UHC, Cambia, BCBS, Humana, and Centene.</span>
+            </div>
+            <div class="proof-row">
+              <strong>5000+</strong>
+              <span>End-to-end claims processed monthly across intake, coding, submission, denial handling, payment mapping, and closure.</span>
+            </div>
+            <div class="proof-row">
+              <strong>90–95%</strong>
+              <span>Projection accuracy built from operational reporting logic that helped teams see risk before delays fully surfaced.</span>
+            </div>
+          </div>
+        </div>
+        <div class="proof-panel coverage-card reveal delay-2">
+          <h3>What this credibility actually covers</h3>
+          <p>Eligibility refresh, visit readiness, patient summaries, coding alignment, claims generation, clearinghouse submission, 277 and 835 progression, denial handling, payment mapping, and finance close-loop.</p>
+          <div class="coverage-list">
+            <div>Client-facing implementation ownership</div>
+            <div>Claims processing from intake to payment</div>
+            <div>Data-heavy healthcare workflows at scale</div>
+            <div>Execution alignment across 12 teams</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="section-header">
+        <div class="section-label">Best Fit</div>
+        <div class="section-accent"></div>
+      </div>
+      <h2>Where this kind of operator creates the most leverage.</h2>
+      <div class="where-grid">
+        <article class="where-card reveal delay-1">
+          <strong>Founders</strong>
+          <p>When growth is exposing operational cracks and you need someone who can stabilize execution without building a bloated process layer.</p>
+        </article>
+        <article class="where-card reveal delay-2">
+          <strong>VPs and Directors</strong>
+          <p>When multiple teams, tools, and reporting paths are involved and you need cleaner control across implementation, claims, and delivery performance.</p>
+        </article>
+        <article class="where-card reveal delay-3">
+          <strong>Healthcare operators</strong>
+          <p>When coding, compliance, client trust, and financial outcomes are connected, and the system needs both discipline and speed at the same time.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section reveal delay-1">
+      <div class="section-header">
+        <div class="section-label">Contact</div>
+        <div class="section-accent"></div>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>If your system feels heavier than it should, that is usually where I add the most value.</h3>
+          <p>I’m most useful when there is real business pressure under the surface: client expectations, claims leakage, implementation drag, visibility gaps, or teams that need a sharper operating rhythm.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:altafsimavatwala1991@gmail.com">Email Altaf</a>
+            <a class="btn btn-secondary" href="https://www.linkedin.com/in/altaf-simavatwala-20a46160" target="_blank" rel="noreferrer">Open LinkedIn</a>
+          </div>
+        </div>
+        <div class="contact-card">
+          <h3>Reach out</h3>
+          <p>Ahmedabad, Gujarat, India. Available for remote leadership, implementation, operations, and transformation opportunities.</p>
+          <div class="contact-actions">
+            <a class="contact-action" href="mailto:altafsimavatwala1991@gmail.com">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4 7.5 12 13l8-5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <rect x="3.25" y="5.25" width="17.5" height="13.5" rx="3" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+              Email
+            </a>
+            <a class="contact-action" href="https://wa.me/918905196948" target="_blank" rel="noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19.05 4.94A9.86 9.86 0 0 0 12.03 2C6.56 2 2.1 6.45 2.1 11.92c0 1.75.46 3.46 1.33 4.97L2 22l5.26-1.38a9.9 9.9 0 0 0 4.75 1.21h.01c5.47 0 9.92-4.45 9.92-9.92a9.86 9.86 0 0 0-2.89-6.97Zm-7.03 15.2h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.12.82.84-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.36c0-4.52 3.69-8.2 8.23-8.2 2.2 0 4.26.85 5.82 2.41a8.16 8.16 0 0 1 2.4 5.8c0 4.53-3.69 8.21-8.22 8.21Zm4.5-6.16c-.25-.13-1.47-.73-1.7-.81-.22-.08-.39-.12-.55.13-.17.25-.64.8-.79.96-.15.17-.3.19-.55.06-.25-.13-1.06-.39-2.01-1.24-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.3.37-.45.12-.15.16-.25.25-.42.08-.17.04-.32-.02-.45-.06-.13-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.41h-.47c-.17 0-.45.06-.69.32-.23.25-.89.87-.89 2.12s.91 2.45 1.03 2.62c.13.17 1.78 2.72 4.31 3.81.6.26 1.07.41 1.44.53.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.22-.16-.47-.29Z"/>
+              </svg>
+              WhatsApp
+            </a>
+            <a class="contact-action" href="https://www.linkedin.com/in/altaf-simavatwala-20a46160" target="_blank" rel="noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A1.97 1.97 0 1 0 5.3 6.94 1.97 1.97 0 0 0 5.25 3Zm14.19 9.83c0-3.45-1.84-5.05-4.29-5.05-1.98 0-2.86 1.09-3.36 1.86V8.5H8.42c.05.76 0 11.5 0 11.5h3.37v-6.42c0-.34.02-.68.13-.92.27-.68.88-1.38 1.92-1.38 1.35 0 1.89 1.03 1.89 2.54V20h3.37v-7.17Z"/>
+              </svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const revealItems = document.querySelectorAll(".reveal");
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (!prefersReducedMotion) {
+      const observer = new IntersectionObserver(
+        (entries) => entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add("is-visible");
+        }),
+        { threshold: 0.12 }
+      );
+
+      revealItems.forEach((item) => observer.observe(item));
+    } else {
+      revealItems.forEach((item) => item.classList.add("is-visible"));
+    }
+  </script>
+</body>
+</html>
