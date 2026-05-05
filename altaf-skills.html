@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Altaf Simavatwala | Product · Operations · Automation</title>
+  <meta name="description" content="I own delivery end to end and fix the flows your team keeps working around. Head of Product, Program Manager, and Growth Ops leader." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231f6f70'/%3E%3Cpath d='M19 47 28 17h8l9 30h-7l-2-7H28l-2 7Zm10-13h7l-3-12h-.3Z' fill='%23fff7ef'/%3E%3C/svg%3E" />
+  <style>
+    :root {
+      --bg:        #F6F4EF;
+      --surface:   #FFFFFF;
+      --dark:      #0C1A28;
+      --dark-2:    #13253A;
+      --ink:       #16120C;
+      --muted:     #6A5C50;
+      --subtle:    #A0917F;
+      --line:      rgba(20,16,10,.09);
+
+      --coral:     #E35535;
+      --coral-2:   rgba(227,85,53,.11);
+      --teal:      #0F7B7C;
+      --teal-2:    rgba(15,123,124,.1);
+      --gold:      #C98A25;
+      --gold-2:    rgba(201,138,37,.1);
+      --plum:      #8C3F70;
+      --plum-2:    rgba(140,63,112,.1);
+      --violet:    #6D4FD4;
+      --violet-2:  rgba(109,79,212,.1);
+      --green:     #1AAD6B;
+      --green-2:   rgba(26,173,107,.1);
+
+      --s-sm:  0 2px 8px rgba(20,12,6,.05);
+      --s-md:  0 8px 24px rgba(20,12,6,.08);
+      --s-lg:  0 20px 48px rgba(20,12,6,.1);
+      --s-xl:  0 32px 72px rgba(20,12,6,.12);
+
+      --r-sm: 12px;
+      --r-md: 18px;
+      --r-lg: 24px;
+      --r-xl: 32px;
+      --r-2xl:40px;
+
+      --max: 1160px;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans:  "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      color: var(--ink);
+      background: var(--bg);
+      min-height: 100vh;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Reveal ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .6s cubic-bezier(.22,.68,0,1.1), transform .6s cubic-bezier(.22,.68,0,1.1);
+    }
+    .reveal.is-visible { opacity: 1; transform: none; }
+    .d1 { transition-delay: .1s; }
+    .d2 { transition-delay: .2s; }
+    .d3 { transition-delay: .3s; }
+
+    /* ── Layout ── */
+    .page { max-width: var(--max); margin: 0 auto; padding: 20px 18px 80px; }
+
+    /* ──────────────────────
+       NAV
+    ────────────────────── */
+    .nav {
+      position: sticky; top: 14px; z-index: 50;
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      padding: 11px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.75);
+      background: rgba(251,248,243,.9);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 4px 24px rgba(20,12,6,.08), inset 0 1px 0 rgba(255,255,255,.9);
+    }
+    .brand { display: flex; align-items: center; gap: 11px; font-weight: 800; font-size: .88rem; flex-shrink: 0; }
+    .brand-mark {
+      width: 36px; height: 36px; border-radius: 11px;
+      background: linear-gradient(135deg, var(--violet), var(--teal));
+      color: #fff; display: flex; align-items: center; justify-content: center;
+      font-size: .78rem; font-weight: 800; letter-spacing: .06em;
+      box-shadow: 0 6px 18px rgba(109,79,212,.3); flex-shrink: 0;
+    }
+    .brand-sub { font-size: .64rem; color: var(--muted); font-weight: 600; letter-spacing: .07em; text-transform: uppercase; display: block; margin-top: 2px; }
+
+    .nav-links { display: flex; gap: 2px; }
+    .nav-links a {
+      padding: 7px 12px; border-radius: 999px;
+      font-size: .86rem; font-weight: 600; color: var(--muted);
+      transition: background .18s, color .18s;
+    }
+    .nav-links a:hover { background: var(--violet-2); color: var(--violet); }
+
+    .nav-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+    .avail-pill {
+      display: flex; align-items: center; gap: 7px;
+      padding: 6px 12px; border-radius: 999px;
+      background: var(--green-2); border: 1px solid rgba(26,173,107,.2);
+      color: #138a52; font-size: .76rem; font-weight: 700; white-space: nowrap;
+    }
+    .avail-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 3px rgba(26,173,107,.2);
+      animation: pulse 2.4s ease infinite;
+    }
+    @keyframes pulse {
+      0%,100% { box-shadow: 0 0 0 3px rgba(26,173,107,.2); }
+      50%      { box-shadow: 0 0 0 6px rgba(26,173,107,.07); }
+    }
+    .nav-icon {
+      width: 34px; height: 34px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid var(--line); background: rgba(255,255,255,.7);
+      color: var(--muted); transition: transform .18s, box-shadow .18s, color .18s, border-color .18s;
+    }
+    .nav-icon:hover { transform: translateY(-2px); box-shadow: var(--s-md); }
+    .nav-icon.email:hover   { border-color: var(--coral); color: var(--coral); }
+    .nav-icon.linkedin:hover{ border-color: #0a66c2; color: #0a66c2; }
+    .nav-icon.whatsapp:hover{ border-color: #25d366; color: #25d366; }
+    .nav-icon svg { width: 15px; height: 15px; display: block; }
+
+    .alt-page-link {
+      padding: 7px 13px; border-radius: 999px;
+      background: rgba(109,79,212,.08); border: 1px solid rgba(109,79,212,.15);
+      color: var(--violet); font-size: .78rem; font-weight: 700;
+      transition: background .18s;
+    }
+    .alt-page-link:hover { background: rgba(109,79,212,.14); }
+
+    /* ──────────────────────
+       HERO
+    ────────────────────── */
+    .hero {
+      margin-top: 16px;
+      border-radius: var(--r-2xl);
+      overflow: hidden;
+      background: var(--dark);
+      padding: 60px 56px 56px;
+      position: relative;
+      isolation: isolate;
+    }
+    .hero::before {
+      content: "";
+      position: absolute; inset: 0; z-index: 0;
+      background:
+        radial-gradient(ellipse 65% 65% at 90% 15%, rgba(109,79,212,.25), transparent 60%),
+        radial-gradient(ellipse 50% 55% at 5%  80%, rgba(15,123,124,.18), transparent 55%),
+        radial-gradient(ellipse 40% 40% at 55% 50%, rgba(26,173,107,.06), transparent 60%);
+    }
+    .hero::after {
+      content: "";
+      position: absolute; inset: 0; z-index: 0;
+      background-image: linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 44px 44px;
+    }
+
+    .hero-inner {
+      position: relative; z-index: 1;
+      display: grid; grid-template-columns: 1fr 320px; gap: 44px; align-items: start;
+    }
+    .hero-left { display: grid; gap: 24px; }
+
+    .hero-tag-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .hero-role-tag {
+      padding: 6px 13px; border-radius: 999px;
+      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
+      color: rgba(255,255,255,.65); font-size: .76rem; font-weight: 700;
+    }
+    .hero-role-tag.accent {
+      background: rgba(109,79,212,.25); border-color: rgba(109,79,212,.4);
+      color: #c4b5fd;
+    }
+
+    .hero-headline {
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 6.5vw, 5.4rem);
+      font-weight: 400; line-height: 1.04; letter-spacing: -.03em;
+      color: #fff;
+    }
+    .hero-headline em {
+      font-style: normal;
+      background: linear-gradient(120deg, #c4b5fd, var(--teal), #5eead4);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      font-weight: 600; color: rgba(255,255,255,.7); line-height: 1.5; max-width: 50ch;
+    }
+
+    .hero-bio {
+      font-size: .96rem; color: rgba(255,255,255,.48); line-height: 1.72; max-width: 58ch;
+    }
+
+    /* proof row */
+    .hero-proof {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      border-radius: var(--r-md); overflow: hidden;
+      border: 1px solid rgba(255,255,255,.09);
+      background: rgba(255,255,255,.04);
+    }
+    .proof-cell { padding: 18px 18px; border-right: 1px solid rgba(255,255,255,.07); }
+    .proof-cell:last-child { border-right: 0; }
+    .proof-num { font-size: 1.4rem; font-weight: 800; color: #fff; line-height: 1; margin-bottom: 5px; }
+    .proof-label { font-size: .73rem; color: rgba(255,255,255,.42); line-height: 1.4; }
+
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: 10px; }
+
+    /* buttons */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 22px; border-radius: 999px;
+      font-size: .88rem; font-weight: 700;
+      transition: transform .18s, box-shadow .18s; line-height: 1;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-violet {
+      background: linear-gradient(135deg, var(--violet), #5538b8);
+      color: #fff; box-shadow: 0 8px 24px rgba(109,79,212,.38);
+    }
+    .btn-violet:hover { box-shadow: 0 12px 32px rgba(109,79,212,.5); }
+    .btn-ghost {
+      background: rgba(255,255,255,.09); border: 1px solid rgba(255,255,255,.15);
+      color: rgba(255,255,255,.82);
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,.15); }
+    .btn-outline { background: transparent; border: 1.5px solid var(--line); color: var(--ink); }
+    .btn-outline:hover { border-color: var(--violet); color: var(--violet); }
+    .btn-teal {
+      background: linear-gradient(135deg, var(--teal), #0a5c5d);
+      color: #fff; box-shadow: 0 8px 24px rgba(15,123,124,.3);
+    }
+    .btn-teal:hover { box-shadow: 0 12px 32px rgba(15,123,124,.45); }
+
+    /* right side card */
+    .hero-card {
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.11);
+      border-radius: var(--r-xl); padding: 26px; display: grid; gap: 8px;
+      backdrop-filter: blur(12px);
+    }
+    .hero-card-label {
+      font-size: .66rem; font-weight: 800; letter-spacing: .1em;
+      text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: 4px;
+    }
+    .fit-item {
+      display: grid; grid-template-columns: 32px 1fr; gap: 12px; align-items: start;
+      padding: 14px; border-radius: var(--r-sm);
+      background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07);
+      transition: background .18s;
+    }
+    .fit-item:hover { background: rgba(255,255,255,.08); }
+    .fit-icon {
+      width: 32px; height: 32px; border-radius: 9px;
+      display: flex; align-items: center; justify-content: center; font-size: 1rem;
+    }
+    .fit-text strong { display: block; font-size: .88rem; color: #fff; margin-bottom: 3px; }
+    .fit-text span   { display: block; font-size: .77rem; color: rgba(255,255,255,.42); line-height: 1.45; }
+
+    /* ──────────────────────
+       SECTION CHROME
+    ────────────────────── */
+    .section-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: .67rem; font-weight: 800; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--violet); margin-bottom: 6px;
+    }
+    .section-label::before { content: ""; width: 20px; height: 2px; border-radius: 999px; background: currentColor; }
+    .section-label.teal  { color: var(--teal); }
+    .section-label.coral { color: var(--coral); }
+    .section-label.gold  { color: var(--gold); }
+    .section-label.plum  { color: var(--plum); }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(1.7rem, 3.2vw, 2.6rem);
+      line-height: 1.1; letter-spacing: -.025em; color: var(--ink);
+    }
+    .section-copy { font-size: .98rem; color: var(--muted); line-height: 1.7; max-width: 64ch; }
+    .mt4 { margin-top: 4px; }
+    .mt16 { margin-top: 16px; }
+    .mt24 { margin-top: 24px; }
+
+    .card {
+      background: var(--surface); border-radius: var(--r-xl);
+      border: 1px solid var(--line); box-shadow: var(--s-md);
+      padding: 32px; position: relative; overflow: hidden;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: var(--s-lg); }
+    .card-top-coral::before  { content:""; position:absolute; inset:0 auto auto 0; width:100%; height:3px; background:linear-gradient(90deg,var(--coral),var(--gold)); }
+    .card-top-teal::before   { content:""; position:absolute; inset:0 auto auto 0; width:100%; height:3px; background:linear-gradient(90deg,var(--teal),var(--gold)); }
+    .card-top-violet::before { content:""; position:absolute; inset:0 auto auto 0; width:100%; height:3px; background:linear-gradient(90deg,var(--violet),var(--teal)); }
+    .card-top-plum::before   { content:""; position:absolute; inset:0 auto auto 0; width:100%; height:3px; background:linear-gradient(90deg,var(--plum),var(--coral)); }
+
+    /* ──────────────────────
+       WHAT I DO  (4 pillars)
+    ────────────────────── */
+    .pillars-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 24px;
+    }
+    .pillar-card {
+      padding: 30px; border-radius: var(--r-xl);
+      background: var(--surface); border: 1px solid var(--line); box-shadow: var(--s-sm);
+      position: relative; overflow: hidden; transition: transform .2s, box-shadow .2s;
+    }
+    .pillar-card:hover { transform: translateY(-4px); box-shadow: var(--s-lg); }
+    .pillar-icon {
+      width: 52px; height: 52px; border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; margin-bottom: 18px;
+    }
+    .pillar-card:nth-child(1) .pillar-icon { background: var(--violet-2); }
+    .pillar-card:nth-child(2) .pillar-icon { background: var(--teal-2); }
+    .pillar-card:nth-child(3) .pillar-icon { background: var(--coral-2); }
+    .pillar-card:nth-child(4) .pillar-icon { background: var(--gold-2); }
+
+    .pillar-card:nth-child(1)::before { content:""; position:absolute; inset:0 auto auto 0; width:100%; height:3px; background:linear-gradient(90deg,var(--violet),#9b7ef8); }
+    .pillar-card:nth-child(2)::before { content:""; position:absolute; inset:0 auto auto 0; width:100%; height:3px; background:linear-gradient(90deg,var(--teal),#4db8b9); }
+    .pillar-card:nth-child(3)::before { content:""; position:absolute; inset:0 auto auto 0; width:100%; height:3px; background:linear-gradient(90deg,var(--coral),var(--gold)); }
+    .pillar-card:nth-child(4)::before { content:""; position:absolute; inset:0 auto auto 0; width:100%; height:3px; background:linear-gradient(90deg,var(--gold),#e9b85f); }
+
+    .pillar-card h3 { font-size: 1.12rem; font-weight: 800; color: var(--ink); margin-bottom: 10px; }
+    .pillar-card p  { font-size: .9rem; color: var(--muted); line-height: 1.68; margin-bottom: 18px; }
+
+    .pillar-signals { display: flex; flex-wrap: wrap; gap: 7px; }
+    .sig-pill {
+      padding: 5px 11px; border-radius: 999px;
+      background: var(--bg); border: 1px solid var(--line);
+      font-size: .78rem; font-weight: 700; color: var(--ink);
+    }
+
+    /* ──────────────────────
+       TOOLS
+    ────────────────────── */
+    .tools-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 24px;
+    }
+    .tool-card {
+      padding: 22px; border-radius: var(--r-lg);
+      background: var(--surface); border: 1px solid var(--line); box-shadow: var(--s-sm);
+      display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: center;
+      transition: transform .18s, border-color .18s, box-shadow .18s;
+    }
+    .tool-card:hover { transform: translateY(-3px); box-shadow: var(--s-lg); border-color: rgba(109,79,212,.2); }
+    .tool-icon-wrap {
+      width: 44px; height: 44px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center; font-size: 1.3rem;
+    }
+    .tool-card:nth-child(1) .tool-icon-wrap { background: rgba(236,88,25,.1); }
+    .tool-card:nth-child(2) .tool-icon-wrap { background: rgba(0,122,204,.1); }
+    .tool-card:nth-child(3) .tool-icon-wrap { background: rgba(33,131,62,.1); }
+    .tool-card:nth-child(4) .tool-icon-wrap { background: var(--violet-2); }
+    .tool-card:nth-child(5) .tool-icon-wrap { background: var(--teal-2); }
+    .tool-card:nth-child(6) .tool-icon-wrap { background: var(--gold-2); }
+    .tool-name { font-size: .94rem; font-weight: 800; color: var(--ink); margin-bottom: 3px; }
+    .tool-desc { font-size: .78rem; color: var(--muted); line-height: 1.4; }
+
+    .tool-bar-wrap { margin-top: 10px; grid-column: 1 / -1; }
+    .tool-bar-track {
+      height: 5px; border-radius: 999px; background: var(--bg);
+      overflow: hidden; margin-top: 6px;
+    }
+    .tool-bar-fill {
+      height: 100%; border-radius: 999px;
+      background: linear-gradient(90deg, var(--violet), var(--teal));
+      transform-origin: left;
+      transform: scaleX(0);
+      transition: transform 1s cubic-bezier(.34,1.56,.64,1) .3s;
+    }
+    .tool-card.is-visible .tool-bar-fill { transform: scaleX(1); }
+
+    /* ──────────────────────
+       HOW I THINK  (mindset)
+    ────────────────────── */
+    .mindset-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px;
+    }
+    .mindset-card {
+      padding: 26px; border-radius: var(--r-xl);
+      background: var(--surface); border: 1px solid var(--line); box-shadow: var(--s-sm);
+      display: grid; grid-template-columns: 36px 1fr; gap: 16px; align-items: start;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .mindset-card:hover { transform: translateY(-3px); box-shadow: var(--s-lg); }
+    .mindset-num {
+      font-size: 1.8rem; font-weight: 800; font-family: var(--serif);
+      line-height: 1; opacity: .18; color: var(--ink); letter-spacing: -.04em;
+    }
+    .mindset-card:nth-child(1) .mindset-num { color: var(--violet); opacity: .35; }
+    .mindset-card:nth-child(2) .mindset-num { color: var(--teal);   opacity: .35; }
+    .mindset-card:nth-child(3) .mindset-num { color: var(--coral);  opacity: .35; }
+    .mindset-card:nth-child(4) .mindset-num { color: var(--gold);   opacity: .45; }
+    .mindset-card strong { display: block; font-size: 1rem; color: var(--ink); margin-bottom: 7px; line-height: 1.3; }
+    .mindset-card span   { display: block; font-size: .87rem; color: var(--muted); line-height: 1.65; }
+
+    /* ──────────────────────
+       WINS  (results, no industry)
+    ────────────────────── */
+    .wins-band {
+      margin-top: 24px; border-radius: var(--r-xl); overflow: hidden;
+      background: var(--dark); padding: 44px 48px; position: relative;
+    }
+    .wins-band::before {
+      content: ""; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 70% at 95% 50%, rgba(109,79,212,.2), transparent 60%),
+        radial-gradient(ellipse 50% 60% at 0%  60%, rgba(15,123,124,.14), transparent 55%);
+    }
+    .wins-inner { position: relative; z-index: 1; }
+    .wins-band .section-label { color: #c4b5fd; }
+    .wins-band .section-label::before { background: #c4b5fd; }
+    .wins-band .section-title { color: #fff; }
+
+    .wins-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+      margin-top: 28px; border-radius: var(--r-lg); overflow: hidden;
+      border: 1px solid rgba(255,255,255,.07);
+    }
+    .win-cell {
+      padding: 28px 22px;
+      background: rgba(255,255,255,.04);
+      border-right: 1px solid rgba(255,255,255,.07);
+      transition: background .2s;
+    }
+    .win-cell:last-child { border-right: 0; }
+    .win-cell:hover { background: rgba(255,255,255,.07); }
+    .win-num {
+      font-size: 2.4rem; font-weight: 800; line-height: 1;
+      margin-bottom: 8px; letter-spacing: -.02em;
+    }
+    .win-cell:nth-child(1) .win-num { background: linear-gradient(135deg,#c4b5fd,#a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .win-cell:nth-child(2) .win-num { background: linear-gradient(135deg,var(--coral),#f0896a); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .win-cell:nth-child(3) .win-num { background: linear-gradient(135deg,var(--gold),#e9b85f);  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .win-cell:nth-child(4) .win-num { background: linear-gradient(135deg,var(--teal),#4db8b9);  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .win-cell:nth-child(5) .win-num { background: linear-gradient(135deg,var(--green),#4fd6a0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .win-cell:nth-child(6) .win-num { background: linear-gradient(135deg,#f472b6,#e879f9);      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .win-desc { font-size: .82rem; color: rgba(255,255,255,.45); line-height: 1.55; }
+
+    /* ──────────────────────
+       STORIES  (case studies, reframed)
+    ────────────────────── */
+    .stories-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 24px;
+    }
+    .story-card {
+      padding: 28px; border-radius: var(--r-xl);
+      background: var(--surface); border: 1px solid var(--line); box-shadow: var(--s-sm);
+      position: relative; overflow: hidden; transition: transform .22s, box-shadow .22s;
+    }
+    .story-card:hover { transform: translateY(-5px); box-shadow: var(--s-xl); }
+    .story-tag {
+      display: inline-flex; width: fit-content; margin-bottom: 10px;
+      padding: 5px 11px; border-radius: 999px;
+      background: var(--violet-2); color: var(--violet);
+      font-size: .71rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase;
+    }
+    .story-card:nth-child(2) .story-tag { background: var(--teal-2);  color: var(--teal);  }
+    .story-card:nth-child(3) .story-tag { background: var(--coral-2); color: var(--coral); }
+    .story-card:nth-child(4) .story-tag { background: var(--gold-2);  color: var(--gold);  }
+    .story-card:nth-child(5) .story-tag { background: var(--plum-2);  color: var(--plum);  }
+    .story-card:nth-child(6) .story-tag { background: var(--green-2); color: var(--green); }
+
+    .story-card h3 {
+      font-family: var(--serif); font-size: 1.1rem; font-weight: 700;
+      color: var(--ink); line-height: 1.35; margin-bottom: 10px;
+    }
+    .story-card p { font-size: .87rem; color: var(--muted); line-height: 1.65; }
+    .story-result {
+      margin-top: 14px; padding: 12px 14px;
+      border-radius: var(--r-sm);
+      background: linear-gradient(135deg, rgba(109,79,212,.06), rgba(15,123,124,.04));
+      border-left: 3px solid var(--violet);
+      font-size: .83rem; font-weight: 700; color: var(--violet); line-height: 1.5;
+    }
+    .story-card:nth-child(2) .story-result { border-left-color: var(--teal);  color: var(--teal);  background: linear-gradient(135deg,var(--teal-2),rgba(15,123,124,.03)); }
+    .story-card:nth-child(3) .story-result { border-left-color: var(--coral); color: var(--coral); background: linear-gradient(135deg,var(--coral-2),rgba(227,85,53,.02)); }
+    .story-card:nth-child(4) .story-result { border-left-color: var(--gold);  color: var(--gold);  background: linear-gradient(135deg,var(--gold-2),rgba(201,138,37,.02)); }
+    .story-card:nth-child(5) .story-result { border-left-color: var(--plum);  color: var(--plum);  background: linear-gradient(135deg,var(--plum-2),rgba(140,63,112,.02)); }
+    .story-card:nth-child(6) .story-result { border-left-color: var(--green); color: var(--green); background: linear-gradient(135deg,var(--green-2),rgba(26,173,107,.02)); }
+
+    /* ──────────────────────
+       FOR STARTUPS
+    ────────────────────── */
+    .startup-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px;
+    }
+    .startup-card {
+      padding: 28px; border-radius: var(--r-xl);
+      background: var(--surface); border: 1px solid var(--line); box-shadow: var(--s-sm);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .startup-card:hover { transform: translateY(-3px); box-shadow: var(--s-lg); }
+    .startup-q {
+      font-size: .76rem; font-weight: 800; letter-spacing: .06em;
+      text-transform: uppercase; color: var(--subtle); margin-bottom: 10px;
+    }
+    .startup-a { font-size: .97rem; font-weight: 600; color: var(--ink); line-height: 1.55; }
+    .startup-card.featured {
+      grid-column: span 2;
+      background: linear-gradient(135deg, var(--dark), var(--dark-2));
+      border-color: rgba(255,255,255,.08);
+    }
+    .startup-card.featured .startup-q { color: rgba(255,255,255,.4); }
+    .startup-card.featured .startup-a {
+      font-size: 1.18rem; color: #fff; line-height: 1.6;
+    }
+    .startup-card.featured .startup-a em {
+      font-style: normal; color: #c4b5fd;
+    }
+
+    /* ──────────────────────
+       CONTACT
+    ────────────────────── */
+    .contact-section {
+      margin-top: 24px; border-radius: var(--r-2xl); overflow: hidden;
+      background: var(--dark); padding: 56px 52px; position: relative;
+    }
+    .contact-section::before {
+      content: ""; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 100% 50%, rgba(109,79,212,.2), transparent 60%),
+        radial-gradient(ellipse 40% 60% at 0%   80%, rgba(15,123,124,.12), transparent 55%);
+    }
+    .contact-inner {
+      position: relative; z-index: 1;
+      display: grid; grid-template-columns: 1fr 360px; gap: 48px; align-items: start;
+    }
+    .contact-section .section-label { color: #c4b5fd; }
+    .contact-section .section-label::before { background: #c4b5fd; }
+    .contact-avail {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 7px 13px; border-radius: 999px;
+      background: rgba(26,173,107,.12); border: 1px solid rgba(26,173,107,.2);
+      color: #3dd68c; font-size: .77rem; font-weight: 700; margin-bottom: 16px;
+    }
+    .contact-section h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+      line-height: 1.15; letter-spacing: -.025em; color: #fff; margin-bottom: 16px;
+    }
+    .contact-section p { font-size: .96rem; color: rgba(255,255,255,.48); line-height: 1.7; }
+    .contact-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+
+    .contact-card {
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--r-xl); padding: 26px; display: grid; gap: 10px;
+    }
+    .contact-loc { font-size: .78rem; color: rgba(255,255,255,.32); font-weight: 600; margin-bottom: 4px; }
+    .contact-action {
+      display: flex; align-items: center; gap: 14px;
+      padding: 15px 16px; border-radius: var(--r-md);
+      border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.04);
+      transition: background .18s, border-color .18s, transform .18s;
+    }
+    .contact-action:hover { background: rgba(255,255,255,.09); transform: translateX(4px); }
+    .contact-action.email:hover    { border-color: rgba(227,85,53,.3); }
+    .contact-action.whatsapp:hover { border-color: rgba(37,211,102,.3); }
+    .contact-action.linkedin:hover { border-color: rgba(10,102,194,.3); }
+    .c-icon {
+      width: 40px; height: 40px; border-radius: 11px;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .contact-action.email    .c-icon { background: rgba(227,85,53,.15); color: var(--coral); }
+    .contact-action.whatsapp .c-icon { background: rgba(37,211,102,.12); color: #25d366; }
+    .contact-action.linkedin .c-icon { background: rgba(10,102,194,.12); color: #4da3f5; }
+    .c-icon svg { width: 18px; height: 18px; }
+    .c-label { font-size: .65rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.32); }
+    .c-value { font-size: .92rem; font-weight: 700; color: #fff; }
+
+    /* ──────────────────────
+       RESPONSIVE
+    ────────────────────── */
+    @media (max-width: 900px) {
+      .hero { padding: 40px 28px; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-card { display: none; }
+      .hero-proof { grid-template-columns: repeat(2,1fr); }
+      .pillars-grid { grid-template-columns: 1fr; }
+      .tools-grid { grid-template-columns: repeat(2,1fr); }
+      .mindset-grid { grid-template-columns: 1fr; }
+      .wins-grid { grid-template-columns: repeat(2,1fr); }
+      .stories-grid { grid-template-columns: 1fr; }
+      .startup-grid { grid-template-columns: 1fr; }
+      .startup-card.featured { grid-column: span 1; }
+      .contact-inner { grid-template-columns: 1fr; }
+      .contact-section { padding: 40px 28px; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 600px) {
+      .page { padding: 12px 12px 60px; }
+      .hero { padding: 28px 20px 32px; }
+      .wins-grid { grid-template-columns: repeat(2,1fr); }
+      .tools-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ── NAV ── -->
+  <nav class="nav">
+    <div class="brand">
+      <span class="brand-mark">AS</span>
+      <div>
+        <span>ALTAF SIMAVATWALA</span>
+        <span class="brand-sub">Product · Operations · Automation</span>
+      </div>
+    </div>
+
+    <div class="nav-links">
+      <a href="#skills">Skills</a>
+      <a href="#wins">Results</a>
+      <a href="#stories">Work</a>
+      <a href="#startups">For Startups</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="nav-right">
+      <a class="alt-page-link" href="index.html">Healthcare version →</a>
+      <div class="avail-pill">
+        <span class="avail-dot"></span>
+        Open to Roles
+      </div>
+      <a class="nav-icon email" href="mailto:altafsimavatwala1991@gmail.com" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 7.5 12 13l8-5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="3.25" y="5.25" width="17.5" height="13.5" rx="3" stroke="currentColor" stroke-width="1.5"/></svg>
+      </a>
+      <a class="nav-icon linkedin" href="https://www.linkedin.com/in/altaf-simavatwala-20a46160" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A1.97 1.97 0 1 0 5.3 6.94 1.97 1.97 0 0 0 5.25 3Zm14.19 9.83c0-3.45-1.84-5.05-4.29-5.05-1.98 0-2.86 1.09-3.36 1.86V8.5H8.42c.05.76 0 11.5 0 11.5h3.37v-6.42c0-.34.02-.68.13-.92.27-.68.88-1.38 1.92-1.38 1.35 0 1.89 1.03 1.89 2.54V20h3.37v-7.17Z"/></svg>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <header class="hero reveal">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-tag-row">
+          <span class="hero-role-tag accent">Head of Product</span>
+          <span class="hero-role-tag accent">Program Manager</span>
+          <span class="hero-role-tag accent">Growth Ops</span>
+          <span class="hero-role-tag">Open to Remote</span>
+        </div>
+
+        <h1 class="hero-headline">I own delivery<br><em>end to end</em><br>and fix the flows.</h1>
+
+        <p class="hero-sub">
+          I step into messy, fast-moving environments and bring the structure, visibility, and execution rhythm that lets teams scale without breaking.
+        </p>
+
+        <p class="hero-bio">
+          15+ years of building systems, leading cross-functional teams, designing automation, and translating strategy into shipped outcomes. My edge is that I see how work actually flows — where it gets stuck, why it breaks, and what to change so it doesn't happen again. I'm not a specialist tied to one sector. I'm an operator who gets results in any environment where process, product, and people need to work together.
+        </p>
+
+        <div class="hero-proof">
+          <div class="proof-cell">
+            <div class="proof-num">42%</div>
+            <div class="proof-label">Cycle time cut — 72 days down to 42</div>
+          </div>
+          <div class="proof-cell">
+            <div class="proof-num">25%</div>
+            <div class="proof-label">Capacity unlocked without new hires</div>
+          </div>
+          <div class="proof-cell">
+            <div class="proof-num">95%</div>
+            <div class="proof-label">Forecasting accuracy from scratch</div>
+          </div>
+          <div class="proof-cell">
+            <div class="proof-num">12</div>
+            <div class="proof-label">Teams kept aligned as one system</div>
+          </div>
+        </div>
+
+        <div class="hero-ctas">
+          <a class="btn btn-violet" href="#stories">See How I Work</a>
+          <a class="btn btn-ghost" href="#startups">Why Startups</a>
+          <a class="btn btn-ghost" href="#contact">Get in Touch</a>
+        </div>
+      </div>
+
+      <!-- right card -->
+      <aside class="hero-card reveal d1">
+        <div class="hero-card-label">What I bring on day one</div>
+        <div class="fit-item">
+          <div class="fit-icon" style="background:rgba(109,79,212,.2)">🧭</div>
+          <div class="fit-text">
+            <strong>Systems clarity</strong>
+            <span>I map how work flows, find the friction, and redesign it — fast.</span>
+          </div>
+        </div>
+        <div class="fit-item">
+          <div class="fit-icon" style="background:rgba(15,123,124,.2)">📦</div>
+          <div class="fit-text">
+            <strong>Delivery ownership</strong>
+            <span>Requirements in, shipped outcomes out. I close the loop every time.</span>
+          </div>
+        </div>
+        <div class="fit-item">
+          <div class="fit-icon" style="background:rgba(201,138,37,.2)">📊</div>
+          <div class="fit-text">
+            <strong>Data-driven decisions</strong>
+            <span>Power BI, SQL, Excel — I build visibility tools that actually get used.</span>
+          </div>
+        </div>
+        <div class="fit-item">
+          <div class="fit-icon" style="background:rgba(26,173,107,.2)">⚡</div>
+          <div class="fit-text">
+            <strong>Automation instinct</strong>
+            <span>I spot manual work and eliminate it before it becomes a bottleneck.</span>
+          </div>
+        </div>
+        <div class="fit-item">
+          <div class="fit-icon" style="background:rgba(227,85,53,.18)">🤝</div>
+          <div class="fit-text">
+            <strong>Client &amp; team trust</strong>
+            <span>I keep stakeholders confident and internal teams executing cleanly.</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <!-- ── WHAT I DO ── -->
+  <section id="skills" style="margin-top:24px;" class="reveal d1">
+    <div class="section-label">What I Do</div>
+    <h2 class="section-title mt4">Four things I do exceptionally well.</h2>
+    <p class="section-copy mt16">These aren't job descriptions. They're patterns that show up everywhere I've worked, regardless of the product, team size, or domain.</p>
+    <div class="pillars-grid">
+      <article class="pillar-card">
+        <div class="pillar-icon">🔁</div>
+        <h3>Process Architecture</h3>
+        <p>I map how work actually moves through a system, not how it's supposed to move. I find the gaps, the handoff failures, and the silent bottlenecks — then redesign the flow so teams stop working around the same problems every week.</p>
+        <div class="pillar-signals">
+          <span class="sig-pill">Flow mapping</span>
+          <span class="sig-pill">Bottleneck analysis</span>
+          <span class="sig-pill">SOP design</span>
+          <span class="sig-pill">Root cause</span>
+          <span class="sig-pill">Process redesign</span>
+        </div>
+      </article>
+
+      <article class="pillar-card">
+        <div class="pillar-icon">🚀</div>
+        <h3>Product &amp; Program Delivery</h3>
+        <p>I own the gap between what gets decided and what gets shipped. I shape requirements, prioritize backlogs by real ROI, write BRDs that developers can build from, and keep delivery moving through ambiguity, competing priorities, and changing specs.</p>
+        <div class="pillar-signals">
+          <span class="sig-pill">Backlog prioritization</span>
+          <span class="sig-pill">BRD writing</span>
+          <span class="sig-pill">Roadmapping</span>
+          <span class="sig-pill">Stakeholder alignment</span>
+          <span class="sig-pill">Sprint management</span>
+        </div>
+      </article>
+
+      <article class="pillar-card">
+        <div class="pillar-icon">📊</div>
+        <h3>Data Visibility &amp; Decision Tools</h3>
+        <p>I build dashboards, KPI frameworks, and forecasting models that give leadership real signal — not just numbers. I use Power BI, SQL, and Excel to make operational data legible so the right decisions get made faster.</p>
+        <div class="pillar-signals">
+          <span class="sig-pill">Power BI</span>
+          <span class="sig-pill">SQL</span>
+          <span class="sig-pill">Advanced Excel</span>
+          <span class="sig-pill">KPI design</span>
+          <span class="sig-pill">Forecasting</span>
+          <span class="sig-pill">Reporting systems</span>
+        </div>
+      </article>
+
+      <article class="pillar-card">
+        <div class="pillar-icon">⚡</div>
+        <h3>Automation &amp; Operational Leverage</h3>
+        <p>I find manual work and eliminate it. I've led automation programs end to end — documenting current-state workflows, ranking tasks by impact and frequency, writing specs, validating output, and measuring the hours and dollars saved.</p>
+        <div class="pillar-signals">
+          <span class="sig-pill">Workflow automation</span>
+          <span class="sig-pill">Process documentation</span>
+          <span class="sig-pill">Impact measurement</span>
+          <span class="sig-pill">Tool integration</span>
+          <span class="sig-pill">ROI validation</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ── TOOLS ── -->
+  <section style="margin-top:24px;" class="card reveal d1">
+    <div class="section-label teal">Tools &amp; Stack</div>
+    <h2 class="section-title mt4">I work best with data, systems, and automation tooling.</h2>
+    <div class="tools-grid mt24">
+      <div class="tool-card reveal">
+        <div class="tool-icon-wrap">📊</div>
+        <div>
+          <div class="tool-name">Power BI</div>
+          <div class="tool-desc">Dashboards, KPI reporting, operational visibility, and executive-ready data storytelling.</div>
+        </div>
+        <div class="tool-bar-wrap">
+          <div style="font-size:.7rem;font-weight:700;color:var(--subtle);">Proficiency</div>
+          <div class="tool-bar-track"><div class="tool-bar-fill" style="width:90%"></div></div>
+        </div>
+      </div>
+
+      <div class="tool-card reveal d1">
+        <div class="tool-icon-wrap">🗄️</div>
+        <div>
+          <div class="tool-name">SQL</div>
+          <div class="tool-desc">Data querying, transformation logic, operational reporting, and pipeline-level thinking.</div>
+        </div>
+        <div class="tool-bar-wrap">
+          <div style="font-size:.7rem;font-weight:700;color:var(--subtle);">Proficiency</div>
+          <div class="tool-bar-track"><div class="tool-bar-fill" style="width:80%"></div></div>
+        </div>
+      </div>
+
+      <div class="tool-card reveal d2">
+        <div class="tool-icon-wrap">📗</div>
+        <div>
+          <div class="tool-name">Excel (Advanced)</div>
+          <div class="tool-desc">Complex models, forecasting, pivot analysis, and operational tracking systems.</div>
+        </div>
+        <div class="tool-bar-wrap">
+          <div style="font-size:.7rem;font-weight:700;color:var(--subtle);">Proficiency</div>
+          <div class="tool-bar-track"><div class="tool-bar-fill" style="width:95%"></div></div>
+        </div>
+      </div>
+
+      <div class="tool-card reveal">
+        <div class="tool-icon-wrap">🎯</div>
+        <div>
+          <div class="tool-name">Jira / Project Tools</div>
+          <div class="tool-desc">Backlog management, sprint planning, ticket auditing, delivery tracking, and roadmap ownership.</div>
+        </div>
+        <div class="tool-bar-wrap">
+          <div style="font-size:.7rem;font-weight:700;color:var(--subtle);">Proficiency</div>
+          <div class="tool-bar-track"><div class="tool-bar-fill" style="width:88%"></div></div>
+        </div>
+      </div>
+
+      <div class="tool-card reveal d1">
+        <div class="tool-icon-wrap">⚙️</div>
+        <div>
+          <div class="tool-name">Automation Workflows</div>
+          <div class="tool-desc">End-to-end automation scoping, BRD writing, output validation, and ROI measurement.</div>
+        </div>
+        <div class="tool-bar-wrap">
+          <div style="font-size:.7rem;font-weight:700;color:var(--subtle);">Proficiency</div>
+          <div class="tool-bar-track"><div class="tool-bar-fill" style="width:85%"></div></div>
+        </div>
+      </div>
+
+      <div class="tool-card reveal d2">
+        <div class="tool-icon-wrap">🗺️</div>
+        <div>
+          <div class="tool-name">Process &amp; Strategy</div>
+          <div class="tool-desc">Flow mapping, gap analysis, improvement frameworks, and ROI-based prioritization systems.</div>
+        </div>
+        <div class="tool-bar-wrap">
+          <div style="font-size:.7rem;font-weight:700;color:var(--subtle);">Proficiency</div>
+          <div class="tool-bar-track"><div class="tool-bar-fill" style="width:93%"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HOW I THINK ── -->
+  <section style="margin-top:24px;" class="reveal">
+    <div class="section-label coral">How I Think</div>
+    <h2 class="section-title mt4">The mindset behind every result I've delivered.</h2>
+    <p class="section-copy mt16">Skills are the tools. These are the instincts that decide how I use them.</p>
+    <div class="mindset-grid mt24">
+      <article class="mindset-card">
+        <div class="mindset-num">01</div>
+        <div>
+          <strong>I see the system, not just the task.</strong>
+          <span>When something breaks, I don't fix the symptom. I trace it to the structural reason — the bad handoff, the missing feedback loop, the assumption nobody questioned. Then I fix that.</span>
+        </div>
+      </article>
+      <article class="mindset-card">
+        <div class="mindset-num">02</div>
+        <div>
+          <strong>I prioritize by ROI, not by noise.</strong>
+          <span>Every backlog, every roadmap, every automation project — I ask: what's the real dollar or hour value here? That question cuts through opinion and makes resource decisions defensible.</span>
+        </div>
+      </article>
+      <article class="mindset-card">
+        <div class="mindset-num">03</div>
+        <div>
+          <strong>I translate between business and tech.</strong>
+          <span>I sit between what leadership wants, what clients need, and what engineers can build. I turn ambiguous goals into structured requirements — and I check whether what shipped actually matched the intent.</span>
+        </div>
+      </article>
+      <article class="mindset-card">
+        <div class="mindset-num">04</div>
+        <div>
+          <strong>I make visibility a habit, not a report.</strong>
+          <span>Dashboards nobody reads are decoration. I design reporting systems that change what decisions get made. If a metric isn't driving action, it shouldn't exist.</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ── WINS BAND ── -->
+  <section class="wins-band reveal d1" id="wins">
+    <div class="wins-inner">
+      <div class="section-label">Results That Travel</div>
+      <h2 class="section-title mt4">Numbers that prove the pattern — no industry required.</h2>
+      <div class="wins-grid">
+        <div class="win-cell">
+          <div class="win-num">42%</div>
+          <div class="win-desc">Reduction in end-to-end cycle time by rebuilding the reconciliation flow and removing communication drag.</div>
+        </div>
+        <div class="win-cell">
+          <div class="win-num">20–25%</div>
+          <div class="win-desc">Capacity increase without adding headcount — by testing and eliminating a false constraint.</div>
+        </div>
+        <div class="win-cell">
+          <div class="win-num">90–95%</div>
+          <div class="win-desc">Forecasting accuracy achieved using ignored operational data, historical patterns, and manual modelling logic.</div>
+        </div>
+        <div class="win-cell">
+          <div class="win-num">$25K</div>
+          <div class="win-desc">Saved in a single month by catching a silent system failure buried inside vendor invoices.</div>
+        </div>
+        <div class="win-cell">
+          <div class="win-num">12</div>
+          <div class="win-desc">Teams coordinated as one operating system — no missed handoffs, no accountability gaps.</div>
+        </div>
+        <div class="win-cell">
+          <div class="win-num">₹ Crores</div>
+          <div class="win-desc">Penalty-to-incentive flip achieved by refocusing a struggling project on milestone-critical outcomes.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STORIES ── -->
+  <section class="card reveal section-wrap" id="stories" style="margin-top:24px;">
+    <div class="section-label gold">Work Samples</div>
+    <h2 class="section-title mt4">Six executions. Each a different skill. All transferable.</h2>
+    <p class="section-copy mt16">These are real outcomes from real work — reframed around the skill pattern, not the sector. The same playbook applies wherever the problem exists.</p>
+    <div class="stories-grid">
+      <article class="story-card card-top-violet">
+        <div class="story-tag">ROI Prioritization</div>
+        <h3>Turned six months of feature requests into a ranked ROI roadmap.</h3>
+        <p>Audited every pending request, grouped them by functional impact and manual effort saved, and ran ten stakeholder interviews to validate which items actually moved the business forward. Separated signal from noise at scale.</p>
+        <div class="story-result">Backend clutter cleared. Software effort realigned to high-value work. Prioritization model became repeatable across future cycles.</div>
+      </article>
+
+      <article class="story-card card-top-teal">
+        <div class="story-tag">Cycle Time Reduction</div>
+        <h3>Cut a 72-day delivery cycle to 42 days by fixing visibility and accountability.</h3>
+        <p>Rebuilt the reconciliation layer in Power BI so stuck items were visible in real time. Removed slow communication layers between teams. Updated commercial terms so late behavior had consequences. No new tools — just better design.</p>
+        <div class="story-result">30-day improvement in end-to-end cycle time. Faster collections, cleaner ownership, fewer preventable failures downstream.</div>
+      </article>
+
+      <article class="story-card card-top-coral">
+        <div class="story-tag">Operational Leverage</div>
+        <h3>Unlocked 20–25% more capacity by challenging an assumption everyone accepted.</h3>
+        <p>Identified a "rule" about working hours that had never been tested. Ran a controlled pilot. Proved the assumption was wrong. Scaled the finding across teams without resistance because the data made the case.</p>
+        <div class="story-result">One extra productive hour per time zone. Higher throughput. Zero new headcount. Pattern now used to question other untested constraints.</div>
+      </article>
+
+      <article class="story-card card-top-violet" style="--c:var(--gold);">
+        <div class="story-tag">Forecasting System</div>
+        <h3>Built a 90–95% accurate forecasting model from data nobody was reading.</h3>
+        <p>Combined ignored operational reports, historical anomaly patterns, and external variables into a forward-looking model. Predictions started landing before problems showed up in standard dashboards.</p>
+        <div class="story-result">Leadership got early warning instead of post-mortems. Planning improved. Intervention became proactive instead of reactive.</div>
+      </article>
+
+      <article class="story-card">
+        <div class="story-tag">Silent Risk Detection</div>
+        <h3>Caught a hidden system failure that was draining $25K per month.</h3>
+        <p>During a routine vendor invoice review, spotted charges tied to automation output that wasn't running. Investigated further. Found a full engine outage that would have caused widespread downstream failures if left undetected.</p>
+        <div class="story-result">$25K recovered immediately. Larger failure avoided. Audit process formalized so the same gap couldn't reopen.</div>
+      </article>
+
+      <article class="story-card">
+        <div class="story-tag">Automation Program</div>
+        <h3>Bridged a team of departments and developers with a Master Automation Log.</h3>
+        <p>Documented every manual workflow across the organization, ranked tasks by criticality and time cost, wrote BRDs that development could action directly, and validated every output against real user needs — not assumptions.</p>
+        <div class="story-result">Automation work delivered measurable hours saved and dollar impact. Stakeholder confidence in the program went from skepticism to advocacy.</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ── FOR STARTUPS ── -->
+  <section class="reveal section-wrap" id="startups" style="margin-top:24px;">
+    <div class="section-label plum">For Startups</div>
+    <h2 class="section-title mt4">Why early-stage and growth-stage teams get more from me.</h2>
+    <p class="section-copy mt16">Startups don't need someone who learned one industry's playbook. They need someone who can build the playbook.</p>
+    <div class="startup-grid">
+      <div class="startup-card featured">
+        <div class="startup-q">Why I want to work in startups</div>
+        <div class="startup-a">I've spent 15 years operating inside systems that <em>weren't designed well from the start</em>. I've rebuilt them. Fixed them. Made them scale. I want to be in earlier — where the decisions about how work flows, how product gets shipped, and how teams stay aligned are still being made. That's where I create the most leverage.</div>
+      </div>
+      <div class="startup-card">
+        <div class="startup-q">What I give a founding team</div>
+        <div class="startup-a">An operator who can hold product, process, and people simultaneously — without needing a fully defined role to be useful from week one.</div>
+      </div>
+      <div class="startup-card">
+        <div class="startup-q">What problems I love walking into</div>
+        <div class="startup-a">"We're growing but things keep breaking." "We have too many requests and no way to prioritize." "Nobody owns the space between sales and delivery." Those are my problems.</div>
+      </div>
+      <div class="startup-card">
+        <div class="startup-q">What I don't need</div>
+        <div class="startup-a">A perfect playbook, a fully staffed team, or a stable environment. I'm built for the in-between stage where clarity needs to be created, not inherited.</div>
+      </div>
+      <div class="startup-card">
+        <div class="startup-q">What I need from you</div>
+        <div class="startup-a">Access to the real problems, not just the ones in the job description. Trust to work across functions. And a founder who knows the difference between motion and progress.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section class="contact-section reveal d2" id="contact">
+    <div class="contact-inner">
+      <div>
+        <div class="section-label">Let's Talk</div>
+        <div class="contact-avail">
+          <span class="avail-dot"></span>
+          Available for Remote Opportunities
+        </div>
+        <h2>If your team needs someone to own delivery, fix the flows, and build systems that actually scale — let's talk.</h2>
+        <p>I'm looking for product, operations, and growth roles at startups where the work is real, the team is small, and the problems are worth solving. If that sounds like your company, I'd like to hear about it.</p>
+        <div class="contact-ctas">
+          <a class="btn btn-violet" href="mailto:altafsimavatwala1991@gmail.com">Send an Email</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/altaf-simavatwala-20a46160" target="_blank" rel="noreferrer">LinkedIn Profile</a>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-loc">Ahmedabad, Gujarat, India · Remote</div>
+        <a class="contact-action email" href="mailto:altafsimavatwala1991@gmail.com">
+          <span class="c-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 7.5 12 13l8-5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="3.25" y="5.25" width="17.5" height="13.5" rx="3" stroke="currentColor" stroke-width="1.5"/></svg></span>
+          <div><div class="c-label">Email</div><div class="c-value">Send Mail</div></div>
+        </a>
+        <a class="contact-action whatsapp" href="https://wa.me/918905196948" target="_blank" rel="noreferrer">
+          <span class="c-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.05 4.94A9.86 9.86 0 0 0 12.03 2C6.56 2 2.1 6.45 2.1 11.92c0 1.75.46 3.46 1.33 4.97L2 22l5.26-1.38a9.9 9.9 0 0 0 4.75 1.21h.01c5.47 0 9.92-4.45 9.92-9.92a9.86 9.86 0 0 0-2.89-6.97Zm-7.03 15.2h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.12.82.84-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.36c0-4.52 3.69-8.2 8.23-8.2 2.2 0 4.26.85 5.82 2.41a8.16 8.16 0 0 1 2.4 5.8c0 4.53-3.69 8.21-8.22 8.21Zm4.5-6.16c-.25-.13-1.47-.73-1.7-.81-.22-.08-.39-.12-.55.13-.17.25-.64.8-.79.96-.15.17-.3.19-.55.06-.25-.13-1.06-.39-2.01-1.24-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.3.37-.45.12-.15.16-.25.25-.42.08-.17.04-.32-.02-.45-.06-.13-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.41h-.47c-.17 0-.45.06-.69.32-.23.25-.89.87-.89 2.12s.91 2.45 1.03 2.62c.13.17 1.78 2.72 4.31 3.81.6.26 1.07.41 1.44.53.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.22-.16-.47-.29Z"/></svg></span>
+          <div><div class="c-label">WhatsApp</div><div class="c-value">Message Altaf</div></div>
+        </a>
+        <a class="contact-action linkedin" href="https://www.linkedin.com/in/altaf-simavatwala-20a46160" target="_blank" rel="noreferrer">
+          <span class="c-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A1.97 1.97 0 1 0 5.3 6.94 1.97 1.97 0 0 0 5.25 3Zm14.19 9.83c0-3.45-1.84-5.05-4.29-5.05-1.98 0-2.86 1.09-3.36 1.86V8.5H8.42c.05.76 0 11.5 0 11.5h3.37v-6.42c0-.34.02-.68.13-.92.27-.68.88-1.38 1.92-1.38 1.35 0 1.89 1.03 1.89 2.54V20h3.37v-7.17Z"/></svg></span>
+          <div><div class="c-label">LinkedIn</div><div class="c-value">View Profile</div></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /page -->
+
+<script>
+  const reveals = document.querySelectorAll(".reveal");
+  const toolCards = document.querySelectorAll(".tool-card");
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (!prefersReduced) {
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add("is-visible"); }),
+      { threshold: 0.1 }
+    );
+    reveals.forEach((el) => observer.observe(el));
+
+    const barObserver = new IntersectionObserver(
+      (entries) => entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add("is-visible"); }),
+      { threshold: 0.3 }
+    );
+    toolCards.forEach((el) => barObserver.observe(el));
+  } else {
+    reveals.forEach((el) => el.classList.add("is-visible"));
+    toolCards.forEach((el) => el.classList.add("is-visible"));
+  }
+</script>
+</body>
+</html>
