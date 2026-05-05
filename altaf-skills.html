@@ -5,45 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Altaf Simavatwala | Product · Operations · Automation</title>
   <meta name="description" content="I own delivery end to end and fix the flows your team keeps working around. Head of Product, Program Manager, and Growth Ops leader." />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231f6f70'/%3E%3Cpath d='M19 47 28 17h8l9 30h-7l-2-7H28l-2 7Zm10-13h7l-3-12h-.3Z' fill='%23fff7ef'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%236D4FD4'/%3E%3Cpath d='M19 47 28 17h8l9 30h-7l-2-7H28l-2 7Zm10-13h7l-3-12h-.3Z' fill='%23fff'/%3E%3C/svg%3E" />
   <style>
     :root {
-      --bg:        #F6F4EF;
-      --surface:   #FFFFFF;
-      --dark:      #0C1A28;
-      --dark-2:    #13253A;
-      --ink:       #16120C;
-      --muted:     #6A5C50;
-      --subtle:    #A0917F;
-      --line:      rgba(20,16,10,.09);
+      --bg:       #F5F2EB;
+      --surface:  #FFFFFF;
+      --dark:     #0E1B2B;
+      --dark-2:   #152538;
+      --ink:      #18130D;
+      --muted:    #6A5C4E;
+      --subtle:   #A09280;
+      --line:     rgba(20,16,10,.09);
 
-      --coral:     #E35535;
-      --coral-2:   rgba(227,85,53,.11);
-      --teal:      #0F7B7C;
-      --teal-2:    rgba(15,123,124,.1);
-      --gold:      #C98A25;
-      --gold-2:    rgba(201,138,37,.1);
-      --plum:      #8C3F70;
-      --plum-2:    rgba(140,63,112,.1);
-      --violet:    #6D4FD4;
-      --violet-2:  rgba(109,79,212,.1);
-      --green:     #1AAD6B;
-      --green-2:   rgba(26,173,107,.1);
+      --coral:    #E84E2A;
+      --coral-2:  rgba(232,78,42,.1);
+      --teal:     #0B7B7C;
+      --teal-2:   rgba(11,123,124,.1);
+      --gold:     #D4911E;
+      --gold-2:   rgba(212,145,30,.1);
+      --plum:     #952E78;
+      --plum-2:   rgba(149,46,120,.1);
+      --violet:   #7048E8;
+      --violet-2: rgba(112,72,232,.1);
+      --green:    #14AD68;
+      --green-2:  rgba(20,173,104,.1);
+      --pink:     #E8459A;
+      --pink-2:   rgba(232,69,154,.1);
 
-      --s-sm:  0 2px 8px rgba(20,12,6,.05);
-      --s-md:  0 8px 24px rgba(20,12,6,.08);
-      --s-lg:  0 20px 48px rgba(20,12,6,.1);
-      --s-xl:  0 32px 72px rgba(20,12,6,.12);
+      --s-sm: 0 2px 8px rgba(20,12,6,.05);
+      --s-md: 0 8px 28px rgba(20,12,6,.08);
+      --s-lg: 0 20px 52px rgba(20,12,6,.11);
+      --s-xl: 0 32px 72px rgba(20,12,6,.13);
 
       --r-sm: 12px;
       --r-md: 18px;
       --r-lg: 24px;
       --r-xl: 32px;
-      --r-2xl:40px;
+      --r-2xl: 40px;
 
       --max: 1160px;
       --serif: Georgia, "Times New Roman", serif;
       --sans:  "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      --hand:  "Caveat", cursive;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; }
@@ -61,16 +67,100 @@
     /* ── Reveal ── */
     .reveal {
       opacity: 0;
-      transform: translateY(24px);
-      transition: opacity .6s cubic-bezier(.22,.68,0,1.1), transform .6s cubic-bezier(.22,.68,0,1.1);
+      transform: translateY(26px);
+      transition: opacity .65s cubic-bezier(.22,.68,0,1.1), transform .65s cubic-bezier(.22,.68,0,1.1);
     }
     .reveal.is-visible { opacity: 1; transform: none; }
     .d1 { transition-delay: .1s; }
-    .d2 { transition-delay: .2s; }
-    .d3 { transition-delay: .3s; }
+    .d2 { transition-delay: .22s; }
+    .d3 { transition-delay: .34s; }
 
-    /* ── Layout ── */
     .page { max-width: var(--max); margin: 0 auto; padding: 20px 18px 80px; }
+
+    /* ──────────────────────
+       DOODLE SYSTEM
+    ────────────────────── */
+
+    /* Handwritten annotation label */
+    .anno {
+      font-family: var(--hand);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--coral);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      pointer-events: none;
+    }
+    .anno.violet { color: var(--violet); }
+    .anno.teal   { color: var(--teal); }
+    .anno.gold   { color: var(--gold); }
+    .anno.green  { color: var(--green); }
+    .anno.dark   { color: rgba(255,255,255,.55); }
+
+    /* Squiggly underline wrapper — positions SVG under inline text */
+    .squig-wrap {
+      position: relative;
+      display: inline-block;
+      padding-bottom: 6px;
+    }
+    .squig-wrap .squig {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 10px;
+      overflow: visible;
+    }
+
+    /* Doodle circle — drawn around numbers/callouts */
+    .doodle-ring {
+      position: relative;
+      display: inline-block;
+    }
+    .doodle-ring svg.ring {
+      position: absolute;
+      inset: -12px -16px;
+      width: calc(100% + 32px);
+      height: calc(100% + 24px);
+      pointer-events: none;
+      overflow: visible;
+    }
+
+    /* Floating annotation bubble */
+    .doodle-bubble {
+      font-family: var(--hand);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 2px solid currentColor;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      position: relative;
+    }
+
+    /* Scatter dots layer — placed inside sections */
+    .scatter {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    /* Doodle star shape */
+    .dstar {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    /* Hand-drawn border card modifier */
+    .card-sketchy {
+      border-radius: 18px 24px 20px 22px / 22px 20px 24px 18px;
+    }
 
     /* ──────────────────────
        NAV
@@ -78,24 +168,23 @@
     .nav {
       position: sticky; top: 14px; z-index: 50;
       display: flex; align-items: center; justify-content: space-between; gap: 12px;
-      padding: 11px 16px;
+      padding: 11px 18px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.75);
-      background: rgba(251,248,243,.9);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      box-shadow: 0 4px 24px rgba(20,12,6,.08), inset 0 1px 0 rgba(255,255,255,.9);
+      border: 1px solid rgba(255,255,255,.8);
+      background: rgba(250,247,241,.92);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: 0 4px 24px rgba(20,12,6,.08), inset 0 1px 0 rgba(255,255,255,.95);
     }
-    .brand { display: flex; align-items: center; gap: 11px; font-weight: 800; font-size: .88rem; flex-shrink: 0; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: .88rem; flex-shrink: 0; }
     .brand-mark {
       width: 36px; height: 36px; border-radius: 11px;
-      background: linear-gradient(135deg, var(--violet), var(--teal));
+      background: linear-gradient(135deg, var(--violet), #9f7aea);
       color: #fff; display: flex; align-items: center; justify-content: center;
       font-size: .78rem; font-weight: 800; letter-spacing: .06em;
-      box-shadow: 0 6px 18px rgba(109,79,212,.3); flex-shrink: 0;
+      box-shadow: 0 6px 20px rgba(112,72,232,.35); flex-shrink: 0;
     }
-    .brand-sub { font-size: .64rem; color: var(--muted); font-weight: 600; letter-spacing: .07em; text-transform: uppercase; display: block; margin-top: 2px; }
-
+    .brand-sub { font-size: .63rem; color: var(--muted); font-weight: 600; letter-spacing: .07em; text-transform: uppercase; display: block; margin-top: 2px; }
     .nav-links { display: flex; gap: 2px; }
     .nav-links a {
       padding: 7px 12px; border-radius: 999px;
@@ -103,23 +192,20 @@
       transition: background .18s, color .18s;
     }
     .nav-links a:hover { background: var(--violet-2); color: var(--violet); }
-
     .nav-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
     .avail-pill {
       display: flex; align-items: center; gap: 7px;
       padding: 6px 12px; border-radius: 999px;
-      background: var(--green-2); border: 1px solid rgba(26,173,107,.2);
-      color: #138a52; font-size: .76rem; font-weight: 700; white-space: nowrap;
+      background: var(--green-2); border: 1px solid rgba(20,173,104,.22);
+      color: #0e8a51; font-size: .76rem; font-weight: 700; white-space: nowrap;
     }
     .avail-dot {
-      width: 7px; height: 7px; border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 0 3px rgba(26,173,107,.2);
-      animation: pulse 2.4s ease infinite;
+      width: 7px; height: 7px; border-radius: 50%; background: var(--green);
+      box-shadow: 0 0 0 3px rgba(20,173,104,.2); animation: pulse 2.4s ease infinite;
     }
     @keyframes pulse {
-      0%,100% { box-shadow: 0 0 0 3px rgba(26,173,107,.2); }
-      50%      { box-shadow: 0 0 0 6px rgba(26,173,107,.07); }
+      0%,100% { box-shadow: 0 0 0 3px rgba(20,173,104,.2); }
+      50%      { box-shadow: 0 0 0 6px rgba(20,173,104,.07); }
     }
     .nav-icon {
       width: 34px; height: 34px; border-radius: 50%;
@@ -128,97 +214,99 @@
       color: var(--muted); transition: transform .18s, box-shadow .18s, color .18s, border-color .18s;
     }
     .nav-icon:hover { transform: translateY(-2px); box-shadow: var(--s-md); }
-    .nav-icon.email:hover   { border-color: var(--coral); color: var(--coral); }
-    .nav-icon.linkedin:hover{ border-color: #0a66c2; color: #0a66c2; }
-    .nav-icon.whatsapp:hover{ border-color: #25d366; color: #25d366; }
+    .nav-icon.email:hover    { border-color: var(--coral); color: var(--coral); }
+    .nav-icon.linkedin:hover { border-color: #0a66c2;  color: #0a66c2; }
+    .nav-icon.whatsapp:hover { border-color: #25d366;  color: #25d366; }
     .nav-icon svg { width: 15px; height: 15px; display: block; }
-
-    .alt-page-link {
+    .alt-link {
       padding: 7px 13px; border-radius: 999px;
-      background: rgba(109,79,212,.08); border: 1px solid rgba(109,79,212,.15);
+      background: var(--violet-2); border: 1px solid rgba(112,72,232,.18);
       color: var(--violet); font-size: .78rem; font-weight: 700;
       transition: background .18s;
     }
-    .alt-page-link:hover { background: rgba(109,79,212,.14); }
+    .alt-link:hover { background: rgba(112,72,232,.18); }
 
     /* ──────────────────────
        HERO
     ────────────────────── */
     .hero {
-      margin-top: 16px;
-      border-radius: var(--r-2xl);
-      overflow: hidden;
-      background: var(--dark);
-      padding: 60px 56px 56px;
-      position: relative;
-      isolation: isolate;
+      margin-top: 16px; border-radius: var(--r-2xl);
+      overflow: hidden; background: var(--dark);
+      padding: 64px 56px 60px; position: relative; isolation: isolate;
     }
+
+    /* dark bg gradients */
     .hero::before {
-      content: "";
-      position: absolute; inset: 0; z-index: 0;
+      content: ""; position: absolute; inset: 0; z-index: 0;
       background:
-        radial-gradient(ellipse 65% 65% at 90% 15%, rgba(109,79,212,.25), transparent 60%),
-        radial-gradient(ellipse 50% 55% at 5%  80%, rgba(15,123,124,.18), transparent 55%),
-        radial-gradient(ellipse 40% 40% at 55% 50%, rgba(26,173,107,.06), transparent 60%);
+        radial-gradient(ellipse 70% 60% at 88% 10%, rgba(112,72,232,.28), transparent 58%),
+        radial-gradient(ellipse 45% 55% at 8%  80%, rgba(11,123,124,.2),  transparent 55%),
+        radial-gradient(ellipse 35% 40% at 50% 50%, rgba(20,173,104,.06), transparent 55%);
     }
+    /* grid overlay */
     .hero::after {
-      content: "";
-      position: absolute; inset: 0; z-index: 0;
-      background-image: linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      content: ""; position: absolute; inset: 0; z-index: 0;
+      background-image: linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,255,255,.022) 1px, transparent 1px);
       background-size: 44px 44px;
     }
 
     .hero-inner {
       position: relative; z-index: 1;
-      display: grid; grid-template-columns: 1fr 320px; gap: 44px; align-items: start;
+      display: grid; grid-template-columns: 1fr 310px; gap: 48px; align-items: start;
     }
-    .hero-left { display: grid; gap: 24px; }
+    .hero-left { display: grid; gap: 26px; }
 
-    .hero-tag-row { display: flex; flex-wrap: wrap; gap: 8px; }
-    .hero-role-tag {
+    .hero-roles { display: flex; flex-wrap: wrap; gap: 8px; }
+    .role-chip {
       padding: 6px 13px; border-radius: 999px;
       background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
-      color: rgba(255,255,255,.65); font-size: .76rem; font-weight: 700;
+      color: rgba(255,255,255,.6); font-size: .76rem; font-weight: 700;
     }
-    .hero-role-tag.accent {
-      background: rgba(109,79,212,.25); border-color: rgba(109,79,212,.4);
+    .role-chip.lit {
+      background: rgba(112,72,232,.28); border-color: rgba(112,72,232,.45);
       color: #c4b5fd;
     }
 
     .hero-headline {
       font-family: var(--serif);
       font-size: clamp(2.8rem, 6.5vw, 5.4rem);
-      font-weight: 400; line-height: 1.04; letter-spacing: -.03em;
-      color: #fff;
+      font-weight: 400; line-height: 1.05; letter-spacing: -.03em; color: #fff;
     }
-    .hero-headline em {
-      font-style: normal;
-      background: linear-gradient(120deg, #c4b5fd, var(--teal), #5eead4);
+    /* gradient text segment */
+    .hero-headline .grad {
+      background: linear-gradient(118deg, #c4b5fd 10%, #5eead4 90%);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
+      background-clip: text; font-style: normal;
     }
 
     .hero-sub {
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      font-weight: 600; color: rgba(255,255,255,.7); line-height: 1.5; max-width: 50ch;
+      font-size: clamp(.98rem, 2vw, 1.18rem);
+      font-weight: 600; color: rgba(255,255,255,.68); line-height: 1.55; max-width: 50ch;
     }
+    .hero-bio { font-size: .95rem; color: rgba(255,255,255,.46); line-height: 1.74; max-width: 58ch; }
 
-    .hero-bio {
-      font-size: .96rem; color: rgba(255,255,255,.48); line-height: 1.72; max-width: 58ch;
-    }
-
-    /* proof row */
+    /* proof strip */
     .hero-proof {
-      display: grid; grid-template-columns: repeat(4, 1fr);
       border-radius: var(--r-md); overflow: hidden;
+      display: grid; grid-template-columns: repeat(4,1fr);
       border: 1px solid rgba(255,255,255,.09);
       background: rgba(255,255,255,.04);
     }
-    .proof-cell { padding: 18px 18px; border-right: 1px solid rgba(255,255,255,.07); }
+    .proof-cell { padding: 18px; border-right: 1px solid rgba(255,255,255,.07); }
     .proof-cell:last-child { border-right: 0; }
-    .proof-num { font-size: 1.4rem; font-weight: 800; color: #fff; line-height: 1; margin-bottom: 5px; }
-    .proof-label { font-size: .73rem; color: rgba(255,255,255,.42); line-height: 1.4; }
+    .proof-num {
+      font-size: 1.5rem; font-weight: 800; color: #fff; line-height: 1;
+      margin-bottom: 5px; font-family: var(--serif);
+    }
+    .proof-label { font-size: .72rem; color: rgba(255,255,255,.4); line-height: 1.4; }
+
+    /* hand-drawn annotation above proof */
+    .proof-anno {
+      font-family: var(--hand);
+      font-size: 1rem; color: rgba(255,255,255,.45);
+      margin-bottom: 6px; display: flex; align-items: center; gap: 6px;
+    }
 
     .hero-ctas { display: flex; flex-wrap: wrap; gap: 10px; }
 
@@ -226,73 +314,77 @@
     .btn {
       display: inline-flex; align-items: center; gap: 8px;
       padding: 12px 22px; border-radius: 999px;
-      font-size: .88rem; font-weight: 700;
-      transition: transform .18s, box-shadow .18s; line-height: 1;
+      font-size: .88rem; font-weight: 700; line-height: 1;
+      transition: transform .18s, box-shadow .18s;
     }
     .btn:hover { transform: translateY(-2px); }
     .btn-violet {
-      background: linear-gradient(135deg, var(--violet), #5538b8);
-      color: #fff; box-shadow: 0 8px 24px rgba(109,79,212,.38);
+      background: linear-gradient(135deg, var(--violet), #5536c4);
+      color: #fff; box-shadow: 0 8px 24px rgba(112,72,232,.42);
     }
-    .btn-violet:hover { box-shadow: 0 12px 32px rgba(109,79,212,.5); }
+    .btn-violet:hover { box-shadow: 0 14px 32px rgba(112,72,232,.55); }
     .btn-ghost {
-      background: rgba(255,255,255,.09); border: 1px solid rgba(255,255,255,.15);
-      color: rgba(255,255,255,.82);
+      background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15);
+      color: rgba(255,255,255,.8);
     }
     .btn-ghost:hover { background: rgba(255,255,255,.15); }
     .btn-outline { background: transparent; border: 1.5px solid var(--line); color: var(--ink); }
     .btn-outline:hover { border-color: var(--violet); color: var(--violet); }
     .btn-teal {
-      background: linear-gradient(135deg, var(--teal), #0a5c5d);
-      color: #fff; box-shadow: 0 8px 24px rgba(15,123,124,.3);
+      background: linear-gradient(135deg, var(--teal), #085f60);
+      color: #fff; box-shadow: 0 8px 24px rgba(11,123,124,.32);
     }
-    .btn-teal:hover { box-shadow: 0 12px 32px rgba(15,123,124,.45); }
+    .btn-teal:hover { box-shadow: 0 14px 32px rgba(11,123,124,.45); }
 
-    /* right side card */
-    .hero-card {
-      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.11);
-      border-radius: var(--r-xl); padding: 26px; display: grid; gap: 8px;
-      backdrop-filter: blur(12px);
+    /* right panel */
+    .hero-panel {
+      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.11);
+      border-radius: var(--r-xl); padding: 26px; display: grid; gap: 9px;
+      backdrop-filter: blur(14px);
     }
-    .hero-card-label {
-      font-size: .66rem; font-weight: 800; letter-spacing: .1em;
-      text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: 4px;
+    .hero-panel-label {
+      font-family: var(--hand); font-size: 1.05rem;
+      color: rgba(255,255,255,.45); margin-bottom: 4px;
     }
-    .fit-item {
-      display: grid; grid-template-columns: 32px 1fr; gap: 12px; align-items: start;
-      padding: 14px; border-radius: var(--r-sm);
+    .day1-item {
+      display: grid; grid-template-columns: 36px 1fr; gap: 12px; align-items: start;
+      padding: 13px; border-radius: 13px;
       background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07);
       transition: background .18s;
     }
-    .fit-item:hover { background: rgba(255,255,255,.08); }
-    .fit-icon {
-      width: 32px; height: 32px; border-radius: 9px;
-      display: flex; align-items: center; justify-content: center; font-size: 1rem;
+    .day1-item:hover { background: rgba(255,255,255,.09); }
+    .day1-icon {
+      width: 36px; height: 36px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
     }
-    .fit-text strong { display: block; font-size: .88rem; color: #fff; margin-bottom: 3px; }
-    .fit-text span   { display: block; font-size: .77rem; color: rgba(255,255,255,.42); line-height: 1.45; }
+    .day1-item strong { display: block; font-size: .88rem; color: #fff; margin-bottom: 3px; }
+    .day1-item span   { display: block; font-size: .76rem; color: rgba(255,255,255,.4); line-height: 1.45; }
 
     /* ──────────────────────
        SECTION CHROME
     ────────────────────── */
-    .section-label {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-size: .67rem; font-weight: 800; letter-spacing: .1em;
-      text-transform: uppercase; color: var(--violet); margin-bottom: 6px;
+    .sec-kicker {
+      font-size: .68rem; font-weight: 800; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--violet);
+      display: inline-flex; align-items: center; gap: 8px; margin-bottom: 6px;
     }
-    .section-label::before { content: ""; width: 20px; height: 2px; border-radius: 999px; background: currentColor; }
-    .section-label.teal  { color: var(--teal); }
-    .section-label.coral { color: var(--coral); }
-    .section-label.gold  { color: var(--gold); }
-    .section-label.plum  { color: var(--plum); }
+    .sec-kicker::before { content:""; width:20px; height:2px; border-radius:999px; background:currentColor; }
+    .sec-kicker.teal  { color: var(--teal); }
+    .sec-kicker.coral { color: var(--coral); }
+    .sec-kicker.gold  { color: var(--gold); }
+    .sec-kicker.plum  { color: var(--plum); }
+    .sec-kicker.green { color: var(--green); }
 
-    .section-title {
+    .sec-title {
       font-family: var(--serif);
-      font-size: clamp(1.7rem, 3.2vw, 2.6rem);
+      font-size: clamp(1.65rem, 3vw, 2.5rem);
       line-height: 1.1; letter-spacing: -.025em; color: var(--ink);
     }
-    .section-copy { font-size: .98rem; color: var(--muted); line-height: 1.7; max-width: 64ch; }
-    .mt4 { margin-top: 4px; }
+    .sec-copy { font-size: .97rem; color: var(--muted); line-height: 1.72; max-width: 64ch; }
+
+    .mt4  { margin-top: 4px; }
+    .mt12 { margin-top: 12px; }
     .mt16 { margin-top: 16px; }
     .mt24 { margin-top: 24px; }
 
@@ -303,310 +395,415 @@
       transition: transform .2s, box-shadow .2s;
     }
     .card:hover { transform: translateY(-3px); box-shadow: var(--s-lg); }
-    .card-top-coral::before  { content:""; position:absolute; inset:0 auto auto 0; width:100%; height:3px; background:linear-gradient(90deg,var(--coral),var(--gold)); }
-    .card-top-teal::before   { content:""; position:absolute; inset:0 auto auto 0; width:100%; height:3px; background:linear-gradient(90deg,var(--teal),var(--gold)); }
-    .card-top-violet::before { content:""; position:absolute; inset:0 auto auto 0; width:100%; height:3px; background:linear-gradient(90deg,var(--violet),var(--teal)); }
-    .card-top-plum::before   { content:""; position:absolute; inset:0 auto auto 0; width:100%; height:3px; background:linear-gradient(90deg,var(--plum),var(--coral)); }
 
     /* ──────────────────────
-       WHAT I DO  (4 pillars)
+       SECTION WRAPPER
     ────────────────────── */
-    .pillars-grid {
-      display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 24px;
-    }
-    .pillar-card {
+    .sec { margin-top: 24px; position: relative; }
+
+    /* ──────────────────────
+       WHAT I DO — PILLARS
+    ────────────────────── */
+    .pillars { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; margin-top: 24px; }
+
+    .pillar {
       padding: 30px; border-radius: var(--r-xl);
       background: var(--surface); border: 1px solid var(--line); box-shadow: var(--s-sm);
-      position: relative; overflow: hidden; transition: transform .2s, box-shadow .2s;
+      position: relative; overflow: hidden;
+      transition: transform .22s, box-shadow .22s;
     }
-    .pillar-card:hover { transform: translateY(-4px); box-shadow: var(--s-lg); }
-    .pillar-icon {
-      width: 52px; height: 52px; border-radius: 16px;
+    .pillar:hover { transform: translateY(-5px); box-shadow: var(--s-xl); }
+
+    /* Top stripe per pillar */
+    .pillar::before {
+      content: ""; position: absolute; inset: 0 auto auto 0;
+      width: 100%; height: 3px;
+    }
+    .pillar:nth-child(1)::before { background: linear-gradient(90deg, var(--violet), #a78bfa); }
+    .pillar:nth-child(2)::before { background: linear-gradient(90deg, var(--teal),   #38bdf8); }
+    .pillar:nth-child(3)::before { background: linear-gradient(90deg, var(--coral),  var(--gold)); }
+    .pillar:nth-child(4)::before { background: linear-gradient(90deg, var(--gold),   #fbbf24); }
+
+    /* Doodle sketch icon per pillar */
+    .pillar-icon-wrap {
+      width: 56px; height: 56px; border-radius: 16px;
       display: flex; align-items: center; justify-content: center;
-      font-size: 1.5rem; margin-bottom: 18px;
+      margin-bottom: 18px; position: relative;
     }
-    .pillar-card:nth-child(1) .pillar-icon { background: var(--violet-2); }
-    .pillar-card:nth-child(2) .pillar-icon { background: var(--teal-2); }
-    .pillar-card:nth-child(3) .pillar-icon { background: var(--coral-2); }
-    .pillar-card:nth-child(4) .pillar-icon { background: var(--gold-2); }
+    .pillar:nth-child(1) .pillar-icon-wrap { background: var(--violet-2); }
+    .pillar:nth-child(2) .pillar-icon-wrap { background: var(--teal-2); }
+    .pillar:nth-child(3) .pillar-icon-wrap { background: var(--coral-2); }
+    .pillar:nth-child(4) .pillar-icon-wrap { background: var(--gold-2); }
 
-    .pillar-card:nth-child(1)::before { content:""; position:absolute; inset:0 auto auto 0; width:100%; height:3px; background:linear-gradient(90deg,var(--violet),#9b7ef8); }
-    .pillar-card:nth-child(2)::before { content:""; position:absolute; inset:0 auto auto 0; width:100%; height:3px; background:linear-gradient(90deg,var(--teal),#4db8b9); }
-    .pillar-card:nth-child(3)::before { content:""; position:absolute; inset:0 auto auto 0; width:100%; height:3px; background:linear-gradient(90deg,var(--coral),var(--gold)); }
-    .pillar-card:nth-child(4)::before { content:""; position:absolute; inset:0 auto auto 0; width:100%; height:3px; background:linear-gradient(90deg,var(--gold),#e9b85f); }
+    .pillar h3 { font-size: 1.1rem; font-weight: 800; color: var(--ink); margin-bottom: 10px; }
+    .pillar p  { font-size: .9rem; color: var(--muted); line-height: 1.7; margin-bottom: 18px; }
 
-    .pillar-card h3 { font-size: 1.12rem; font-weight: 800; color: var(--ink); margin-bottom: 10px; }
-    .pillar-card p  { font-size: .9rem; color: var(--muted); line-height: 1.68; margin-bottom: 18px; }
-
-    .pillar-signals { display: flex; flex-wrap: wrap; gap: 7px; }
-    .sig-pill {
+    .tag-row { display: flex; flex-wrap: wrap; gap: 7px; }
+    .tag {
       padding: 5px 11px; border-radius: 999px;
       background: var(--bg); border: 1px solid var(--line);
       font-size: .78rem; font-weight: 700; color: var(--ink);
+      transition: background .15s, border-color .15s, color .15s;
+    }
+    .tag:hover { background: var(--violet-2); border-color: rgba(112,72,232,.2); color: var(--violet); }
+
+    /* floating doodle annotation on pillar 1 */
+    .pillar-anno {
+      position: absolute; top: 22px; right: 18px;
+      font-family: var(--hand); font-size: .95rem; font-weight: 600;
+      color: var(--violet); opacity: .6;
+      display: flex; align-items: center; gap: 4px;
     }
 
     /* ──────────────────────
-       TOOLS
+       TOOLS SECTION
     ────────────────────── */
-    .tools-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 24px;
+    .tools-wrap {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-top: 24px;
     }
-    .tool-card {
+    .tool {
       padding: 22px; border-radius: var(--r-lg);
       background: var(--surface); border: 1px solid var(--line); box-shadow: var(--s-sm);
-      display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: center;
-      transition: transform .18s, border-color .18s, box-shadow .18s;
+      position: relative; overflow: hidden;
+      transition: transform .2s, box-shadow .2s, border-color .2s;
     }
-    .tool-card:hover { transform: translateY(-3px); box-shadow: var(--s-lg); border-color: rgba(109,79,212,.2); }
-    .tool-icon-wrap {
-      width: 44px; height: 44px; border-radius: 12px;
-      display: flex; align-items: center; justify-content: center; font-size: 1.3rem;
+    .tool:hover { transform: translateY(-4px); box-shadow: var(--s-lg); border-color: rgba(112,72,232,.22); }
+    .tool-head { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+    .tool-emoji {
+      width: 44px; height: 44px; border-radius: 12px; font-size: 1.3rem;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
     }
-    .tool-card:nth-child(1) .tool-icon-wrap { background: rgba(236,88,25,.1); }
-    .tool-card:nth-child(2) .tool-icon-wrap { background: rgba(0,122,204,.1); }
-    .tool-card:nth-child(3) .tool-icon-wrap { background: rgba(33,131,62,.1); }
-    .tool-card:nth-child(4) .tool-icon-wrap { background: var(--violet-2); }
-    .tool-card:nth-child(5) .tool-icon-wrap { background: var(--teal-2); }
-    .tool-card:nth-child(6) .tool-icon-wrap { background: var(--gold-2); }
-    .tool-name { font-size: .94rem; font-weight: 800; color: var(--ink); margin-bottom: 3px; }
-    .tool-desc { font-size: .78rem; color: var(--muted); line-height: 1.4; }
+    .tool:nth-child(1) .tool-emoji { background: rgba(236,88,0,.1);  }
+    .tool:nth-child(2) .tool-emoji { background: rgba(0,100,200,.1); }
+    .tool:nth-child(3) .tool-emoji { background: rgba(20,160,80,.1); }
+    .tool:nth-child(4) .tool-emoji { background: var(--violet-2); }
+    .tool:nth-child(5) .tool-emoji { background: var(--teal-2); }
+    .tool:nth-child(6) .tool-emoji { background: var(--gold-2); }
+    .tool-name { font-size: .96rem; font-weight: 800; color: var(--ink); margin-bottom: 2px; }
+    .tool-sub  { font-size: .76rem; color: var(--subtle); font-weight: 600; }
+    .tool-desc { font-size: .82rem; color: var(--muted); line-height: 1.55; margin-bottom: 14px; }
 
-    .tool-bar-wrap { margin-top: 10px; grid-column: 1 / -1; }
-    .tool-bar-track {
-      height: 5px; border-radius: 999px; background: var(--bg);
-      overflow: hidden; margin-top: 6px;
+    /* Skill bar */
+    .skill-bar-label {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 5px;
     }
-    .tool-bar-fill {
+    .skill-bar-label span { font-family: var(--hand); font-size: .92rem; color: var(--subtle); }
+    .skill-bar-label strong { font-family: var(--hand); font-size: .98rem; color: var(--ink); font-weight: 600; }
+    .bar-track {
+      height: 6px; border-radius: 999px;
+      background: var(--bg); overflow: hidden; border: 1px solid var(--line);
+    }
+    .bar-fill {
       height: 100%; border-radius: 999px;
-      background: linear-gradient(90deg, var(--violet), var(--teal));
-      transform-origin: left;
-      transform: scaleX(0);
-      transition: transform 1s cubic-bezier(.34,1.56,.64,1) .3s;
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 1.1s cubic-bezier(.34,1.56,.64,1) .3s;
     }
-    .tool-card.is-visible .tool-bar-fill { transform: scaleX(1); }
+    .tool.is-visible .bar-fill { transform: scaleX(1); }
+    .tool:nth-child(1) .bar-fill { background: linear-gradient(90deg, #ec5800, #f97316); }
+    .tool:nth-child(2) .bar-fill { background: linear-gradient(90deg, #0064c8, #3b82f6); }
+    .tool:nth-child(3) .bar-fill { background: linear-gradient(90deg, #14a050, #22c55e); }
+    .tool:nth-child(4) .bar-fill { background: linear-gradient(90deg, var(--violet), #a78bfa); }
+    .tool:nth-child(5) .bar-fill { background: linear-gradient(90deg, var(--teal), #38bdf8); }
+    .tool:nth-child(6) .bar-fill { background: linear-gradient(90deg, var(--gold), #fbbf24); }
+
+    /* doodle star badge on top tools */
+    .tool-star-badge {
+      position: absolute; top: 14px; right: 14px;
+      font-family: var(--hand); font-size: .78rem; font-weight: 700;
+      color: var(--gold); display: flex; align-items: center; gap: 3px;
+      background: var(--gold-2); border: 1px solid rgba(212,145,30,.25);
+      padding: 3px 8px; border-radius: 999px;
+    }
 
     /* ──────────────────────
-       HOW I THINK  (mindset)
+       HOW I THINK
     ────────────────────── */
-    .mindset-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px;
-    }
-    .mindset-card {
-      padding: 26px; border-radius: var(--r-xl);
+    .mindset { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
+
+    .mind-card {
+      padding: 28px; border-radius: var(--r-xl);
       background: var(--surface); border: 1px solid var(--line); box-shadow: var(--s-sm);
-      display: grid; grid-template-columns: 36px 1fr; gap: 16px; align-items: start;
+      position: relative; overflow: hidden;
       transition: transform .2s, box-shadow .2s;
     }
-    .mindset-card:hover { transform: translateY(-3px); box-shadow: var(--s-lg); }
-    .mindset-num {
-      font-size: 1.8rem; font-weight: 800; font-family: var(--serif);
-      line-height: 1; opacity: .18; color: var(--ink); letter-spacing: -.04em;
+    .mind-card:hover { transform: translateY(-3px); box-shadow: var(--s-lg); }
+
+    .mind-num {
+      font-family: var(--serif); font-size: 5rem; font-weight: 400;
+      line-height: 1; letter-spacing: -.04em;
+      position: absolute; top: 12px; right: 18px;
+      opacity: .06;
     }
-    .mindset-card:nth-child(1) .mindset-num { color: var(--violet); opacity: .35; }
-    .mindset-card:nth-child(2) .mindset-num { color: var(--teal);   opacity: .35; }
-    .mindset-card:nth-child(3) .mindset-num { color: var(--coral);  opacity: .35; }
-    .mindset-card:nth-child(4) .mindset-num { color: var(--gold);   opacity: .45; }
-    .mindset-card strong { display: block; font-size: 1rem; color: var(--ink); margin-bottom: 7px; line-height: 1.3; }
-    .mindset-card span   { display: block; font-size: .87rem; color: var(--muted); line-height: 1.65; }
+    .mind-card:nth-child(1) .mind-num { color: var(--violet); opacity:.15; }
+    .mind-card:nth-child(2) .mind-num { color: var(--teal);   opacity:.15; }
+    .mind-card:nth-child(3) .mind-num { color: var(--coral);  opacity:.15; }
+    .mind-card:nth-child(4) .mind-num { color: var(--gold);   opacity:.2; }
+
+    .mind-icon {
+      font-size: 1.6rem; margin-bottom: 14px; display: block;
+    }
+    .mind-card strong { display: block; font-size: 1rem; color: var(--ink); margin-bottom: 8px; line-height: 1.35; }
+    .mind-card p      { font-size: .88rem; color: var(--muted); line-height: 1.68; }
+
+    /* doodle underline on mind-card heading */
+    .mind-title-wrap { position: relative; display: inline-block; margin-bottom: 8px; }
 
     /* ──────────────────────
-       WINS  (results, no industry)
+       WINS BAND
     ────────────────────── */
     .wins-band {
       margin-top: 24px; border-radius: var(--r-xl); overflow: hidden;
-      background: var(--dark); padding: 44px 48px; position: relative;
+      background: var(--dark); padding: 48px 52px; position: relative;
     }
     .wins-band::before {
       content: ""; position: absolute; inset: 0;
       background:
-        radial-gradient(ellipse 60% 70% at 95% 50%, rgba(109,79,212,.2), transparent 60%),
-        radial-gradient(ellipse 50% 60% at 0%  60%, rgba(15,123,124,.14), transparent 55%);
+        radial-gradient(ellipse 60% 70% at 95% 50%, rgba(112,72,232,.22), transparent 60%),
+        radial-gradient(ellipse 50% 60% at 0%  60%, rgba(11,123,124,.15),  transparent 55%);
     }
     .wins-inner { position: relative; z-index: 1; }
-    .wins-band .section-label { color: #c4b5fd; }
-    .wins-band .section-label::before { background: #c4b5fd; }
-    .wins-band .section-title { color: #fff; }
+    .wins-band .sec-kicker { color: #c4b5fd; }
+    .wins-band .sec-kicker::before { background: #c4b5fd; }
+    .wins-band .sec-title { color: #fff; }
+    .wins-band .sec-copy  { color: rgba(255,255,255,.45); max-width: 60ch; }
 
     .wins-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
-      margin-top: 28px; border-radius: var(--r-lg); overflow: hidden;
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 2px; margin-top: 28px;
+      border-radius: var(--r-lg); overflow: hidden;
       border: 1px solid rgba(255,255,255,.07);
     }
     .win-cell {
-      padding: 28px 22px;
-      background: rgba(255,255,255,.04);
+      padding: 30px 24px; background: rgba(255,255,255,.04);
       border-right: 1px solid rgba(255,255,255,.07);
-      transition: background .2s;
+      position: relative; overflow: hidden; transition: background .2s;
     }
     .win-cell:last-child { border-right: 0; }
-    .win-cell:hover { background: rgba(255,255,255,.07); }
+    .win-cell:hover { background: rgba(255,255,255,.08); }
+
     .win-num {
-      font-size: 2.4rem; font-weight: 800; line-height: 1;
-      margin-bottom: 8px; letter-spacing: -.02em;
+      font-size: 2.6rem; font-weight: 800; line-height: 1;
+      margin-bottom: 10px; font-family: var(--serif); letter-spacing: -.02em;
+      display: block; position: relative;
     }
-    .win-cell:nth-child(1) .win-num { background: linear-gradient(135deg,#c4b5fd,#a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .win-cell:nth-child(2) .win-num { background: linear-gradient(135deg,var(--coral),#f0896a); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .win-cell:nth-child(3) .win-num { background: linear-gradient(135deg,var(--gold),#e9b85f);  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .win-cell:nth-child(4) .win-num { background: linear-gradient(135deg,var(--teal),#4db8b9);  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .win-cell:nth-child(5) .win-num { background: linear-gradient(135deg,var(--green),#4fd6a0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .win-cell:nth-child(6) .win-num { background: linear-gradient(135deg,#f472b6,#e879f9);      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .win-desc { font-size: .82rem; color: rgba(255,255,255,.45); line-height: 1.55; }
+    .win-cell:nth-child(1) .win-num { background: linear-gradient(135deg,#c4b5fd,#a78bfa); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .win-cell:nth-child(2) .win-num { background: linear-gradient(135deg,var(--coral),#f97316); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .win-cell:nth-child(3) .win-num { background: linear-gradient(135deg,var(--gold),#fbbf24); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .win-cell:nth-child(4) .win-num { background: linear-gradient(135deg,var(--teal),#38bdf8); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .win-cell:nth-child(5) .win-num { background: linear-gradient(135deg,var(--green),#4ade80); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .win-cell:nth-child(6) .win-num { background: linear-gradient(135deg,#f472b6,#e879f9); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+
+    .win-desc { font-size: .82rem; color: rgba(255,255,255,.42); line-height: 1.6; }
+
+    /* doodle corner squiggle in win-cell */
+    .win-doodle {
+      position: absolute; bottom: 10px; right: 10px;
+      opacity: .12; pointer-events: none;
+    }
 
     /* ──────────────────────
-       STORIES  (case studies, reframed)
+       STORIES
     ────────────────────── */
-    .stories-grid {
-      display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 24px;
-    }
-    .story-card {
+    .stories { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; margin-top: 24px; }
+
+    .story {
       padding: 28px; border-radius: var(--r-xl);
       background: var(--surface); border: 1px solid var(--line); box-shadow: var(--s-sm);
-      position: relative; overflow: hidden; transition: transform .22s, box-shadow .22s;
+      position: relative; overflow: hidden;
+      transition: transform .22s, box-shadow .22s;
     }
-    .story-card:hover { transform: translateY(-5px); box-shadow: var(--s-xl); }
+    .story:hover { transform: translateY(-5px); box-shadow: var(--s-xl); }
+
+    /* top color stripe */
+    .story::before { content:""; position:absolute; inset:0 auto auto 0; width:100%; height:3px; }
+    .story:nth-child(1)::before { background: linear-gradient(90deg,var(--violet),#a78bfa); }
+    .story:nth-child(2)::before { background: linear-gradient(90deg,var(--teal),  #38bdf8); }
+    .story:nth-child(3)::before { background: linear-gradient(90deg,var(--coral), var(--gold)); }
+    .story:nth-child(4)::before { background: linear-gradient(90deg,var(--gold),  #fbbf24); }
+    .story:nth-child(5)::before { background: linear-gradient(90deg,var(--plum),  var(--coral)); }
+    .story:nth-child(6)::before { background: linear-gradient(90deg,var(--green), #38bdf8); }
+
     .story-tag {
       display: inline-flex; width: fit-content; margin-bottom: 10px;
       padding: 5px 11px; border-radius: 999px;
-      background: var(--violet-2); color: var(--violet);
-      font-size: .71rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase;
+      font-size: .7rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase;
     }
-    .story-card:nth-child(2) .story-tag { background: var(--teal-2);  color: var(--teal);  }
-    .story-card:nth-child(3) .story-tag { background: var(--coral-2); color: var(--coral); }
-    .story-card:nth-child(4) .story-tag { background: var(--gold-2);  color: var(--gold);  }
-    .story-card:nth-child(5) .story-tag { background: var(--plum-2);  color: var(--plum);  }
-    .story-card:nth-child(6) .story-tag { background: var(--green-2); color: var(--green); }
+    .story:nth-child(1) .story-tag { background: var(--violet-2); color: var(--violet); }
+    .story:nth-child(2) .story-tag { background: var(--teal-2);   color: var(--teal);   }
+    .story:nth-child(3) .story-tag { background: var(--coral-2);  color: var(--coral);  }
+    .story:nth-child(4) .story-tag { background: var(--gold-2);   color: var(--gold);   }
+    .story:nth-child(5) .story-tag { background: var(--plum-2);   color: var(--plum);   }
+    .story:nth-child(6) .story-tag { background: var(--green-2);  color: var(--green);  }
 
-    .story-card h3 {
+    .story h3 {
       font-family: var(--serif); font-size: 1.1rem; font-weight: 700;
       color: var(--ink); line-height: 1.35; margin-bottom: 10px;
     }
-    .story-card p { font-size: .87rem; color: var(--muted); line-height: 1.65; }
+    .story p { font-size: .87rem; color: var(--muted); line-height: 1.68; }
+
     .story-result {
-      margin-top: 14px; padding: 12px 14px;
-      border-radius: var(--r-sm);
-      background: linear-gradient(135deg, rgba(109,79,212,.06), rgba(15,123,124,.04));
-      border-left: 3px solid var(--violet);
-      font-size: .83rem; font-weight: 700; color: var(--violet); line-height: 1.5;
+      margin-top: 14px; padding: 12px 15px; border-radius: var(--r-sm);
+      font-size: .82rem; font-weight: 700; line-height: 1.55;
+      border-left: 3px solid;
     }
-    .story-card:nth-child(2) .story-result { border-left-color: var(--teal);  color: var(--teal);  background: linear-gradient(135deg,var(--teal-2),rgba(15,123,124,.03)); }
-    .story-card:nth-child(3) .story-result { border-left-color: var(--coral); color: var(--coral); background: linear-gradient(135deg,var(--coral-2),rgba(227,85,53,.02)); }
-    .story-card:nth-child(4) .story-result { border-left-color: var(--gold);  color: var(--gold);  background: linear-gradient(135deg,var(--gold-2),rgba(201,138,37,.02)); }
-    .story-card:nth-child(5) .story-result { border-left-color: var(--plum);  color: var(--plum);  background: linear-gradient(135deg,var(--plum-2),rgba(140,63,112,.02)); }
-    .story-card:nth-child(6) .story-result { border-left-color: var(--green); color: var(--green); background: linear-gradient(135deg,var(--green-2),rgba(26,173,107,.02)); }
+    .story:nth-child(1) .story-result { border-color:var(--violet); color:var(--violet); background:var(--violet-2); }
+    .story:nth-child(2) .story-result { border-color:var(--teal);   color:var(--teal);   background:var(--teal-2);   }
+    .story:nth-child(3) .story-result { border-color:var(--coral);  color:var(--coral);  background:var(--coral-2);  }
+    .story:nth-child(4) .story-result { border-color:var(--gold);   color:var(--gold);   background:var(--gold-2);   }
+    .story:nth-child(5) .story-result { border-color:var(--plum);   color:var(--plum);   background:var(--plum-2);   }
+    .story:nth-child(6) .story-result { border-color:var(--green);  color:var(--green);  background:var(--green-2);  }
+
+    /* doodle annotation on featured story */
+    .story-doodle-anno {
+      position: absolute; top: 18px; right: 18px;
+      font-family: var(--hand); font-size: .9rem;
+      color: var(--violet); opacity: .65;
+      display: flex; align-items: center; gap: 4px; transform: rotate(-2deg);
+    }
 
     /* ──────────────────────
        FOR STARTUPS
     ────────────────────── */
     .startup-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 24px;
     }
     .startup-card {
-      padding: 28px; border-radius: var(--r-xl);
+      padding: 26px; border-radius: var(--r-xl);
       background: var(--surface); border: 1px solid var(--line); box-shadow: var(--s-sm);
       transition: transform .2s, box-shadow .2s;
+      position: relative; overflow: hidden;
     }
     .startup-card:hover { transform: translateY(-3px); box-shadow: var(--s-lg); }
     .startup-q {
-      font-size: .76rem; font-weight: 800; letter-spacing: .06em;
-      text-transform: uppercase; color: var(--subtle); margin-bottom: 10px;
+      font-family: var(--hand); font-size: 1rem; font-weight: 600;
+      color: var(--subtle); margin-bottom: 8px;
     }
-    .startup-a { font-size: .97rem; font-weight: 600; color: var(--ink); line-height: 1.55; }
-    .startup-card.featured {
+    .startup-a { font-size: .96rem; font-weight: 600; color: var(--ink); line-height: 1.6; }
+
+    .startup-card.hero-card-dark {
       grid-column: span 2;
       background: linear-gradient(135deg, var(--dark), var(--dark-2));
-      border-color: rgba(255,255,255,.08);
+      border-color: rgba(255,255,255,.09);
     }
-    .startup-card.featured .startup-q { color: rgba(255,255,255,.4); }
-    .startup-card.featured .startup-a {
-      font-size: 1.18rem; color: #fff; line-height: 1.6;
+    .startup-card.hero-card-dark .startup-q { color: rgba(255,255,255,.38); }
+    .startup-card.hero-card-dark .startup-a {
+      font-size: 1.2rem; color: #fff; line-height: 1.65;
     }
-    .startup-card.featured .startup-a em {
+    .startup-card.hero-card-dark .startup-a em {
       font-style: normal; color: #c4b5fd;
+    }
+    /* speech bubble tail on featured card */
+    .startup-card.hero-card-dark::after {
+      content: ""; position: absolute;
+      bottom: -12px; left: 48px;
+      width: 0; height: 0;
+      border-left: 14px solid transparent;
+      border-right: 14px solid transparent;
+      border-top: 14px solid var(--dark-2);
     }
 
     /* ──────────────────────
        CONTACT
     ────────────────────── */
-    .contact-section {
+    .contact {
       margin-top: 24px; border-radius: var(--r-2xl); overflow: hidden;
-      background: var(--dark); padding: 56px 52px; position: relative;
+      background: var(--dark); padding: 60px 56px; position: relative;
     }
-    .contact-section::before {
+    .contact::before {
       content: ""; position: absolute; inset: 0;
       background:
-        radial-gradient(ellipse 60% 80% at 100% 50%, rgba(109,79,212,.2), transparent 60%),
-        radial-gradient(ellipse 40% 60% at 0%   80%, rgba(15,123,124,.12), transparent 55%);
+        radial-gradient(ellipse 60% 80% at 100% 50%, rgba(112,72,232,.22), transparent 58%),
+        radial-gradient(ellipse 40% 60% at 0%   80%, rgba(11,123,124,.14),  transparent 55%);
     }
     .contact-inner {
       position: relative; z-index: 1;
-      display: grid; grid-template-columns: 1fr 360px; gap: 48px; align-items: start;
+      display: grid; grid-template-columns: 1fr 360px; gap: 52px; align-items: start;
     }
-    .contact-section .section-label { color: #c4b5fd; }
-    .contact-section .section-label::before { background: #c4b5fd; }
+    .contact .sec-kicker { color: #c4b5fd; }
+    .contact .sec-kicker::before { background: #c4b5fd; }
     .contact-avail {
       display: inline-flex; align-items: center; gap: 8px;
       padding: 7px 13px; border-radius: 999px;
-      background: rgba(26,173,107,.12); border: 1px solid rgba(26,173,107,.2);
-      color: #3dd68c; font-size: .77rem; font-weight: 700; margin-bottom: 16px;
+      background: rgba(20,173,104,.12); border: 1px solid rgba(20,173,104,.22);
+      color: #3dd68c; font-size: .77rem; font-weight: 700; margin-bottom: 18px;
     }
-    .contact-section h2 {
+    .contact h2 {
       font-family: var(--serif);
       font-size: clamp(1.6rem, 2.8vw, 2.4rem);
       line-height: 1.15; letter-spacing: -.025em; color: #fff; margin-bottom: 16px;
     }
-    .contact-section p { font-size: .96rem; color: rgba(255,255,255,.48); line-height: 1.7; }
+    .contact p { font-size: .95rem; color: rgba(255,255,255,.46); line-height: 1.72; }
     .contact-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
 
-    .contact-card {
+    .cta-card {
       background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
       border-radius: var(--r-xl); padding: 26px; display: grid; gap: 10px;
     }
-    .contact-loc { font-size: .78rem; color: rgba(255,255,255,.32); font-weight: 600; margin-bottom: 4px; }
-    .contact-action {
+    .contact-loc { font-size: .76rem; color: rgba(255,255,255,.3); font-weight: 600; margin-bottom: 4px; }
+    .c-action {
       display: flex; align-items: center; gap: 14px;
-      padding: 15px 16px; border-radius: var(--r-md);
+      padding: 14px 16px; border-radius: var(--r-md);
       border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.04);
       transition: background .18s, border-color .18s, transform .18s;
     }
-    .contact-action:hover { background: rgba(255,255,255,.09); transform: translateX(4px); }
-    .contact-action.email:hover    { border-color: rgba(227,85,53,.3); }
-    .contact-action.whatsapp:hover { border-color: rgba(37,211,102,.3); }
-    .contact-action.linkedin:hover { border-color: rgba(10,102,194,.3); }
+    .c-action:hover { background: rgba(255,255,255,.09); transform: translateX(4px); }
+    .c-action.email:hover    { border-color: rgba(232,78,42,.35); }
+    .c-action.whatsapp:hover { border-color: rgba(37,211,102,.3); }
+    .c-action.linkedin:hover { border-color: rgba(10,102,194,.3); }
     .c-icon {
       width: 40px; height: 40px; border-radius: 11px;
       display: flex; align-items: center; justify-content: center; flex-shrink: 0;
     }
-    .contact-action.email    .c-icon { background: rgba(227,85,53,.15); color: var(--coral); }
-    .contact-action.whatsapp .c-icon { background: rgba(37,211,102,.12); color: #25d366; }
-    .contact-action.linkedin .c-icon { background: rgba(10,102,194,.12); color: #4da3f5; }
+    .c-action.email    .c-icon { background: rgba(232,78,42,.15); color: var(--coral); }
+    .c-action.whatsapp .c-icon { background: rgba(37,211,102,.12); color: #25d366; }
+    .c-action.linkedin .c-icon { background: rgba(10,102,194,.12); color: #4da3f5; }
     .c-icon svg { width: 18px; height: 18px; }
-    .c-label { font-size: .65rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.32); }
+    .c-label { font-size: .64rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.3); }
     .c-value { font-size: .92rem; font-weight: 700; color: #fff; }
+
+    /* ──────────────────────
+       DOODLE DECORATIVE ELEMENTS
+    ────────────────────── */
+
+    /* Floating scattered dots for section backgrounds */
+    @keyframes floatA { 0%,100% { transform: translateY(0)    rotate(0deg);   } 50% { transform: translateY(-8px)  rotate(6deg);  } }
+    @keyframes floatB { 0%,100% { transform: translateY(0)    rotate(0deg);   } 50% { transform: translateY(-12px) rotate(-4deg); } }
+    @keyframes floatC { 0%,100% { transform: translateY(0)    rotate(0deg);   } 50% { transform: translateY(-6px)  rotate(8deg);  } }
+    @keyframes spin   { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+    .deco-float-a { animation: floatA 6s ease-in-out infinite; }
+    .deco-float-b { animation: floatB 8s ease-in-out infinite; }
+    .deco-float-c { animation: floatC 5s ease-in-out infinite; }
+
+    /* section with scattered doodles */
+    .doodle-bg { position: relative; }
 
     /* ──────────────────────
        RESPONSIVE
     ────────────────────── */
-    @media (max-width: 900px) {
+    @media (max-width: 960px) {
       .hero { padding: 40px 28px; }
       .hero-inner { grid-template-columns: 1fr; }
-      .hero-card { display: none; }
+      .hero-panel { display: none; }
       .hero-proof { grid-template-columns: repeat(2,1fr); }
-      .pillars-grid { grid-template-columns: 1fr; }
-      .tools-grid { grid-template-columns: repeat(2,1fr); }
-      .mindset-grid { grid-template-columns: 1fr; }
-      .wins-grid { grid-template-columns: repeat(2,1fr); }
-      .stories-grid { grid-template-columns: 1fr; }
-      .startup-grid { grid-template-columns: 1fr; }
-      .startup-card.featured { grid-column: span 1; }
+      .pillars     { grid-template-columns: 1fr; }
+      .tools-wrap  { grid-template-columns: repeat(2,1fr); }
+      .mindset     { grid-template-columns: 1fr; }
+      .wins-grid   { grid-template-columns: repeat(2,1fr); }
+      .stories     { grid-template-columns: 1fr; }
+      .startup-grid{ grid-template-columns: 1fr; }
+      .startup-card.hero-card-dark { grid-column: span 1; }
+      .startup-card.hero-card-dark::after { display: none; }
       .contact-inner { grid-template-columns: 1fr; }
-      .contact-section { padding: 40px 28px; }
+      .contact { padding: 40px 28px; }
       .nav-links { display: none; }
     }
     @media (max-width: 600px) {
       .page { padding: 12px 12px 60px; }
-      .hero { padding: 28px 20px 32px; }
-      .wins-grid { grid-template-columns: repeat(2,1fr); }
-      .tools-grid { grid-template-columns: 1fr; }
+      .hero { padding: 28px 18px 36px; }
+      .wins-grid   { grid-template-columns: repeat(2,1fr); }
+      .tools-wrap  { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -622,21 +819,17 @@
         <span class="brand-sub">Product · Operations · Automation</span>
       </div>
     </div>
-
     <div class="nav-links">
       <a href="#skills">Skills</a>
+      <a href="#tools">Tools</a>
       <a href="#wins">Results</a>
       <a href="#stories">Work</a>
       <a href="#startups">For Startups</a>
       <a href="#contact">Contact</a>
     </div>
-
     <div class="nav-right">
-      <a class="alt-page-link" href="index.html">Healthcare version →</a>
-      <div class="avail-pill">
-        <span class="avail-dot"></span>
-        Open to Roles
-      </div>
+      <a class="alt-link" href="index.html">Healthcare version →</a>
+      <div class="avail-pill"><span class="avail-dot"></span>Open to Roles</div>
       <a class="nav-icon email" href="mailto:altafsimavatwala1991@gmail.com" aria-label="Email">
         <svg viewBox="0 0 24 24" fill="none"><path d="M4 7.5 12 13l8-5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="3.25" y="5.25" width="17.5" height="13.5" rx="3" stroke="currentColor" stroke-width="1.5"/></svg>
       </a>
@@ -648,411 +841,668 @@
 
   <!-- ── HERO ── -->
   <header class="hero reveal">
+
+    <!-- scattered doodle dots in background -->
+    <svg aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;overflow:hidden" viewBox="0 0 1160 520" preserveAspectRatio="xMidYMid slice">
+      <!-- stars -->
+      <g stroke="rgba(196,181,253,.25)" fill="none" stroke-width="1.5" stroke-linecap="round">
+        <path d="M80,60 L80,72 M74,66 L86,66 M75.5,61.5 L84.5,70.5 M84.5,61.5 L75.5,70.5"/>
+        <path d="M1060,80 L1060,92 M1054,86 L1066,86 M1055,81 L1065,91 M1065,81 L1055,91"/>
+        <path d="M950,420 L950,430 M945,425 L955,425 M946,421 L954,429 M954,421 L946,429"/>
+        <path d="M200,420 L200,430 M195,425 L205,425 M196,421 L204,429 M204,421 L196,429"/>
+      </g>
+      <!-- circles -->
+      <g stroke="rgba(94,234,212,.15)" fill="none" stroke-width="1.5">
+        <circle cx="1100" cy="200" r="24"/>
+        <circle cx="60"   cy="300" r="18"/>
+        <circle cx="600"  cy="480" r="14"/>
+      </g>
+      <!-- dots cluster -->
+      <g fill="rgba(196,181,253,.2)">
+        <circle cx="140" cy="140" r="3"/><circle cx="155" cy="128" r="2"/><circle cx="170" cy="140" r="2.5"/><circle cx="148" cy="155" r="2"/>
+        <circle cx="990" cy="340" r="3"/><circle cx="1006" cy="328" r="2.5"/><circle cx="1018" cy="342" r="2"/><circle cx="998" cy="357" r="2"/>
+      </g>
+      <!-- plus signs -->
+      <g stroke="rgba(94,234,212,.18)" fill="none" stroke-width="1.8" stroke-linecap="round">
+        <path d="M1020,130 L1020,144 M1013,137 L1027,137"/>
+        <path d="M130,390 L130,402 M123,396 L137,396"/>
+        <path d="M560,50 L560,62 M554,56 L566,56"/>
+      </g>
+      <!-- wavy squiggle top right decoration -->
+      <path d="M900,30 Q920,22 940,30 Q960,38 980,30 Q1000,22 1020,30" stroke="rgba(196,181,253,.2)" fill="none" stroke-width="2" stroke-linecap="round"/>
+      <!-- wavy squiggle bottom left -->
+      <path d="M60,480 Q80,472 100,480 Q120,488 140,480 Q160,472 180,480" stroke="rgba(94,234,212,.18)" fill="none" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+
     <div class="hero-inner">
       <div class="hero-left">
-        <div class="hero-tag-row">
-          <span class="hero-role-tag accent">Head of Product</span>
-          <span class="hero-role-tag accent">Program Manager</span>
-          <span class="hero-role-tag accent">Growth Ops</span>
-          <span class="hero-role-tag">Open to Remote</span>
+
+        <div class="hero-roles">
+          <span class="role-chip lit">Head of Product</span>
+          <span class="role-chip lit">Program Manager</span>
+          <span class="role-chip lit">Growth Ops</span>
+          <span class="role-chip">Open to Remote</span>
         </div>
 
-        <h1 class="hero-headline">I own delivery<br><em>end to end</em><br>and fix the flows.</h1>
-
-        <p class="hero-sub">
-          I step into messy, fast-moving environments and bring the structure, visibility, and execution rhythm that lets teams scale without breaking.
-        </p>
-
-        <p class="hero-bio">
-          15+ years of building systems, leading cross-functional teams, designing automation, and translating strategy into shipped outcomes. My edge is that I see how work actually flows — where it gets stuck, why it breaks, and what to change so it doesn't happen again. I'm not a specialist tied to one sector. I'm an operator who gets results in any environment where process, product, and people need to work together.
-        </p>
-
-        <div class="hero-proof">
-          <div class="proof-cell">
-            <div class="proof-num">42%</div>
-            <div class="proof-label">Cycle time cut — 72 days down to 42</div>
+        <div>
+          <h1 class="hero-headline">
+            I own delivery<br>
+            <!-- doodle squiggly underline on gradient text -->
+            <span style="position:relative;display:inline-block;padding-bottom:8px;">
+              <span class="grad">end&nbsp;to&nbsp;end</span>
+              <svg aria-hidden="true" style="position:absolute;bottom:0;left:0;width:100%;height:12px;overflow:visible" viewBox="0 0 200 12" preserveAspectRatio="none">
+                <path d="M2,8 Q25,2 50,8 Q75,14 100,8 Q125,2 150,8 Q175,14 198,8" stroke="rgba(196,181,253,.6)" fill="none" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
+            </span><br>
+            and fix the flows.
+          </h1>
+          <!-- doodle annotation next to headline -->
+          <div style="margin-top:8px;display:flex;align-items:center;gap:8px;">
+            <svg aria-hidden="true" width="36" height="20" viewBox="0 0 36 20" fill="none">
+              <path d="M2,10 Q12,4 28,10" stroke="rgba(196,181,253,.45)" fill="none" stroke-width="2" stroke-linecap="round"/>
+              <path d="M23,5 L30,10 L23,15" stroke="rgba(196,181,253,.45)" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span style="font-family:var(--hand);font-size:1rem;color:rgba(196,181,253,.55);">that's the whole job</span>
           </div>
-          <div class="proof-cell">
-            <div class="proof-num">25%</div>
-            <div class="proof-label">Capacity unlocked without new hires</div>
+        </div>
+
+        <p class="hero-sub">I step into messy, fast-moving environments and bring the structure, visibility, and execution rhythm that lets teams scale without breaking.</p>
+
+        <p class="hero-bio">15+ years building systems, leading cross-functional teams, designing automation, and translating strategy into shipped outcomes. I see how work actually flows — where it gets stuck, why it breaks, and what to change so it doesn't happen again. I'm not a specialist tied to one sector. I'm an operator who gets results wherever process, product, and people need to work together.</p>
+
+        <!-- proof stats -->
+        <div>
+          <div class="proof-anno">
+            <svg width="22" height="14" viewBox="0 0 22 14" fill="none" aria-hidden="true">
+              <path d="M2,7 Q8,2 18,7" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M14,3 L20,7 L14,11" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            real numbers, not fluff
           </div>
-          <div class="proof-cell">
-            <div class="proof-num">95%</div>
-            <div class="proof-label">Forecasting accuracy from scratch</div>
-          </div>
-          <div class="proof-cell">
-            <div class="proof-num">12</div>
-            <div class="proof-label">Teams kept aligned as one system</div>
+          <div class="hero-proof">
+            <div class="proof-cell">
+              <div class="proof-num">42%</div>
+              <div class="proof-label">Cycle time cut — 72 days to 42</div>
+            </div>
+            <div class="proof-cell">
+              <div class="proof-num">25%</div>
+              <div class="proof-label">Capacity unlocked without new hires</div>
+            </div>
+            <div class="proof-cell">
+              <div class="proof-num">95%</div>
+              <div class="proof-label">Forecasting accuracy built from scratch</div>
+            </div>
+            <div class="proof-cell">
+              <div class="proof-num">12</div>
+              <div class="proof-label">Teams kept aligned as one system</div>
+            </div>
           </div>
         </div>
 
         <div class="hero-ctas">
           <a class="btn btn-violet" href="#stories">See How I Work</a>
-          <a class="btn btn-ghost" href="#startups">Why Startups</a>
-          <a class="btn btn-ghost" href="#contact">Get in Touch</a>
+          <a class="btn btn-ghost"  href="#startups">Why Startups</a>
+          <a class="btn btn-ghost"  href="#contact">Get in Touch</a>
         </div>
       </div>
 
-      <!-- right card -->
-      <aside class="hero-card reveal d1">
-        <div class="hero-card-label">What I bring on day one</div>
-        <div class="fit-item">
-          <div class="fit-icon" style="background:rgba(109,79,212,.2)">🧭</div>
-          <div class="fit-text">
-            <strong>Systems clarity</strong>
-            <span>I map how work flows, find the friction, and redesign it — fast.</span>
-          </div>
+      <!-- right panel -->
+      <aside class="hero-panel reveal d1">
+        <div class="hero-panel-label">✦ what I bring on day one</div>
+        <div class="day1-item">
+          <div class="day1-icon" style="background:rgba(112,72,232,.2)">🧭</div>
+          <div><strong>Systems clarity</strong><span>I map how work flows, find the friction, and redesign it — fast.</span></div>
         </div>
-        <div class="fit-item">
-          <div class="fit-icon" style="background:rgba(15,123,124,.2)">📦</div>
-          <div class="fit-text">
-            <strong>Delivery ownership</strong>
-            <span>Requirements in, shipped outcomes out. I close the loop every time.</span>
-          </div>
+        <div class="day1-item">
+          <div class="day1-icon" style="background:rgba(11,123,124,.2)">📦</div>
+          <div><strong>Delivery ownership</strong><span>Requirements in, shipped outcomes out. I close the loop every time.</span></div>
         </div>
-        <div class="fit-item">
-          <div class="fit-icon" style="background:rgba(201,138,37,.2)">📊</div>
-          <div class="fit-text">
-            <strong>Data-driven decisions</strong>
-            <span>Power BI, SQL, Excel — I build visibility tools that actually get used.</span>
-          </div>
+        <div class="day1-item">
+          <div class="day1-icon" style="background:rgba(212,145,30,.2)">📊</div>
+          <div><strong>Data-driven decisions</strong><span>Power BI, SQL, Excel — visibility tools that actually get used.</span></div>
         </div>
-        <div class="fit-item">
-          <div class="fit-icon" style="background:rgba(26,173,107,.2)">⚡</div>
-          <div class="fit-text">
-            <strong>Automation instinct</strong>
-            <span>I spot manual work and eliminate it before it becomes a bottleneck.</span>
-          </div>
+        <div class="day1-item">
+          <div class="day1-icon" style="background:rgba(20,173,104,.2)">⚡</div>
+          <div><strong>Automation instinct</strong><span>I spot manual work and eliminate it before it becomes a bottleneck.</span></div>
         </div>
-        <div class="fit-item">
-          <div class="fit-icon" style="background:rgba(227,85,53,.18)">🤝</div>
-          <div class="fit-text">
-            <strong>Client &amp; team trust</strong>
-            <span>I keep stakeholders confident and internal teams executing cleanly.</span>
-          </div>
+        <div class="day1-item">
+          <div class="day1-icon" style="background:rgba(232,78,42,.18)">🤝</div>
+          <div><strong>Client &amp; team trust</strong><span>I keep stakeholders confident and internal teams executing cleanly.</span></div>
         </div>
       </aside>
     </div>
   </header>
 
   <!-- ── WHAT I DO ── -->
-  <section id="skills" style="margin-top:24px;" class="reveal d1">
-    <div class="section-label">What I Do</div>
-    <h2 class="section-title mt4">Four things I do exceptionally well.</h2>
-    <p class="section-copy mt16">These aren't job descriptions. They're patterns that show up everywhere I've worked, regardless of the product, team size, or domain.</p>
-    <div class="pillars-grid">
-      <article class="pillar-card">
-        <div class="pillar-icon">🔁</div>
+  <section class="sec doodle-bg reveal d1" id="skills">
+
+    <!-- floating doodles around section -->
+    <div style="position:absolute;top:-14px;right:60px;pointer-events:none;" aria-hidden="true">
+      <svg class="deco-float-a" width="42" height="42" viewBox="0 0 42 42" fill="none">
+        <path d="M21,4 L24.5,14.5 L35.5,14.5 L26.5,21 L30,32 L21,25.5 L12,32 L15.5,21 L6.5,14.5 L17.5,14.5 Z" stroke="var(--violet)" fill="rgba(112,72,232,.1)" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div style="position:absolute;top:20px;left:-10px;pointer-events:none;" aria-hidden="true">
+      <svg class="deco-float-b" width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <circle cx="14" cy="14" r="12" stroke="var(--teal)" fill="none" stroke-width="1.5" stroke-dasharray="3 3"/>
+      </svg>
+    </div>
+
+    <div class="sec-kicker">What I Do</div>
+    <h2 class="sec-title mt4">
+      Four things I do
+      <span style="position:relative;display:inline-block;">
+        exceptionally well.
+        <svg aria-hidden="true" style="position:absolute;bottom:-4px;left:0;width:100%;height:8px;overflow:visible" viewBox="0 0 220 8" preserveAspectRatio="none">
+          <path d="M2,6 Q55,1 110,5 Q165,9 218,4" stroke="var(--coral)" fill="none" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </span>
+    </h2>
+    <p class="sec-copy mt16">These aren't job descriptions — they're patterns that show up everywhere I've worked, regardless of the product, team size, or domain.</p>
+
+    <div class="pillars">
+
+      <article class="pillar reveal">
+        <div class="pillar-anno">key strength ✦</div>
+        <div class="pillar-icon-wrap">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+            <path d="M5,15 Q5,5 15,5 Q25,5 25,15 Q25,25 15,25 Q5,25 5,15" stroke="var(--violet)" fill="none" stroke-width="2" stroke-linecap="round"/>
+            <path d="M10,15 L14,19 L21,10" stroke="var(--violet)" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
         <h3>Process Architecture</h3>
-        <p>I map how work actually moves through a system, not how it's supposed to move. I find the gaps, the handoff failures, and the silent bottlenecks — then redesign the flow so teams stop working around the same problems every week.</p>
-        <div class="pillar-signals">
-          <span class="sig-pill">Flow mapping</span>
-          <span class="sig-pill">Bottleneck analysis</span>
-          <span class="sig-pill">SOP design</span>
-          <span class="sig-pill">Root cause</span>
-          <span class="sig-pill">Process redesign</span>
+        <p>I map how work actually moves through a system — not how it's supposed to. I find the gaps, the handoff failures, the silent bottlenecks, then redesign the flow so teams stop working around the same problems every week.</p>
+        <div class="tag-row">
+          <span class="tag">Flow mapping</span><span class="tag">Bottleneck analysis</span>
+          <span class="tag">SOP design</span><span class="tag">Root cause</span><span class="tag">Process redesign</span>
         </div>
       </article>
 
-      <article class="pillar-card">
-        <div class="pillar-icon">🚀</div>
+      <article class="pillar reveal d1">
+        <div class="pillar-icon-wrap">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+            <path d="M6,22 L6,10 Q6,6 10,6 L20,6 Q24,6 24,10 L24,20 Q24,24 20,24 L10,24 Q8,24 6,22" stroke="var(--teal)" fill="none" stroke-width="2" stroke-linecap="round"/>
+            <path d="M10,12 L20,12 M10,16 L17,16" stroke="var(--teal)" fill="none" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
         <h3>Product &amp; Program Delivery</h3>
-        <p>I own the gap between what gets decided and what gets shipped. I shape requirements, prioritize backlogs by real ROI, write BRDs that developers can build from, and keep delivery moving through ambiguity, competing priorities, and changing specs.</p>
-        <div class="pillar-signals">
-          <span class="sig-pill">Backlog prioritization</span>
-          <span class="sig-pill">BRD writing</span>
-          <span class="sig-pill">Roadmapping</span>
-          <span class="sig-pill">Stakeholder alignment</span>
-          <span class="sig-pill">Sprint management</span>
+        <p>I own the gap between what gets decided and what gets shipped. I shape requirements, prioritize backlogs by real ROI, write BRDs that developers can build from, and keep delivery moving through ambiguity and changing specs.</p>
+        <div class="tag-row">
+          <span class="tag">Backlog prioritization</span><span class="tag">BRD writing</span>
+          <span class="tag">Roadmapping</span><span class="tag">Stakeholder alignment</span><span class="tag">Sprint management</span>
         </div>
       </article>
 
-      <article class="pillar-card">
-        <div class="pillar-icon">📊</div>
+      <article class="pillar reveal d1">
+        <div class="pillar-icon-wrap">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+            <path d="M5,22 L10,14 L15,18 L20,8 L25,12" stroke="var(--coral)" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M5,25 L25,25" stroke="var(--coral)" fill="none" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="25" cy="12" r="2.5" fill="var(--coral)" opacity=".5"/>
+          </svg>
+        </div>
         <h3>Data Visibility &amp; Decision Tools</h3>
-        <p>I build dashboards, KPI frameworks, and forecasting models that give leadership real signal — not just numbers. I use Power BI, SQL, and Excel to make operational data legible so the right decisions get made faster.</p>
-        <div class="pillar-signals">
-          <span class="sig-pill">Power BI</span>
-          <span class="sig-pill">SQL</span>
-          <span class="sig-pill">Advanced Excel</span>
-          <span class="sig-pill">KPI design</span>
-          <span class="sig-pill">Forecasting</span>
-          <span class="sig-pill">Reporting systems</span>
+        <p>I build dashboards, KPI frameworks, and forecasting models that give leadership real signal — not just numbers. Power BI, SQL, and Excel become tools that change what decisions get made and how fast they get made.</p>
+        <div class="tag-row">
+          <span class="tag">Power BI</span><span class="tag">SQL</span>
+          <span class="tag">Advanced Excel</span><span class="tag">KPI design</span><span class="tag">Forecasting</span>
         </div>
       </article>
 
-      <article class="pillar-card">
-        <div class="pillar-icon">⚡</div>
+      <article class="pillar reveal d2">
+        <div class="pillar-icon-wrap">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+            <path d="M15,5 L15,10 M15,20 L15,25 M5,15 L10,15 M20,15 L25,15" stroke="var(--gold)" fill="none" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="15" cy="15" r="4.5" stroke="var(--gold)" fill="none" stroke-width="2"/>
+            <path d="M8.5,8.5 L11.8,11.8 M18.2,18.2 L21.5,21.5 M21.5,8.5 L18.2,11.8 M11.8,18.2 L8.5,21.5" stroke="var(--gold)" fill="none" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
         <h3>Automation &amp; Operational Leverage</h3>
-        <p>I find manual work and eliminate it. I've led automation programs end to end — documenting current-state workflows, ranking tasks by impact and frequency, writing specs, validating output, and measuring the hours and dollars saved.</p>
-        <div class="pillar-signals">
-          <span class="sig-pill">Workflow automation</span>
-          <span class="sig-pill">Process documentation</span>
-          <span class="sig-pill">Impact measurement</span>
-          <span class="sig-pill">Tool integration</span>
-          <span class="sig-pill">ROI validation</span>
+        <p>I find manual work and eliminate it. I've led automation programs end to end — documenting workflows, ranking tasks by impact, writing specs, validating output, and measuring the hours and dollars saved.</p>
+        <div class="tag-row">
+          <span class="tag">Workflow automation</span><span class="tag">Process documentation</span>
+          <span class="tag">Impact measurement</span><span class="tag">Tool integration</span><span class="tag">ROI validation</span>
         </div>
       </article>
+
     </div>
   </section>
 
   <!-- ── TOOLS ── -->
-  <section style="margin-top:24px;" class="card reveal d1">
-    <div class="section-label teal">Tools &amp; Stack</div>
-    <h2 class="section-title mt4">I work best with data, systems, and automation tooling.</h2>
-    <div class="tools-grid mt24">
-      <div class="tool-card reveal">
-        <div class="tool-icon-wrap">📊</div>
-        <div>
-          <div class="tool-name">Power BI</div>
-          <div class="tool-desc">Dashboards, KPI reporting, operational visibility, and executive-ready data storytelling.</div>
+  <section class="sec card reveal" id="tools">
+
+    <div class="sec-kicker teal">Tools &amp; Stack</div>
+    <h2 class="sec-title mt4">I work best with data, systems, and automation tooling.</h2>
+
+    <!-- hand annotation -->
+    <div style="display:flex;align-items:center;gap:8px;margin-top:10px;">
+      <span style="font-family:var(--hand);font-size:1.05rem;color:var(--subtle);">these 3 are my daily drivers</span>
+      <svg width="32" height="18" viewBox="0 0 32 18" fill="none" aria-hidden="true">
+        <path d="M2,9 Q12,3 28,9" stroke="var(--subtle)" fill="none" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M23,4 L30,9 L23,14" stroke="var(--subtle)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <div class="tools-wrap">
+
+      <div class="tool reveal">
+        <div class="tool-star-badge">★ daily driver</div>
+        <div class="tool-head">
+          <div class="tool-emoji">📊</div>
+          <div><div class="tool-name">Power BI</div><div class="tool-sub">Data Visualisation</div></div>
         </div>
-        <div class="tool-bar-wrap">
-          <div style="font-size:.7rem;font-weight:700;color:var(--subtle);">Proficiency</div>
-          <div class="tool-bar-track"><div class="tool-bar-fill" style="width:90%"></div></div>
-        </div>
+        <p class="tool-desc">Dashboards, KPI reporting, operational visibility, and executive-ready data storytelling that drives decisions.</p>
+        <div class="skill-bar-label"><span>Proficiency</span><strong>Expert</strong></div>
+        <div class="bar-track"><div class="bar-fill" style="width:90%"></div></div>
       </div>
 
-      <div class="tool-card reveal d1">
-        <div class="tool-icon-wrap">🗄️</div>
-        <div>
-          <div class="tool-name">SQL</div>
-          <div class="tool-desc">Data querying, transformation logic, operational reporting, and pipeline-level thinking.</div>
+      <div class="tool reveal d1">
+        <div class="tool-star-badge">★ daily driver</div>
+        <div class="tool-head">
+          <div class="tool-emoji">🗄️</div>
+          <div><div class="tool-name">SQL</div><div class="tool-sub">Data Querying</div></div>
         </div>
-        <div class="tool-bar-wrap">
-          <div style="font-size:.7rem;font-weight:700;color:var(--subtle);">Proficiency</div>
-          <div class="tool-bar-track"><div class="tool-bar-fill" style="width:80%"></div></div>
-        </div>
+        <p class="tool-desc">Data querying, transformation logic, operational reporting, and pipeline-level analytical thinking.</p>
+        <div class="skill-bar-label"><span>Proficiency</span><strong>Advanced</strong></div>
+        <div class="bar-track"><div class="bar-fill" style="width:80%"></div></div>
       </div>
 
-      <div class="tool-card reveal d2">
-        <div class="tool-icon-wrap">📗</div>
-        <div>
-          <div class="tool-name">Excel (Advanced)</div>
-          <div class="tool-desc">Complex models, forecasting, pivot analysis, and operational tracking systems.</div>
+      <div class="tool reveal d2">
+        <div class="tool-star-badge">★ daily driver</div>
+        <div class="tool-head">
+          <div class="tool-emoji">📗</div>
+          <div><div class="tool-name">Excel (Advanced)</div><div class="tool-sub">Modelling &amp; Analysis</div></div>
         </div>
-        <div class="tool-bar-wrap">
-          <div style="font-size:.7rem;font-weight:700;color:var(--subtle);">Proficiency</div>
-          <div class="tool-bar-track"><div class="tool-bar-fill" style="width:95%"></div></div>
-        </div>
+        <p class="tool-desc">Complex models, forecasting, pivot analysis, and operational tracking systems built to last.</p>
+        <div class="skill-bar-label"><span>Proficiency</span><strong>Expert</strong></div>
+        <div class="bar-track"><div class="bar-fill" style="width:95%"></div></div>
       </div>
 
-      <div class="tool-card reveal">
-        <div class="tool-icon-wrap">🎯</div>
-        <div>
-          <div class="tool-name">Jira / Project Tools</div>
-          <div class="tool-desc">Backlog management, sprint planning, ticket auditing, delivery tracking, and roadmap ownership.</div>
+      <div class="tool reveal">
+        <div class="tool-head">
+          <div class="tool-emoji">🎯</div>
+          <div><div class="tool-name">Jira / PM Tools</div><div class="tool-sub">Project Management</div></div>
         </div>
-        <div class="tool-bar-wrap">
-          <div style="font-size:.7rem;font-weight:700;color:var(--subtle);">Proficiency</div>
-          <div class="tool-bar-track"><div class="tool-bar-fill" style="width:88%"></div></div>
-        </div>
+        <p class="tool-desc">Backlog management, sprint planning, ticket auditing, delivery tracking, and roadmap ownership.</p>
+        <div class="skill-bar-label"><span>Proficiency</span><strong>Advanced</strong></div>
+        <div class="bar-track"><div class="bar-fill" style="width:88%"></div></div>
       </div>
 
-      <div class="tool-card reveal d1">
-        <div class="tool-icon-wrap">⚙️</div>
-        <div>
-          <div class="tool-name">Automation Workflows</div>
-          <div class="tool-desc">End-to-end automation scoping, BRD writing, output validation, and ROI measurement.</div>
+      <div class="tool reveal d1">
+        <div class="tool-head">
+          <div class="tool-emoji">⚙️</div>
+          <div><div class="tool-name">Automation Design</div><div class="tool-sub">Workflow Automation</div></div>
         </div>
-        <div class="tool-bar-wrap">
-          <div style="font-size:.7rem;font-weight:700;color:var(--subtle);">Proficiency</div>
-          <div class="tool-bar-track"><div class="tool-bar-fill" style="width:85%"></div></div>
-        </div>
+        <p class="tool-desc">End-to-end automation scoping, BRD writing, output validation, and ROI measurement from day one.</p>
+        <div class="skill-bar-label"><span>Proficiency</span><strong>Advanced</strong></div>
+        <div class="bar-track"><div class="bar-fill" style="width:85%"></div></div>
       </div>
 
-      <div class="tool-card reveal d2">
-        <div class="tool-icon-wrap">🗺️</div>
-        <div>
-          <div class="tool-name">Process &amp; Strategy</div>
-          <div class="tool-desc">Flow mapping, gap analysis, improvement frameworks, and ROI-based prioritization systems.</div>
+      <div class="tool reveal d2">
+        <div class="tool-head">
+          <div class="tool-emoji">🗺️</div>
+          <div><div class="tool-name">Process Strategy</div><div class="tool-sub">Systems Thinking</div></div>
         </div>
-        <div class="tool-bar-wrap">
-          <div style="font-size:.7rem;font-weight:700;color:var(--subtle);">Proficiency</div>
-          <div class="tool-bar-track"><div class="tool-bar-fill" style="width:93%"></div></div>
-        </div>
+        <p class="tool-desc">Flow mapping, gap analysis, improvement frameworks, and ROI-based prioritization systems that stick.</p>
+        <div class="skill-bar-label"><span>Proficiency</span><strong>Expert</strong></div>
+        <div class="bar-track"><div class="bar-fill" style="width:93%"></div></div>
       </div>
+
     </div>
   </section>
 
   <!-- ── HOW I THINK ── -->
-  <section style="margin-top:24px;" class="reveal">
-    <div class="section-label coral">How I Think</div>
-    <h2 class="section-title mt4">The mindset behind every result I've delivered.</h2>
-    <p class="section-copy mt16">Skills are the tools. These are the instincts that decide how I use them.</p>
-    <div class="mindset-grid mt24">
-      <article class="mindset-card">
-        <div class="mindset-num">01</div>
-        <div>
-          <strong>I see the system, not just the task.</strong>
-          <span>When something breaks, I don't fix the symptom. I trace it to the structural reason — the bad handoff, the missing feedback loop, the assumption nobody questioned. Then I fix that.</span>
+  <section class="sec doodle-bg reveal">
+
+    <!-- floating deco -->
+    <div style="position:absolute;top:-10px;right:20px;pointer-events:none;" aria-hidden="true">
+      <svg class="deco-float-c" width="36" height="36" viewBox="0 0 36 36" fill="none">
+        <path d="M18,3 Q33,3 33,18 Q33,33 18,33 Q3,33 3,18 Q3,3 18,3" stroke="var(--coral)" fill="none" stroke-width="1.5" stroke-dasharray="4 3"/>
+      </svg>
+    </div>
+
+    <div class="sec-kicker coral">How I Think</div>
+    <h2 class="sec-title mt4">The mindset behind every result.</h2>
+    <p class="sec-copy mt16">Skills are the tools. These are the instincts that decide how I use them.</p>
+
+    <div class="mindset">
+
+      <article class="mind-card reveal">
+        <div class="mind-num">01</div>
+        <span class="mind-icon">🔍</span>
+        <div class="mind-title-wrap">
+          <strong>
+            I see the system, not just the task.
+            <svg aria-hidden="true" style="display:block;margin-top:3px;width:200px;height:7px;overflow:visible" viewBox="0 0 200 7" preserveAspectRatio="none">
+              <path d="M2,5 Q50,1 100,4 Q150,7 198,3" stroke="var(--violet)" fill="none" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+            </svg>
+          </strong>
         </div>
+        <p>When something breaks, I don't fix the symptom. I trace it to the structural reason — the bad handoff, the missing feedback loop, the assumption nobody questioned. Then I fix that.</p>
       </article>
-      <article class="mindset-card">
-        <div class="mindset-num">02</div>
-        <div>
-          <strong>I prioritize by ROI, not by noise.</strong>
-          <span>Every backlog, every roadmap, every automation project — I ask: what's the real dollar or hour value here? That question cuts through opinion and makes resource decisions defensible.</span>
+
+      <article class="mind-card reveal d1">
+        <div class="mind-num">02</div>
+        <span class="mind-icon">💰</span>
+        <div class="mind-title-wrap">
+          <strong>
+            I prioritize by ROI, not by noise.
+            <svg aria-hidden="true" style="display:block;margin-top:3px;width:200px;height:7px;overflow:visible" viewBox="0 0 200 7" preserveAspectRatio="none">
+              <path d="M2,5 Q50,1 100,4 Q150,7 198,3" stroke="var(--teal)" fill="none" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+            </svg>
+          </strong>
         </div>
+        <p>Every backlog, roadmap, automation project — I ask: what's the real dollar or hour value here? That question cuts through opinion and makes resource decisions defensible.</p>
       </article>
-      <article class="mindset-card">
-        <div class="mindset-num">03</div>
-        <div>
-          <strong>I translate between business and tech.</strong>
-          <span>I sit between what leadership wants, what clients need, and what engineers can build. I turn ambiguous goals into structured requirements — and I check whether what shipped actually matched the intent.</span>
+
+      <article class="mind-card reveal d1">
+        <div class="mind-num">03</div>
+        <span class="mind-icon">🔗</span>
+        <div class="mind-title-wrap">
+          <strong>
+            I translate between business and tech.
+            <svg aria-hidden="true" style="display:block;margin-top:3px;width:220px;height:7px;overflow:visible" viewBox="0 0 220 7" preserveAspectRatio="none">
+              <path d="M2,5 Q55,1 110,4 Q165,7 218,3" stroke="var(--coral)" fill="none" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+            </svg>
+          </strong>
         </div>
+        <p>I turn ambiguous goals into structured requirements — and I check whether what shipped actually matched the intent. No more "that's not what we asked for."</p>
       </article>
-      <article class="mindset-card">
-        <div class="mindset-num">04</div>
-        <div>
-          <strong>I make visibility a habit, not a report.</strong>
-          <span>Dashboards nobody reads are decoration. I design reporting systems that change what decisions get made. If a metric isn't driving action, it shouldn't exist.</span>
+
+      <article class="mind-card reveal d2">
+        <div class="mind-num">04</div>
+        <span class="mind-icon">📡</span>
+        <div class="mind-title-wrap">
+          <strong>
+            I make visibility a habit, not a report.
+            <svg aria-hidden="true" style="display:block;margin-top:3px;width:230px;height:7px;overflow:visible" viewBox="0 0 230 7" preserveAspectRatio="none">
+              <path d="M2,5 Q58,1 115,4 Q172,7 228,3" stroke="var(--gold)" fill="none" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+            </svg>
+          </strong>
         </div>
+        <p>Dashboards nobody reads are decoration. I design reporting systems that change what decisions get made. If a metric isn't driving action, it shouldn't exist.</p>
       </article>
+
     </div>
   </section>
 
-  <!-- ── WINS BAND ── -->
+  <!-- ── WINS ── -->
   <section class="wins-band reveal d1" id="wins">
+    <!-- scattered doodle dots -->
+    <svg aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:hidden" viewBox="0 0 1160 280" preserveAspectRatio="xMidYMid slice">
+      <g fill="rgba(196,181,253,.15)">
+        <circle cx="50" cy="50" r="3.5"/><circle cx="70" cy="38" r="2.5"/><circle cx="62" cy="64" r="2"/>
+        <circle cx="1100" cy="220" r="3.5"/><circle cx="1120" cy="205" r="2"/><circle cx="1110" cy="236" r="2.5"/>
+        <circle cx="580" cy="15" r="2.5"/><circle cx="598" cy="26" r="2"/>
+      </g>
+      <g stroke="rgba(94,234,212,.12)" fill="none" stroke-width="1.5">
+        <path d="M1050,40 L1050,52 M1044,46 L1056,46"/>
+        <path d="M100,230 L100,242 M94,236 L106,236"/>
+      </g>
+      <!-- big circle doodle around section -->
+      <ellipse cx="580" cy="140" rx="560" ry="126" stroke="rgba(196,181,253,.05)" fill="none" stroke-width="1"/>
+    </svg>
+
     <div class="wins-inner">
-      <div class="section-label">Results That Travel</div>
-      <h2 class="section-title mt4">Numbers that prove the pattern — no industry required.</h2>
+      <div class="sec-kicker">Results That Travel</div>
+
+      <!-- doodle annotation -->
+      <div style="display:flex;align-items:center;gap:8px;margin-top:6px;margin-bottom:4px;" aria-hidden="true">
+        <span style="font-family:var(--hand);font-size:1.1rem;color:rgba(196,181,253,.55);">no industry required →</span>
+      </div>
+
+      <h2 class="sec-title mt4">Numbers that prove the pattern.</h2>
       <div class="wins-grid">
+
         <div class="win-cell">
-          <div class="win-num">42%</div>
+          <!-- doodle circle around number -->
+          <div style="position:relative;display:inline-block;margin-bottom:10px;">
+            <span class="win-num">42%</span>
+            <svg aria-hidden="true" style="position:absolute;inset:-10px -14px;width:calc(100% + 28px);height:calc(100% + 20px);pointer-events:none;overflow:visible" viewBox="0 0 90 56" preserveAspectRatio="none">
+              <path d="M45,4 Q86,4 86,28 Q86,52 45,52 Q4,52 4,28 Q4,4 45,4" stroke="rgba(196,181,253,.3)" fill="none" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
           <div class="win-desc">Reduction in end-to-end cycle time by rebuilding the reconciliation flow and removing communication drag.</div>
+          <!-- corner doodle -->
+          <svg class="win-doodle" width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+            <path d="M5,5 Q25,5 25,15 Q25,28 15,28" stroke="rgba(196,181,253,.6)" fill="none" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
         </div>
+
         <div class="win-cell">
-          <div class="win-num">20–25%</div>
-          <div class="win-desc">Capacity increase without adding headcount — by testing and eliminating a false constraint.</div>
+          <div style="position:relative;display:inline-block;margin-bottom:10px;">
+            <span class="win-num">20–25%</span>
+            <svg aria-hidden="true" style="position:absolute;inset:-10px -14px;width:calc(100% + 28px);height:calc(100% + 20px);pointer-events:none;overflow:visible" viewBox="0 0 130 56" preserveAspectRatio="none">
+              <path d="M65,4 Q126,4 126,28 Q126,52 65,52 Q4,52 4,28 Q4,4 65,4" stroke="rgba(232,78,42,.25)" fill="none" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="win-desc">Capacity increase without adding headcount — by testing and eliminating a false constraint everyone accepted.</div>
+          <svg class="win-doodle" width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+            <path d="M5,25 Q5,5 15,5 Q28,5 28,15" stroke="rgba(232,78,42,.5)" fill="none" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
         </div>
+
         <div class="win-cell">
-          <div class="win-num">90–95%</div>
-          <div class="win-desc">Forecasting accuracy achieved using ignored operational data, historical patterns, and manual modelling logic.</div>
+          <div style="position:relative;display:inline-block;margin-bottom:10px;">
+            <span class="win-num">90–95%</span>
+            <svg aria-hidden="true" style="position:absolute;inset:-10px -14px;width:calc(100% + 28px);height:calc(100% + 20px);pointer-events:none;overflow:visible" viewBox="0 0 130 56" preserveAspectRatio="none">
+              <path d="M65,4 Q126,4 126,28 Q126,52 65,52 Q4,52 4,28 Q4,4 65,4" stroke="rgba(212,145,30,.25)" fill="none" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="win-desc">Forecasting accuracy achieved using ignored operational data, historical patterns, and manual modelling.</div>
+          <svg class="win-doodle" width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+            <path d="M25,5 Q5,5 5,20 Q5,28 15,28" stroke="rgba(212,145,30,.5)" fill="none" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
         </div>
+
         <div class="win-cell">
-          <div class="win-num">$25K</div>
+          <div style="position:relative;display:inline-block;margin-bottom:10px;">
+            <span class="win-num">$25K</span>
+            <svg aria-hidden="true" style="position:absolute;inset:-10px -14px;width:calc(100% + 28px);height:calc(100% + 20px);pointer-events:none;overflow:visible" viewBox="0 0 90 56" preserveAspectRatio="none">
+              <path d="M45,4 Q86,4 86,28 Q86,52 45,52 Q4,52 4,28 Q4,4 45,4" stroke="rgba(11,123,124,.3)" fill="none" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
           <div class="win-desc">Saved in a single month by catching a silent system failure buried inside vendor invoices.</div>
         </div>
+
         <div class="win-cell">
-          <div class="win-num">12</div>
-          <div class="win-desc">Teams coordinated as one operating system — no missed handoffs, no accountability gaps.</div>
+          <div style="position:relative;display:inline-block;margin-bottom:10px;">
+            <span class="win-num">12</span>
+            <svg aria-hidden="true" style="position:absolute;inset:-10px -16px;width:calc(100% + 32px);height:calc(100% + 20px);pointer-events:none;overflow:visible" viewBox="0 0 72 56" preserveAspectRatio="none">
+              <path d="M36,4 Q68,4 68,28 Q68,52 36,52 Q4,52 4,28 Q4,4 36,4" stroke="rgba(20,173,104,.28)" fill="none" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="win-desc">Teams coordinated as one operating system — no missed handoffs, no accountability gaps at any stage.</div>
         </div>
+
         <div class="win-cell">
-          <div class="win-num">₹ Crores</div>
-          <div class="win-desc">Penalty-to-incentive flip achieved by refocusing a struggling project on milestone-critical outcomes.</div>
+          <div style="position:relative;display:inline-block;margin-bottom:10px;">
+            <span class="win-num">₹ Crores</span>
+            <svg aria-hidden="true" style="position:absolute;inset:-10px -14px;width:calc(100% + 28px);height:calc(100% + 20px);pointer-events:none;overflow:visible" viewBox="0 0 120 56" preserveAspectRatio="none">
+              <path d="M60,4 Q116,4 116,28 Q116,52 60,52 Q4,52 4,28 Q4,4 60,4" stroke="rgba(232,69,154,.22)" fill="none" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="win-desc">Penalty-to-incentive flip by refocusing a struggling project on milestone-critical outcomes.</div>
         </div>
+
       </div>
     </div>
   </section>
 
   <!-- ── STORIES ── -->
-  <section class="card reveal section-wrap" id="stories" style="margin-top:24px;">
-    <div class="section-label gold">Work Samples</div>
-    <h2 class="section-title mt4">Six executions. Each a different skill. All transferable.</h2>
-    <p class="section-copy mt16">These are real outcomes from real work — reframed around the skill pattern, not the sector. The same playbook applies wherever the problem exists.</p>
-    <div class="stories-grid">
-      <article class="story-card card-top-violet">
+  <section class="sec card reveal d1" id="stories">
+
+    <div class="sec-kicker gold">Work Samples</div>
+    <h2 class="sec-title mt4">Six executions. Each a different skill.</h2>
+    <p class="sec-copy mt16">Real outcomes, reframed around the skill pattern — not the sector. The same playbook applies wherever the problem exists.</p>
+
+    <!-- doodle annotation -->
+    <div style="display:flex;align-items:center;gap:8px;margin-top:10px;" aria-hidden="true">
+      <svg width="24" height="18" viewBox="0 0 24 18" fill="none">
+        <path d="M2,6 Q8,14 20,12" stroke="var(--gold)" fill="none" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M16,8 L22,13 L15,16" stroke="var(--gold)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span style="font-family:var(--hand);font-size:1rem;color:var(--subtle);">all transferable — no niche required</span>
+    </div>
+
+    <div class="stories">
+
+      <article class="story reveal">
+        <div class="story-doodle-anno">flagship ✦</div>
         <div class="story-tag">ROI Prioritization</div>
         <h3>Turned six months of feature requests into a ranked ROI roadmap.</h3>
         <p>Audited every pending request, grouped them by functional impact and manual effort saved, and ran ten stakeholder interviews to validate which items actually moved the business forward. Separated signal from noise at scale.</p>
         <div class="story-result">Backend clutter cleared. Software effort realigned to high-value work. Prioritization model became repeatable across future cycles.</div>
       </article>
 
-      <article class="story-card card-top-teal">
+      <article class="story reveal d1">
         <div class="story-tag">Cycle Time Reduction</div>
         <h3>Cut a 72-day delivery cycle to 42 days by fixing visibility and accountability.</h3>
-        <p>Rebuilt the reconciliation layer in Power BI so stuck items were visible in real time. Removed slow communication layers between teams. Updated commercial terms so late behavior had consequences. No new tools — just better design.</p>
+        <p>Rebuilt the reconciliation layer in Power BI so stuck items were visible in real time. Removed slow communication layers. Updated commercial terms so late behavior had consequences. No new tools — just better design.</p>
         <div class="story-result">30-day improvement in end-to-end cycle time. Faster collections, cleaner ownership, fewer preventable failures downstream.</div>
       </article>
 
-      <article class="story-card card-top-coral">
+      <article class="story reveal">
         <div class="story-tag">Operational Leverage</div>
         <h3>Unlocked 20–25% more capacity by challenging an assumption everyone accepted.</h3>
         <p>Identified a "rule" about working hours that had never been tested. Ran a controlled pilot. Proved the assumption was wrong. Scaled the finding across teams without resistance because the data made the case.</p>
         <div class="story-result">One extra productive hour per time zone. Higher throughput. Zero new headcount. Pattern now used to question other untested constraints.</div>
       </article>
 
-      <article class="story-card card-top-violet" style="--c:var(--gold);">
+      <article class="story reveal d1">
         <div class="story-tag">Forecasting System</div>
         <h3>Built a 90–95% accurate forecasting model from data nobody was reading.</h3>
         <p>Combined ignored operational reports, historical anomaly patterns, and external variables into a forward-looking model. Predictions started landing before problems showed up in standard dashboards.</p>
         <div class="story-result">Leadership got early warning instead of post-mortems. Planning improved. Intervention became proactive instead of reactive.</div>
       </article>
 
-      <article class="story-card">
+      <article class="story reveal">
         <div class="story-tag">Silent Risk Detection</div>
-        <h3>Caught a hidden system failure that was draining $25K per month.</h3>
+        <h3>Caught a hidden system failure draining $25K per month.</h3>
         <p>During a routine vendor invoice review, spotted charges tied to automation output that wasn't running. Investigated further. Found a full engine outage that would have caused widespread downstream failures if left undetected.</p>
         <div class="story-result">$25K recovered immediately. Larger failure avoided. Audit process formalized so the same gap couldn't reopen.</div>
       </article>
 
-      <article class="story-card">
+      <article class="story reveal d1">
         <div class="story-tag">Automation Program</div>
-        <h3>Bridged a team of departments and developers with a Master Automation Log.</h3>
-        <p>Documented every manual workflow across the organization, ranked tasks by criticality and time cost, wrote BRDs that development could action directly, and validated every output against real user needs — not assumptions.</p>
-        <div class="story-result">Automation work delivered measurable hours saved and dollar impact. Stakeholder confidence in the program went from skepticism to advocacy.</div>
+        <h3>Bridged departments and developers with a Master Automation Log.</h3>
+        <p>Documented every manual workflow, ranked tasks by criticality and time cost, wrote BRDs that development could action directly, and validated every output against real user needs — not assumptions.</p>
+        <div class="story-result">Automation work delivered measurable hours saved and dollar impact. Stakeholder confidence went from skepticism to advocacy.</div>
       </article>
+
     </div>
   </section>
 
   <!-- ── FOR STARTUPS ── -->
-  <section class="reveal section-wrap" id="startups" style="margin-top:24px;">
-    <div class="section-label plum">For Startups</div>
-    <h2 class="section-title mt4">Why early-stage and growth-stage teams get more from me.</h2>
-    <p class="section-copy mt16">Startups don't need someone who learned one industry's playbook. They need someone who can build the playbook.</p>
+  <section class="sec doodle-bg reveal" id="startups">
+
+    <!-- floating deco star -->
+    <div style="position:absolute;top:-8px;right:80px;pointer-events:none;" aria-hidden="true">
+      <svg class="deco-float-a" width="44" height="44" viewBox="0 0 44 44" fill="none">
+        <path d="M22,4 L25.5,14.5 L37,14.5 L27.5,21.5 L31,32 L22,25.5 L13,32 L16.5,21.5 L7,14.5 L18.5,14.5 Z" stroke="var(--gold)" fill="rgba(212,145,30,.1)" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div style="position:absolute;top:30px;left:-12px;pointer-events:none;" aria-hidden="true">
+      <svg class="deco-float-b" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="10" stroke="var(--green)" fill="none" stroke-width="1.5"/>
+        <path d="M7,12 L10,15 L17,9" stroke="var(--green)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <div class="sec-kicker plum">For Startups</div>
+    <h2 class="sec-title mt4">
+      Why early-stage teams get
+      <span style="position:relative;display:inline-block;">
+        more from me.
+        <svg aria-hidden="true" style="position:absolute;bottom:-3px;left:0;width:100%;height:8px;overflow:visible" viewBox="0 0 140 8" preserveAspectRatio="none">
+          <path d="M2,6 Q35,1 70,5 Q105,9 138,4" stroke="var(--plum)" fill="none" stroke-width="2.5" stroke-linecap="round" opacity=".55"/>
+        </svg>
+      </span>
+    </h2>
+    <p class="sec-copy mt16">Startups don't need someone who learned one industry's playbook. They need someone who can build the playbook.</p>
+
     <div class="startup-grid">
-      <div class="startup-card featured">
-        <div class="startup-q">Why I want to work in startups</div>
-        <div class="startup-a">I've spent 15 years operating inside systems that <em>weren't designed well from the start</em>. I've rebuilt them. Fixed them. Made them scale. I want to be in earlier — where the decisions about how work flows, how product gets shipped, and how teams stay aligned are still being made. That's where I create the most leverage.</div>
+
+      <!-- speech bubble featured card -->
+      <div class="startup-card hero-card-dark">
+        <div class="startup-q">✦ why I want to work in startups</div>
+        <div class="startup-a">I've spent 15 years operating inside systems that <em>weren't designed well from the start</em>. I've rebuilt them, fixed them, made them scale. I want to be in earlier — where the decisions about how work flows, how product gets shipped, and how teams stay aligned are still being made. That's where I create the most leverage.</div>
       </div>
+
       <div class="startup-card">
-        <div class="startup-q">What I give a founding team</div>
+        <!-- doodle squiggle top-right corner -->
+        <svg aria-hidden="true" style="position:absolute;top:14px;right:14px;opacity:.3" width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <path d="M5,14 Q5,5 14,5 Q23,5 23,14 Q23,23 14,23 Q9,23 6,20" stroke="var(--violet)" fill="none" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M4,17 L6,21 L9,18" stroke="var(--violet)" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="startup-q">what I give a founding team</div>
         <div class="startup-a">An operator who can hold product, process, and people simultaneously — without needing a fully defined role to be useful from week one.</div>
       </div>
+
       <div class="startup-card">
-        <div class="startup-q">What problems I love walking into</div>
+        <div class="startup-q">problems I love walking into</div>
         <div class="startup-a">"We're growing but things keep breaking." "We have too many requests and no way to prioritize." "Nobody owns the space between sales and delivery." Those are my problems.</div>
       </div>
+
       <div class="startup-card">
-        <div class="startup-q">What I don't need</div>
+        <div class="startup-q">what I don't need</div>
         <div class="startup-a">A perfect playbook, a fully staffed team, or a stable environment. I'm built for the in-between stage where clarity needs to be created, not inherited.</div>
       </div>
+
       <div class="startup-card">
-        <div class="startup-q">What I need from you</div>
+        <div class="startup-q">what I need from you</div>
         <div class="startup-a">Access to the real problems, not just the ones in the job description. Trust to work across functions. And a founder who knows the difference between motion and progress.</div>
       </div>
+
     </div>
   </section>
 
   <!-- ── CONTACT ── -->
-  <section class="contact-section reveal d2" id="contact">
+  <section class="contact reveal d2" id="contact">
+
+    <!-- scattered doodles -->
+    <svg aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:hidden" viewBox="0 0 1160 360" preserveAspectRatio="xMidYMid slice">
+      <g fill="rgba(196,181,253,.12)">
+        <circle cx="40" cy="40" r="3"/><circle cx="58" cy="28" r="2"/><circle cx="50" cy="54" r="2.5"/>
+        <circle cx="1110" cy="300" r="3"/><circle cx="1128" cy="288" r="2.5"/>
+      </g>
+      <path d="M1040,50 L1040,62 M1034,56 L1046,56" stroke="rgba(94,234,212,.15)" fill="none" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M80,300 Q100,292 120,300 Q140,308 160,300" stroke="rgba(196,181,253,.15)" fill="none" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+
     <div class="contact-inner">
       <div>
-        <div class="section-label">Let's Talk</div>
-        <div class="contact-avail">
-          <span class="avail-dot"></span>
-          Available for Remote Opportunities
-        </div>
-        <h2>If your team needs someone to own delivery, fix the flows, and build systems that actually scale — let's talk.</h2>
+        <div class="sec-kicker">Let's Talk</div>
+        <div class="contact-avail"><span class="avail-dot"></span>Available for Remote Opportunities</div>
+        <h2>If your team needs someone to own delivery, fix the flows, and build systems that scale — let's talk.</h2>
         <p>I'm looking for product, operations, and growth roles at startups where the work is real, the team is small, and the problems are worth solving. If that sounds like your company, I'd like to hear about it.</p>
+
+        <!-- doodle annotation -->
+        <div style="display:flex;align-items:center;gap:8px;margin-top:12px;" aria-hidden="true">
+          <svg width="28" height="16" viewBox="0 0 28 16" fill="none">
+            <path d="M2,8 Q10,2 24,8" stroke="rgba(196,181,253,.4)" fill="none" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M19,4 L26,8 L19,12" stroke="rgba(196,181,253,.4)" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span style="font-family:var(--hand);font-size:1rem;color:rgba(196,181,253,.42);">I respond fast, I promise</span>
+        </div>
+
         <div class="contact-ctas">
           <a class="btn btn-violet" href="mailto:altafsimavatwala1991@gmail.com">Send an Email</a>
-          <a class="btn btn-ghost" href="https://www.linkedin.com/in/altaf-simavatwala-20a46160" target="_blank" rel="noreferrer">LinkedIn Profile</a>
+          <a class="btn btn-ghost"  href="https://www.linkedin.com/in/altaf-simavatwala-20a46160" target="_blank" rel="noreferrer">LinkedIn Profile</a>
         </div>
       </div>
 
-      <div class="contact-card">
+      <div class="cta-card">
         <div class="contact-loc">Ahmedabad, Gujarat, India · Remote</div>
-        <a class="contact-action email" href="mailto:altafsimavatwala1991@gmail.com">
+        <a class="c-action email" href="mailto:altafsimavatwala1991@gmail.com">
           <span class="c-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 7.5 12 13l8-5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="3.25" y="5.25" width="17.5" height="13.5" rx="3" stroke="currentColor" stroke-width="1.5"/></svg></span>
           <div><div class="c-label">Email</div><div class="c-value">Send Mail</div></div>
         </a>
-        <a class="contact-action whatsapp" href="https://wa.me/918905196948" target="_blank" rel="noreferrer">
+        <a class="c-action whatsapp" href="https://wa.me/918905196948" target="_blank" rel="noreferrer">
           <span class="c-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.05 4.94A9.86 9.86 0 0 0 12.03 2C6.56 2 2.1 6.45 2.1 11.92c0 1.75.46 3.46 1.33 4.97L2 22l5.26-1.38a9.9 9.9 0 0 0 4.75 1.21h.01c5.47 0 9.92-4.45 9.92-9.92a9.86 9.86 0 0 0-2.89-6.97Zm-7.03 15.2h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.12.82.84-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.36c0-4.52 3.69-8.2 8.23-8.2 2.2 0 4.26.85 5.82 2.41a8.16 8.16 0 0 1 2.4 5.8c0 4.53-3.69 8.21-8.22 8.21Zm4.5-6.16c-.25-.13-1.47-.73-1.7-.81-.22-.08-.39-.12-.55.13-.17.25-.64.8-.79.96-.15.17-.3.19-.55.06-.25-.13-1.06-.39-2.01-1.24-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.3.37-.45.12-.15.16-.25.25-.42.08-.17.04-.32-.02-.45-.06-.13-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.41h-.47c-.17 0-.45.06-.69.32-.23.25-.89.87-.89 2.12s.91 2.45 1.03 2.62c.13.17 1.78 2.72 4.31 3.81.6.26 1.07.41 1.44.53.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.22-.16-.47-.29Z"/></svg></span>
           <div><div class="c-label">WhatsApp</div><div class="c-value">Message Altaf</div></div>
         </a>
-        <a class="contact-action linkedin" href="https://www.linkedin.com/in/altaf-simavatwala-20a46160" target="_blank" rel="noreferrer">
+        <a class="c-action linkedin" href="https://www.linkedin.com/in/altaf-simavatwala-20a46160" target="_blank" rel="noreferrer">
           <span class="c-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A1.97 1.97 0 1 0 5.3 6.94 1.97 1.97 0 0 0 5.25 3Zm14.19 9.83c0-3.45-1.84-5.05-4.29-5.05-1.98 0-2.86 1.09-3.36 1.86V8.5H8.42c.05.76 0 11.5 0 11.5h3.37v-6.42c0-.34.02-.68.13-.92.27-.68.88-1.38 1.92-1.38 1.35 0 1.89 1.03 1.89 2.54V20h3.37v-7.17Z"/></svg></span>
           <div><div class="c-label">LinkedIn</div><div class="c-value">View Profile</div></div>
         </a>
@@ -1063,25 +1513,25 @@
 </div><!-- /page -->
 
 <script>
-  const reveals = document.querySelectorAll(".reveal");
-  const toolCards = document.querySelectorAll(".tool-card");
-  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const reveals   = document.querySelectorAll(".reveal");
+  const tools     = document.querySelectorAll(".tool");
+  const reduced   = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  if (!prefersReduced) {
-    const observer = new IntersectionObserver(
+  if (!reduced) {
+    const io = new IntersectionObserver(
       (entries) => entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add("is-visible"); }),
       { threshold: 0.1 }
     );
-    reveals.forEach((el) => observer.observe(el));
+    reveals.forEach((el) => io.observe(el));
 
-    const barObserver = new IntersectionObserver(
+    const toolIO = new IntersectionObserver(
       (entries) => entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add("is-visible"); }),
-      { threshold: 0.3 }
+      { threshold: 0.25 }
     );
-    toolCards.forEach((el) => barObserver.observe(el));
+    tools.forEach((el) => toolIO.observe(el));
   } else {
     reveals.forEach((el) => el.classList.add("is-visible"));
-    toolCards.forEach((el) => el.classList.add("is-visible"));
+    tools.forEach((el) => el.classList.add("is-visible"));
   }
 </script>
 </body>
