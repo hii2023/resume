@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Altaf Simavatwala — What Changes When the Work Gets Done Right</title>
+  <meta name="description" content="Product, operations, and automation. 15 years fixing the flows that stop teams from shipping." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%237C3AED'/%3E%3Cpath d='M19 47 28 17h8l9 30h-7l-2-7H28l-2 7Zm10-13h7l-3-12h-.3Z' fill='%23fff'/%3E%3C/svg%3E" />
+  <style>
+    :root {
+      --bg:    #080D1A;
+      --s1:    #0F1525;
+      --s2:    #161D32;
+      --s3:    #1E263E;
+      --s4:    #252F4A;
+      --b:     rgba(255,255,255,.07);
+      --b2:    rgba(255,255,255,.12);
+
+      --ink:   #EDF1FB;
+      --ink2:  #8B96B4;
+      --muted: #49536E;
+
+      --vi:    #7C3AED;
+      --vil:   #A78BFA;
+      --vi2:   rgba(124,58,237,.14);
+      --te:    #06B6D4;
+      --te2:   rgba(6,182,212,.14);
+      --co:    #F05330;
+      --co2:   rgba(240,83,48,.14);
+      --go:    #F59E0B;
+      --go2:   rgba(245,158,11,.14);
+      --gr:    #10B981;
+      --gr2:   rgba(16,185,129,.14);
+
+      --shd:   0 12px 40px rgba(0,0,0,.5);
+      --shd2:  0 24px 64px rgba(0,0,0,.6);
+
+      --r:     14px;
+      --rl:    22px;
+      --max:   1160px;
+      --sans:  "Inter", "Segoe UI", system-ui, sans-serif;
+      --hand:  "Caveat", cursive;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--ink);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── REVEAL ── */
+    .rev {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .7s cubic-bezier(.22,.68,0,1.1),
+                  transform .7s cubic-bezier(.22,.68,0,1.1);
+    }
+    .rev.on { opacity: 1; transform: none; }
+    .d1{transition-delay:.1s} .d2{transition-delay:.22s}
+    .d3{transition-delay:.34s} .d4{transition-delay:.46s}
+
+    @media (prefers-reduced-motion: reduce) {
+      .rev { opacity: 1; transform: none; transition: none; }
+    }
+
+    /* ── NAV ── */
+    .nav {
+      position: sticky; top: 0; z-index: 200;
+      background: rgba(8,13,26,.82);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--b);
+    }
+    .nav-in {
+      max-width: var(--max); margin: 0 auto;
+      padding: 14px 24px;
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    }
+    .nav-logo {
+      font-size: .92rem; font-weight: 800; letter-spacing: -.02em;
+    }
+    .nav-logo span { color: var(--vil); }
+    .nav-links { display: flex; gap: 24px; }
+    .nav-links a {
+      font-size: .83rem; font-weight: 500; color: var(--ink2);
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-cta {
+      font-size: .83rem; font-weight: 600;
+      padding: 8px 18px; border-radius: 8px;
+      background: var(--vi); color: #fff;
+      transition: background .2s, transform .15s, box-shadow .2s;
+    }
+    .nav-cta:hover {
+      background: #6927d4; transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(124,58,237,.4);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; min-height: 96vh;
+      display: flex; align-items: center;
+      padding: 80px 24px 80px; overflow: hidden;
+    }
+    .hero-grid {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image:
+        linear-gradient(rgba(124,58,237,.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(124,58,237,.055) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 20%, transparent 75%);
+    }
+    .hero-orb {
+      position: absolute; border-radius: 50%;
+      filter: blur(90px); pointer-events: none;
+    }
+    .orb1 {
+      width: 560px; height: 560px;
+      background: radial-gradient(circle, rgba(124,58,237,.2) 0%, transparent 70%);
+      top: -160px; left: -120px;
+    }
+    .orb2 {
+      width: 420px; height: 420px;
+      background: radial-gradient(circle, rgba(6,182,212,.13) 0%, transparent 70%);
+      bottom: -80px; right: 5%;
+    }
+    .orb3 {
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(240,83,48,.09) 0%, transparent 70%);
+      top: 30%; right: 30%;
+    }
+
+    .hero-in {
+      position: relative; z-index: 1;
+      max-width: var(--max); width: 100%; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 400px; gap: 64px;
+      align-items: center;
+    }
+    .hero-kicker {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: .75rem; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--vil); margin-bottom: 22px;
+    }
+    .hero-kicker::before {
+      content: ''; width: 28px; height: 2px;
+      background: var(--vil); border-radius: 2px;
+    }
+    h1.hero-h1 {
+      font-size: clamp(2.6rem, 5.2vw, 4.2rem);
+      font-weight: 900; line-height: 1.06;
+      letter-spacing: -.035em;
+      margin-bottom: 26px;
+    }
+    .grad {
+      background: linear-gradient(135deg, var(--vil) 0%, var(--te) 65%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-bio {
+      font-size: 1.05rem; color: var(--ink2); line-height: 1.75;
+      max-width: 540px; margin-bottom: 32px;
+    }
+    .outcomes {
+      display: flex; flex-direction: column; gap: 11px; margin-bottom: 38px;
+    }
+    .outcome-row {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: .93rem; color: var(--ink2); line-height: 1.5;
+    }
+    .odot {
+      width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; margin-top: 6px;
+    }
+    .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 26px; border-radius: 10px;
+      font-size: .9rem; font-weight: 600;
+      transition: all .2s; cursor: pointer; border: none;
+    }
+    .btn-vi {
+      background: var(--vi); color: #fff;
+    }
+    .btn-vi:hover {
+      background: #6927d4; transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(124,58,237,.4);
+    }
+    .btn-ghost {
+      background: transparent; color: var(--ink2);
+      border: 1px solid var(--b2);
+    }
+    .btn-ghost:hover { border-color: var(--vil); color: var(--vil); }
+
+    /* hero right panel */
+    .hero-panel {
+      background: var(--s1); border: 1px solid var(--b);
+      border-radius: var(--rl); padding: 28px; position: relative; overflow: hidden;
+    }
+    .hero-panel::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, var(--vi2) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .panel-label {
+      font-size: .72rem; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--vil); margin-bottom: 20px;
+    }
+    .panel-item {
+      display: flex; align-items: flex-start; gap: 14px;
+      padding: 14px 0; border-bottom: 1px solid var(--b);
+    }
+    .panel-item:last-child { border-bottom: none; }
+    .p-num {
+      width: 30px; height: 30px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .72rem; font-weight: 800; flex-shrink: 0;
+    }
+    .p-name { font-size: .87rem; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
+    .p-desc { font-size: .77rem; color: var(--ink2); line-height: 1.5; }
+
+    /* ── SHARED SECTION ── */
+    .page { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    .sec-kicker {
+      font-size: .72rem; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--vil); margin-bottom: 10px;
+    }
+    .sec-kicker.te{color:var(--te)} .sec-kicker.co{color:var(--co)}
+    .sec-kicker.go{color:var(--go)} .sec-kicker.gr{color:var(--gr)}
+    h2.sec-title {
+      font-size: clamp(1.9rem, 3.6vw, 2.9rem);
+      font-weight: 800; letter-spacing: -.028em; line-height: 1.14;
+      color: var(--ink); margin-bottom: 14px;
+    }
+    .sec-sub {
+      font-size: .98rem; color: var(--ink2); line-height: 1.75;
+      max-width: 600px; margin-bottom: 52px;
+    }
+
+    /* ── JOURNEY ── */
+    .journey-wrap {
+      background: var(--s1);
+      border-top: 1px solid var(--b);
+      border-bottom: 1px solid var(--b);
+      padding: 100px 24px;
+    }
+
+    .journey-track {
+      position: relative; margin-top: 60px;
+    }
+
+    /* SVG connector line */
+    .journey-svg {
+      position: absolute; top: 27px; left: 0; right: 0;
+      width: 100%; height: 4px; z-index: 0; pointer-events: none;
+      overflow: visible;
+    }
+    .j-line-bg {
+      stroke: var(--b2); stroke-width: 2; fill: none;
+    }
+    .j-line-fill {
+      stroke: url(#jgrad); stroke-width: 2; fill: none;
+      stroke-dasharray: 1200; stroke-dashoffset: 1200;
+      transition: stroke-dashoffset 1.6s cubic-bezier(.4,0,.2,1);
+    }
+    .journey-track.animated .j-line-fill { stroke-dashoffset: 0; }
+
+    .journey-nodes {
+      display: grid; grid-template-columns: repeat(5, 1fr);
+      position: relative; z-index: 1;
+    }
+
+    .jn {
+      display: flex; flex-direction: column; align-items: center;
+      padding: 0 10px; text-align: center;
+    }
+    .jn-dot {
+      width: 56px; height: 56px; border-radius: 50%;
+      border: 2px solid var(--b2); background: var(--s2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; margin-bottom: 18px;
+      position: relative; flex-shrink: 0;
+      transition: border-color .4s, box-shadow .4s, background .4s;
+    }
+    .jn-num {
+      position: absolute; top: -7px; right: -7px;
+      width: 20px; height: 20px; border-radius: 50%;
+      background: var(--s4); border: 1px solid var(--b2);
+      font-size: .62rem; font-weight: 700; color: var(--ink2);
+      display: flex; align-items: center; justify-content: center;
+      transition: background .4s, color .4s, border-color .4s;
+    }
+    .journey-track.animated .jn-dot {
+      border-color: var(--vi); background: var(--s3);
+      box-shadow: 0 0 0 8px var(--vi2);
+    }
+    .journey-track.animated .jn:nth-child(1) .jn-dot { transition-delay: .2s; }
+    .journey-track.animated .jn:nth-child(2) .jn-dot { transition-delay: .4s; }
+    .journey-track.animated .jn:nth-child(3) .jn-dot { transition-delay: .6s; }
+    .journey-track.animated .jn:nth-child(4) .jn-dot { transition-delay: .8s; }
+    .journey-track.animated .jn:nth-child(5) .jn-dot { transition-delay: 1.0s; }
+    .journey-track.animated .jn-num {
+      background: var(--vi); color: #fff; border-color: var(--vi);
+    }
+    .journey-track.animated .jn:nth-child(1) .jn-num { transition-delay: .2s; }
+    .journey-track.animated .jn:nth-child(2) .jn-num { transition-delay: .4s; }
+    .journey-track.animated .jn:nth-child(3) .jn-num { transition-delay: .6s; }
+    .journey-track.animated .jn:nth-child(4) .jn-num { transition-delay: .8s; }
+    .journey-track.animated .jn:nth-child(5) .jn-num { transition-delay: 1.0s; }
+
+    .jn-stage {
+      font-size: .72rem; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--ink2); margin-bottom: 12px;
+    }
+    .jn-card {
+      background: var(--s2); border: 1px solid var(--b);
+      border-radius: var(--r); padding: 14px; width: 100%;
+      text-align: left;
+    }
+    .jn-row {
+      display: flex; gap: 8px; align-items: flex-start;
+      margin-bottom: 10px;
+    }
+    .jn-row:last-child { margin-bottom: 0; }
+    .jn-badge {
+      width: 18px; height: 18px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .6rem; flex-shrink: 0; margin-top: 1px; font-weight: 700;
+    }
+    .jn-badge.x { background: var(--co2); color: var(--co); }
+    .jn-badge.ok { background: var(--gr2); color: var(--gr); }
+    .jn-label {
+      font-size: .67rem; font-weight: 700;
+      letter-spacing: .07em; text-transform: uppercase; margin-bottom: 2px;
+    }
+    .jn-label.x { color: rgba(240,83,48,.7); }
+    .jn-label.ok { color: var(--gr); }
+    .jn-text { font-size: .75rem; color: var(--ink2); line-height: 1.5; }
+    .jn-row-body {}
+
+    /* ── SOLUTIONS ── */
+    .solutions-wrap { padding: 100px 24px; }
+    .sol-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px;
+    }
+    .sol-card {
+      background: var(--s1); border: 1px solid var(--b);
+      border-radius: var(--rl); padding: 36px; position: relative; overflow: hidden;
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+    }
+    .sol-card:hover { transform: translateY(-5px); box-shadow: var(--shd2); }
+    .sol-card::before {
+      content: ''; position: absolute;
+      top: 0; left: 0; right: 0; height: 2px; border-radius: 2px 2px 0 0;
+    }
+    .sv::before { background: linear-gradient(90deg, var(--vi), var(--vil)); }
+    .st::before { background: linear-gradient(90deg, var(--te), #38e8e0); }
+    .sc::before { background: linear-gradient(90deg, var(--co), var(--go)); }
+    .sg::before { background: linear-gradient(90deg, var(--gr), var(--te)); }
+    .sol-card:hover.sv { border-color: rgba(124,58,237,.3); }
+    .sol-card:hover.st { border-color: rgba(6,182,212,.3); }
+    .sol-card:hover.sc { border-color: rgba(240,83,48,.3); }
+    .sol-card:hover.sg { border-color: rgba(16,185,129,.3); }
+
+    .sol-icon {
+      width: 50px; height: 50px; border-radius: 13px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; margin-bottom: 20px;
+    }
+    .iv{background:var(--vi2)} .it{background:var(--te2)}
+    .ic{background:var(--co2)} .ig{background:var(--gr2)}
+
+    .sol-situation {
+      font-size: .72rem; font-weight: 700; letter-spacing: .09em;
+      text-transform: uppercase; margin-bottom: 7px;
+    }
+    .vi-t{color:var(--vil)} .te-t{color:var(--te)} .co-t{color:var(--co)} .gr-t{color:var(--gr)}
+
+    .sol-h3 {
+      font-size: 1.2rem; font-weight: 700; line-height: 1.35;
+      letter-spacing: -.02em; color: var(--ink); margin-bottom: 14px;
+    }
+    .sol-body {
+      font-size: .88rem; color: var(--ink2); line-height: 1.72; margin-bottom: 22px;
+    }
+    .sol-result {
+      display: flex; align-items: center; gap: 14px;
+      padding: 14px 16px; border-radius: 10px; margin-bottom: 20px;
+    }
+    .rvi{background:var(--vi2)} .rte{background:var(--te2)}
+    .rco{background:var(--co2)} .rgr{background:var(--gr2)}
+    .sol-big {
+      font-size: 2rem; font-weight: 900; letter-spacing: -.05em; line-height: 1;
+    }
+    .sol-result-label { font-size: .82rem; color: var(--ink2); line-height: 1.45; }
+
+    /* mini chart area */
+    .sol-chart { margin-top: 4px; }
+
+    /* ── IMPACT BAND ── */
+    .impact-band {
+      background: var(--s1);
+      border-top: 1px solid var(--b);
+      border-bottom: 1px solid var(--b);
+      padding: 80px 24px;
+    }
+    .impact-in { max-width: var(--max); margin: 0 auto; }
+    .impact-grid {
+      display: grid; grid-template-columns: repeat(5, 1fr);
+      gap: 1px; background: var(--b);
+      border-radius: var(--r); overflow: hidden; margin-top: 44px;
+    }
+    .ic-cell {
+      background: var(--s2); padding: 34px 20px; text-align: center;
+      transition: background .2s;
+    }
+    .ic-cell:hover { background: var(--s3); }
+    .ic-num {
+      font-size: 2.8rem; font-weight: 900; letter-spacing: -.05em; line-height: 1;
+      margin-bottom: 10px;
+    }
+    .ic-lbl { font-size: .8rem; color: var(--ink2); line-height: 1.5; margin-bottom: 12px; }
+    .ic-bar {
+      height: 3px; background: var(--b); border-radius: 3px;
+      margin: 0 auto; max-width: 56px; overflow: hidden;
+    }
+    .ic-fill {
+      height: 100%; width: 0; border-radius: 3px;
+      transition: width 1.3s cubic-bezier(.4,0,.2,1) .2s;
+    }
+
+    /* ── STORIES ── */
+    .stories-wrap { padding: 100px 24px; }
+    .stories-list { display: flex; flex-direction: column; gap: 20px; margin-top: 52px; }
+    .story {
+      background: var(--s1); border: 1px solid var(--b); border-radius: var(--rl);
+      overflow: hidden; transition: border-color .25s;
+    }
+    .story:hover { border-color: rgba(124,58,237,.22); }
+    .story-top {
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
+      padding: 24px 32px 20px; border-bottom: 1px solid var(--b);
+    }
+    .s-tag {
+      font-size: .7rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; padding: 5px 12px; border-radius: 20px;
+      flex-shrink: 0;
+    }
+    .svi{background:var(--vi2);color:var(--vil)}
+    .ste{background:var(--te2);color:var(--te)}
+    .sco{background:var(--co2);color:var(--co)}
+    .story-h3 {
+      font-size: 1.1rem; font-weight: 700; letter-spacing: -.02em; color: var(--ink);
+    }
+    .story-cols {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+    }
+    .story-col {
+      padding: 24px 28px;
+      border-right: 1px solid var(--b);
+    }
+    .story-col:last-child { border-right: none; }
+    .col-lbl {
+      font-size: .68rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; margin-bottom: 10px;
+    }
+    .clbl-sit{color:var(--co)} .clbl-act{color:var(--vil)} .clbl-out{color:var(--gr)}
+    .col-text { font-size: .87rem; color: var(--ink2); line-height: 1.7; }
+    .col-text.out { color: var(--ink); }
+    .story-metric {
+      display: inline-flex; align-items: baseline; gap: 4px; margin-top: 10px;
+    }
+    .m-num { font-size: 1.7rem; font-weight: 900; letter-spacing: -.04em; color: var(--gr); }
+    .m-lbl { font-size: .78rem; color: var(--ink2); }
+
+    /* ── WHERE IT FITS ── */
+    .where-wrap { padding: 100px 24px; }
+    .stage-line {
+      display: flex; border-radius: var(--r); overflow: hidden;
+      border: 1px solid var(--b); margin-top: 52px;
+    }
+    .st-block {
+      flex: 1; padding: 26px 18px;
+      border-right: 1px solid var(--b);
+      position: relative; transition: background .2s;
+    }
+    .st-block:last-child { border-right: none; }
+    .st-block.fit { background: var(--vi2); }
+    .st-block.fit::after {
+      content: ''; position: absolute;
+      bottom: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--vi), var(--vil));
+    }
+    .st-phase {
+      font-size: .68rem; font-weight: 700; letter-spacing: .09em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 5px;
+    }
+    .st-block.fit .st-phase { color: var(--vil); }
+    .st-scale { font-size: .88rem; font-weight: 700; color: var(--ink2); margin-bottom: 6px; }
+    .st-block.fit .st-scale { color: var(--ink); }
+    .st-desc { font-size: .77rem; color: var(--muted); line-height: 1.55; }
+    .st-block.fit .st-desc { color: var(--ink2); }
+    .fit-badge {
+      display: none; margin-top: 10px;
+      font-size: .68rem; font-weight: 700;
+      padding: 3px 8px; border-radius: 20px;
+      background: var(--vi); color: #fff;
+    }
+    .st-block.fit .fit-badge { display: inline-flex; }
+
+    /* ── STARTUP Q&A ── */
+    .startup-wrap { padding: 0 24px 100px; }
+    .qa-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px;
+      margin-top: 44px;
+    }
+    .qa-card {
+      background: var(--s1); border: 1px solid var(--b);
+      border-radius: var(--r); padding: 26px;
+      transition: border-color .2s, transform .2s;
+    }
+    .qa-card:hover { border-color: rgba(124,58,237,.25); transform: translateY(-2px); }
+    .qa-q {
+      font-size: .75rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .08em; color: var(--vil); margin-bottom: 10px;
+    }
+    .qa-a { font-size: .9rem; color: var(--ink2); line-height: 1.72; }
+
+    /* ── CONTACT ── */
+    .contact {
+      background: var(--s1); border-top: 1px solid var(--b);
+      padding: 100px 24px; text-align: center; position: relative; overflow: hidden;
+    }
+    .contact::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 60% at 50% 110%, rgba(124,58,237,.14) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .contact-in { position: relative; max-width: 580px; margin: 0 auto; }
+    .avail {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: .82rem; color: var(--gr); margin-bottom: 22px;
+    }
+    .avail-dot {
+      width: 8px; height: 8px; border-radius: 50%; background: var(--gr);
+      box-shadow: 0 0 0 3px rgba(16,185,129,.2);
+      animation: avail-pulse 2.2s ease-in-out infinite;
+    }
+    @keyframes avail-pulse {
+      0%,100% { box-shadow: 0 0 0 3px rgba(16,185,129,.2); }
+      50%      { box-shadow: 0 0 0 8px rgba(16,185,129,.04); }
+    }
+    .contact h2 {
+      font-size: clamp(1.7rem, 3.2vw, 2.5rem);
+      font-weight: 800; letter-spacing: -.025em; margin-bottom: 16px;
+    }
+    .contact p { font-size: .96rem; color: var(--ink2); line-height: 1.75; margin-bottom: 36px; }
+    .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--b); padding: 22px 24px;
+    }
+    .foot-in {
+      max-width: var(--max); margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px;
+    }
+    footer p { font-size: .78rem; color: var(--muted); }
+    .foot-links { display: flex; gap: 20px; }
+    .foot-link {
+      font-size: .78rem; color: var(--ink2);
+      border-bottom: 1px solid var(--b);
+      transition: color .2s, border-color .2s;
+    }
+    .foot-link:hover { color: var(--vil); border-color: var(--vil); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .hero-in { grid-template-columns: 1fr; }
+      .hero-panel { display: none; }
+      .journey-nodes { grid-template-columns: 1fr; gap: 0; }
+      .journey-svg { display: none; }
+      .jn {
+        flex-direction: row; align-items: flex-start;
+        text-align: left; padding: 20px 0;
+        border-bottom: 1px solid var(--b); gap: 18px;
+      }
+      .jn:last-child { border-bottom: none; }
+      .jn-dot { margin-bottom: 0; flex-shrink: 0; }
+      .jn-stage { margin-bottom: 8px; }
+      .sol-grid { grid-template-columns: 1fr; }
+      .impact-grid { grid-template-columns: repeat(3, 1fr); }
+      .story-cols { grid-template-columns: 1fr; }
+      .story-col { border-right: none; border-bottom: 1px solid var(--b); }
+      .story-col:last-child { border-bottom: none; }
+      .stage-line { flex-direction: column; border-radius: var(--r); }
+      .st-block { border-right: none; border-bottom: 1px solid var(--b); }
+      .st-block:last-child { border-bottom: none; }
+      .qa-grid { grid-template-columns: 1fr; }
+      .foot-in { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 600px) {
+      .impact-grid { grid-template-columns: repeat(2, 1fr); }
+      .nav-links { display: none; }
+      .hero { min-height: auto; padding: 60px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-in">
+    <div class="nav-logo">Altaf <span>Simavatwala</span></div>
+    <div class="nav-links">
+      <a href="#journey">The Journey</a>
+      <a href="#solutions">Solutions</a>
+      <a href="#stories">Work</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="mailto:altafsimavatwala1991@gmail.com" class="nav-cta">Get in Touch</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-orb orb1"></div>
+  <div class="hero-orb orb2"></div>
+  <div class="hero-orb orb3"></div>
+  <div class="hero-in">
+    <div>
+      <div class="hero-kicker">Product · Operations · Automation</div>
+      <h1 class="hero-h1 rev">
+        What changes<br>when the work<br>
+        <span class="grad">gets done right.</span>
+      </h1>
+      <p class="hero-bio rev d1">
+        Delivery that ships. Flows that stop breaking. Teams that can finally see what's working. Fifteen years spent solving those problems — across industries, team sizes, and stages of growth.
+      </p>
+      <div class="outcomes rev d2">
+        <div class="outcome-row">
+          <span class="odot" style="background:var(--vil)"></span>
+          <span>Strategy lands as structure teams can actually execute on</span>
+        </div>
+        <div class="outcome-row">
+          <span class="odot" style="background:var(--te)"></span>
+          <span>Data tells leadership what to fix, not just what happened</span>
+        </div>
+        <div class="outcome-row">
+          <span class="odot" style="background:var(--gr)"></span>
+          <span>Manual work eliminated before it compounds into a capacity crisis</span>
+        </div>
+      </div>
+      <div class="hero-ctas rev d3">
+        <a href="#journey" class="btn btn-vi">See how the work flows</a>
+        <a href="#contact" class="btn btn-ghost">Start a conversation</a>
+      </div>
+    </div>
+
+    <div class="hero-panel rev d2">
+      <div class="panel-label">✦ Five stages — where things get fixed</div>
+
+      <div class="panel-item">
+        <div class="p-num" style="background:var(--vi2);color:var(--vil)">01</div>
+        <div>
+          <div class="p-name">Discovery &amp; Alignment</div>
+          <div class="p-desc">Strategy clarified. Everyone working from the same definition of success.</div>
+        </div>
+      </div>
+      <div class="panel-item">
+        <div class="p-num" style="background:var(--te2);color:var(--te)">02</div>
+        <div>
+          <div class="p-name">Planning &amp; Requirements</div>
+          <div class="p-desc">Backlog ranked by ROI. BRDs that developers can actually build from.</div>
+        </div>
+      </div>
+      <div class="panel-item">
+        <div class="p-num" style="background:var(--co2);color:var(--co)">03</div>
+        <div>
+          <div class="p-name">Delivery &amp; Execution</div>
+          <div class="p-desc">Rhythm established. Blockers surface early. Scope held without micromanagement.</div>
+        </div>
+      </div>
+      <div class="panel-item">
+        <div class="p-num" style="background:var(--go2);color:var(--go)">04</div>
+        <div>
+          <div class="p-name">Visibility &amp; Measurement</div>
+          <div class="p-desc">Dashboards that drive decisions. KPIs built around what needs to change.</div>
+        </div>
+      </div>
+      <div class="panel-item">
+        <div class="p-num" style="background:var(--gr2);color:var(--gr)">05</div>
+        <div>
+          <div class="p-name">Automation &amp; Scale</div>
+          <div class="p-desc">Manual work eliminated. Capacity freed. The system compounds over time.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section class="journey-wrap" id="journey">
+  <div class="page">
+    <div class="sec-kicker rev">How the work flows</div>
+    <h2 class="sec-title rev d1">The path most teams take —<br>and where things typically break.</h2>
+    <p class="sec-sub rev d2">Every project moves through the same five stages. Most teams hit the same friction points at the same places. This is where the work actually happens.</p>
+
+    <div class="journey-track rev d2" id="journey-track">
+
+      <!-- animated SVG connector -->
+      <svg class="journey-svg" viewBox="0 0 1100 4" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="jgrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%"   stop-color="#7C3AED"/>
+            <stop offset="50%"  stop-color="#06B6D4"/>
+            <stop offset="100%" stop-color="#10B981"/>
+          </linearGradient>
+        </defs>
+        <line class="j-line-bg" x1="55" y1="2" x2="1045" y2="2"/>
+        <line class="j-line-fill" x1="55" y1="2" x2="1045" y2="2"/>
+      </svg>
+
+      <div class="journey-nodes">
+
+        <div class="jn">
+          <div class="jn-dot">🎯<span class="jn-num">1</span></div>
+          <div class="jn-stage">Discovery</div>
+          <div class="jn-card">
+            <div class="jn-row">
+              <div class="jn-badge x">✕</div>
+              <div class="jn-row-body">
+                <div class="jn-label x">What breaks</div>
+                <div class="jn-text">Everyone has a different version of the goal. Direction is unclear before work starts.</div>
+              </div>
+            </div>
+            <div class="jn-row">
+              <div class="jn-badge ok">✓</div>
+              <div class="jn-row-body">
+                <div class="jn-label ok">What changes</div>
+                <div class="jn-text">Strategy crystallised into a shared definition. Alignment before the first line of work.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="jn">
+          <div class="jn-dot">📋<span class="jn-num">2</span></div>
+          <div class="jn-stage">Planning</div>
+          <div class="jn-card">
+            <div class="jn-row">
+              <div class="jn-badge x">✕</div>
+              <div class="jn-row-body">
+                <div class="jn-label x">What breaks</div>
+                <div class="jn-text">Features built that nobody asked for. Backlog grows with no criteria for what matters.</div>
+              </div>
+            </div>
+            <div class="jn-row">
+              <div class="jn-badge ok">✓</div>
+              <div class="jn-row-body">
+                <div class="jn-label ok">What changes</div>
+                <div class="jn-text">Backlog ranked by real ROI. BRDs written so developers build exactly what's needed.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="jn">
+          <div class="jn-dot">🚀<span class="jn-num">3</span></div>
+          <div class="jn-stage">Execution</div>
+          <div class="jn-card">
+            <div class="jn-row">
+              <div class="jn-badge x">✕</div>
+              <div class="jn-row-body">
+                <div class="jn-label x">What breaks</div>
+                <div class="jn-text">Deadlines slip. Blockers stay hidden. Nobody owns the gap between decisions and delivery.</div>
+              </div>
+            </div>
+            <div class="jn-row">
+              <div class="jn-badge ok">✓</div>
+              <div class="jn-row-body">
+                <div class="jn-label ok">What changes</div>
+                <div class="jn-text">Delivery rhythm set. Blockers surface early. Every sprint has clear ownership and outcome.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="jn">
+          <div class="jn-dot">📊<span class="jn-num">4</span></div>
+          <div class="jn-stage">Visibility</div>
+          <div class="jn-card">
+            <div class="jn-row">
+              <div class="jn-badge x">✕</div>
+              <div class="jn-row-body">
+                <div class="jn-label x">What breaks</div>
+                <div class="jn-text">Reports get built but nothing changes. Leadership makes decisions without real signal.</div>
+              </div>
+            </div>
+            <div class="jn-row">
+              <div class="jn-badge ok">✓</div>
+              <div class="jn-row-body">
+                <div class="jn-label ok">What changes</div>
+                <div class="jn-text">Dashboards that drive real decisions. KPI frameworks built around action, not just tracking.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="jn">
+          <div class="jn-dot">⚡<span class="jn-num">5</span></div>
+          <div class="jn-stage">Scale</div>
+          <div class="jn-card">
+            <div class="jn-row">
+              <div class="jn-badge x">✕</div>
+              <div class="jn-row-body">
+                <div class="jn-label x">What breaks</div>
+                <div class="jn-text">Growth adds manual work faster than headcount can absorb. Teams drown in repetition.</div>
+              </div>
+            </div>
+            <div class="jn-row">
+              <div class="jn-badge ok">✓</div>
+              <div class="jn-row-body">
+                <div class="jn-label ok">What changes</div>
+                <div class="jn-text">Automation programs eliminate the bottlenecks. Capacity freed for work that compounds.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTIONS -->
+<section class="solutions-wrap" id="solutions">
+  <div class="page">
+    <div class="sec-kicker co rev">The outcomes</div>
+    <h2 class="sec-title rev d1">Four things that change<br>when the right work happens.</h2>
+    <p class="sec-sub rev d2">Not job titles. The actual problems that get solved — and what the numbers look like after.</p>
+
+    <div class="sol-grid">
+
+      <!-- Delivery -->
+      <article class="sol-card sv rev">
+        <div class="sol-icon iv">🗺️</div>
+        <div class="sol-situation vi-t">When delivery keeps slipping</div>
+        <h3 class="sol-h3">Structure built into how the work moves — not applied after it breaks.</h3>
+        <p class="sol-body">Requirements shaped before development starts. Backlogs prioritised by what actually moves the business forward. Delivery rhythm set so blockers surface early, not at deadline.</p>
+        <div class="sol-result rvi">
+          <div class="sol-big vi-t" data-target="42" data-suffix="%">0%</div>
+          <div class="sol-result-label">reduction in delivery cycle time — from 72 days to 42, managing 12 teams across one program</div>
+        </div>
+        <div class="sol-chart">
+          <svg width="100%" height="48" viewBox="0 0 300 48" aria-hidden="true">
+            <text x="0" y="11" font-family="Inter,sans-serif" font-size="8" fill="rgba(167,139,250,.4)" font-weight="700" letter-spacing="1">BEFORE</text>
+            <rect x="0" y="15" width="220" height="10" rx="5" fill="rgba(240,83,48,.25)"/>
+            <text x="226" y="24" font-family="Inter,sans-serif" font-size="8" fill="rgba(240,83,48,.6)" font-weight="700">72 days</text>
+            <text x="0" y="38" font-family="Inter,sans-serif" font-size="8" fill="rgba(167,139,250,.4)" font-weight="700" letter-spacing="1">AFTER</text>
+            <rect x="0" y="38" width="220" height="10" rx="5" fill="rgba(124,58,237,.15)"/>
+            <rect x="0" y="38" width="129" height="10" rx="5" fill="rgba(124,58,237,.55)" class="anim-bar" data-w="129"/>
+            <text x="135" y="47" font-family="Inter,sans-serif" font-size="8" fill="rgba(167,139,250,.9)" font-weight="700" class="anim-label" style="opacity:0">42 days</text>
+          </svg>
+        </div>
+      </article>
+
+      <!-- Visibility -->
+      <article class="sol-card st rev d1">
+        <div class="sol-icon it">📡</div>
+        <div class="sol-situation te-t">When leadership is flying blind</div>
+        <h3 class="sol-h3">Visibility that changes what decisions get made — not just reported.</h3>
+        <p class="sol-body">Dashboards that give signal, not just numbers. KPI frameworks built around what actually needs to change. Forecasting models that reach 95% accuracy because they're grounded in real operational data.</p>
+        <div class="sol-result rte">
+          <div class="sol-big te-t" data-target="95" data-suffix="%">0%</div>
+          <div class="sol-result-label">forecasting accuracy built from scratch — replacing gut-feel with a model leadership could act on</div>
+        </div>
+        <div class="sol-chart">
+          <svg width="100%" height="48" viewBox="0 0 300 48" aria-hidden="true">
+            <text x="0" y="11" font-family="Inter,sans-serif" font-size="8" fill="rgba(6,182,212,.4)" font-weight="700" letter-spacing="1">FORECAST ACCURACY — BUILT OVER TIME</text>
+            <rect x="0"   y="20" width="30" height="28" rx="4" fill="rgba(6,182,212,.08)"/>
+            <rect x="0"   y="37" width="30" height="11" rx="3" fill="rgba(6,182,212,.3)"/>
+            <rect x="36"  y="20" width="30" height="28" rx="4" fill="rgba(6,182,212,.08)"/>
+            <rect x="36"  y="33" width="30" height="15" rx="3" fill="rgba(6,182,212,.4)"/>
+            <rect x="72"  y="20" width="30" height="28" rx="4" fill="rgba(6,182,212,.08)"/>
+            <rect x="72"  y="30" width="30" height="18" rx="3" fill="rgba(6,182,212,.5)"/>
+            <rect x="108" y="20" width="30" height="28" rx="4" fill="rgba(6,182,212,.08)"/>
+            <rect x="108" y="26" width="30" height="22" rx="3" fill="rgba(6,182,212,.65)"/>
+            <rect x="144" y="20" width="30" height="28" rx="4" fill="rgba(6,182,212,.08)"/>
+            <rect x="144" y="21" width="30" height="27" rx="3" fill="rgba(6,182,212,.85)"/>
+            <text x="180" y="36" font-family="Inter,sans-serif" font-size="13" fill="rgba(6,182,212,1)" font-weight="900">95%</text>
+          </svg>
+        </div>
+      </article>
+
+      <!-- Automation -->
+      <article class="sol-card sc rev">
+        <div class="sol-icon ic">⚡</div>
+        <div class="sol-situation co-t">When growth is eating the team alive</div>
+        <h3 class="sol-h3">Manual work eliminated before it becomes a headcount problem.</h3>
+        <p class="sol-body">Every automation program starts with documentation — where work goes, who touches it, where it breaks. Tasks ranked by impact, specs written, output validated. Hours and dollars saved measured, not estimated.</p>
+        <div class="sol-result rco">
+          <div class="sol-big co-t" data-target="25" data-suffix="%">0%</div>
+          <div class="sol-result-label">capacity unlocked without adding headcount — through automation programs that compounded over time</div>
+        </div>
+        <div class="sol-chart">
+          <svg width="100%" height="48" viewBox="0 0 300 48" aria-hidden="true">
+            <text x="0" y="11" font-family="Inter,sans-serif" font-size="8" fill="rgba(240,83,48,.4)" font-weight="700" letter-spacing="1">TEAM CAPACITY (manual work vs. freed)</text>
+            <rect x="0"   y="18" width="260" height="14" rx="7" fill="rgba(240,83,48,.1)"/>
+            <rect x="0"   y="18" width="195" height="14" rx="7" fill="rgba(240,83,48,.35)" class="cap-manual"/>
+            <rect x="195" y="18" width="0"   height="14" rx="7" fill="rgba(16,185,129,.5)" class="cap-freed" data-w="65"/>
+            <text x="0"  y="43" font-family="Inter,sans-serif" font-size="8" fill="rgba(240,83,48,.5)">manual work</text>
+            <text x="196" y="43" font-family="Inter,sans-serif" font-size="8" fill="rgba(16,185,129,.8)" font-weight="700" class="cap-lbl" style="opacity:0">+25% freed</text>
+          </svg>
+        </div>
+      </article>
+
+      <!-- Alignment -->
+      <article class="sol-card sg rev d1">
+        <div class="sol-icon ig">🔗</div>
+        <div class="sol-situation gr-t">When strategy doesn't survive the handoff</div>
+        <h3 class="sol-h3">What gets decided and what gets built — the same thing, every time.</h3>
+        <p class="sol-body">Business goals translated into structured requirements developers can build from. Stakeholder intent tracked through to delivery. No "that's not what we asked for" at the end of a sprint.</p>
+        <div class="sol-result rgr">
+          <div class="sol-big gr-t" data-target="12" data-suffix="">0</div>
+          <div class="sol-result-label">cross-functional teams kept aligned as one delivery system — simultaneously, across multiple programs</div>
+        </div>
+        <div class="sol-chart">
+          <svg width="100%" height="48" viewBox="0 0 300 48" aria-hidden="true">
+            <text x="0" y="11" font-family="Inter,sans-serif" font-size="8" fill="rgba(16,185,129,.4)" font-weight="700" letter-spacing="1">ALIGNMENT ACROSS FUNCTIONS</text>
+            <circle cx="150" cy="34" r="9" fill="rgba(16,185,129,.3)" stroke="rgba(16,185,129,.7)" stroke-width="1.5"/>
+            <text x="146" y="38" font-family="Inter,sans-serif" font-size="7" fill="rgba(16,185,129,.9)" font-weight="800">HQ</text>
+            <circle cx="108" cy="22" r="6" fill="rgba(16,185,129,.2)" stroke="rgba(16,185,129,.4)" stroke-width="1"/>
+            <circle cx="78"  cy="38" r="6" fill="rgba(16,185,129,.2)" stroke="rgba(16,185,129,.4)" stroke-width="1"/>
+            <circle cx="120" cy="46" r="6" fill="rgba(16,185,129,.2)" stroke="rgba(16,185,129,.4)" stroke-width="1"/>
+            <circle cx="180" cy="46" r="6" fill="rgba(6,182,212,.2)" stroke="rgba(6,182,212,.4)" stroke-width="1"/>
+            <circle cx="210" cy="30" r="6" fill="rgba(16,185,129,.2)" stroke="rgba(16,185,129,.4)" stroke-width="1"/>
+            <circle cx="225" cy="46" r="6" fill="rgba(16,185,129,.2)" stroke="rgba(16,185,129,.4)" stroke-width="1"/>
+            <line x1="150" y1="34" x2="108" y2="22" stroke="rgba(16,185,129,.22)" stroke-width="1"/>
+            <line x1="150" y1="34" x2="78"  y2="38" stroke="rgba(16,185,129,.22)" stroke-width="1"/>
+            <line x1="150" y1="34" x2="120" y2="46" stroke="rgba(16,185,129,.22)" stroke-width="1"/>
+            <line x1="150" y1="34" x2="180" y2="46" stroke="rgba(16,185,129,.22)" stroke-width="1"/>
+            <line x1="150" y1="34" x2="210" y2="30" stroke="rgba(16,185,129,.22)" stroke-width="1"/>
+            <line x1="150" y1="34" x2="225" y2="46" stroke="rgba(16,185,129,.22)" stroke-width="1"/>
+          </svg>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT BAND -->
+<div class="impact-band" id="impact">
+  <div class="impact-in">
+    <div class="page" style="padding:0">
+      <div class="sec-kicker rev">Selected outcomes</div>
+      <h2 class="sec-title rev d1">Numbers from the work.</h2>
+    </div>
+    <div class="impact-grid rev d2" id="impact-grid">
+      <div class="ic-cell">
+        <div class="ic-num" style="color:var(--vil)" data-target="42" data-suffix="%">0%</div>
+        <div class="ic-lbl">Delivery cycle time reduced</div>
+        <div class="ic-bar"><div class="ic-fill" style="background:var(--vil)" data-pct="42"></div></div>
+      </div>
+      <div class="ic-cell">
+        <div class="ic-num" style="color:var(--te)" data-target="25" data-suffix="%">0%</div>
+        <div class="ic-lbl">Capacity freed without new hires</div>
+        <div class="ic-bar"><div class="ic-fill" style="background:var(--te)" data-pct="25"></div></div>
+      </div>
+      <div class="ic-cell">
+        <div class="ic-num" style="color:var(--go)" data-target="95" data-suffix="%">0%</div>
+        <div class="ic-lbl">Forecasting accuracy achieved</div>
+        <div class="ic-bar"><div class="ic-fill" style="background:var(--go)" data-pct="95"></div></div>
+      </div>
+      <div class="ic-cell">
+        <div class="ic-num" style="color:var(--gr)" data-target="12" data-suffix="">0</div>
+        <div class="ic-lbl">Teams aligned as one system</div>
+        <div class="ic-bar"><div class="ic-fill" style="background:var(--gr)" data-pct="60"></div></div>
+      </div>
+      <div class="ic-cell">
+        <div class="ic-num" style="color:var(--co)" data-target="15" data-suffix="+">0+</div>
+        <div class="ic-lbl">Years building systems that scale</div>
+        <div class="ic-bar"><div class="ic-fill" style="background:var(--co)" data-pct="75"></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STORIES -->
+<section class="stories-wrap" id="stories">
+  <div class="page">
+    <div class="sec-kicker te rev">Project stories</div>
+    <h2 class="sec-title rev d1">Three times the work changed something.</h2>
+    <p class="sec-sub rev d2">The shape of each problem, how it got taken apart, and what the outcome looked like.</p>
+
+    <div class="stories-list">
+
+      <article class="story rev">
+        <div class="story-top">
+          <span class="s-tag svi">ROI Prioritisation</span>
+          <h3 class="story-h3">Turned six months of feature requests into a ranked delivery roadmap.</h3>
+        </div>
+        <div class="story-cols">
+          <div class="story-col">
+            <div class="col-lbl clbl-sit">Situation</div>
+            <div class="col-text">A backlog with 60+ items and no criteria. Engineering effort going to whoever asked loudest. Six months of accumulated requests, no way to separate signal from noise.</div>
+          </div>
+          <div class="story-col">
+            <div class="col-lbl clbl-act">Approach</div>
+            <div class="col-text">Every request audited. Grouped by functional impact and manual effort saved. Ten stakeholder interviews to validate which items actually moved the business. A scoring model built from real ROI, not opinion.</div>
+          </div>
+          <div class="story-col">
+            <div class="col-lbl clbl-out">Outcome</div>
+            <div class="col-text out">Engineering effort realigned to the top 20% of items driving 80% of business value. Prioritisation model became repeatable across future cycles.
+              <div class="story-metric"><span class="m-num">80%</span><span class="m-lbl">&nbsp;of value from 20% of backlog</span></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="story rev d1">
+        <div class="story-top">
+          <span class="s-tag ste">Process Redesign</span>
+          <h3 class="story-h3">Rebuilt a 72-day delivery cycle down to 42 days.</h3>
+        </div>
+        <div class="story-cols">
+          <div class="story-col">
+            <div class="col-lbl clbl-sit">Situation</div>
+            <div class="col-text">A multi-team delivery cycle averaging 72 days. Handoff failures between 12 teams. No visibility into where work was getting stuck or why deadlines kept slipping.</div>
+          </div>
+          <div class="story-col">
+            <div class="col-lbl clbl-act">Approach</div>
+            <div class="col-text">Every handoff mapped. Six structural failure points identified. Flow redesigned around those failure points — not around the org chart. Visibility built into each stage so blockers surfaced in real time.</div>
+          </div>
+          <div class="story-col">
+            <div class="col-lbl clbl-out">Outcome</div>
+            <div class="col-text out">Cycle time from 72 to 42 days. Teams stopped working around the same bottlenecks. The redesign became the standard process across all delivery programs.
+              <div class="story-metric"><span class="m-num">42%</span><span class="m-lbl">&nbsp;faster delivery</span></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="story rev">
+        <div class="story-top">
+          <span class="s-tag sco">Automation Program</span>
+          <h3 class="story-h3">Freed 25% of team capacity without adding a single hire.</h3>
+        </div>
+        <div class="story-cols">
+          <div class="story-col">
+            <div class="col-lbl clbl-sit">Situation</div>
+            <div class="col-text">A growing operation where manual work was compounding faster than the team could absorb. Hiring more wasn't the solution — the underlying workflows were broken.</div>
+          </div>
+          <div class="story-col">
+            <div class="col-lbl clbl-act">Approach</div>
+            <div class="col-text">Workflows documented end to end. Tasks ranked by hours consumed vs. business impact. Automation specs written, output validated, results measured. Program ran in phases with clear ROI at each stage.</div>
+          </div>
+          <div class="story-col">
+            <div class="col-lbl clbl-out">Outcome</div>
+            <div class="col-text out">25% of team capacity freed for high-value work. Automation program became self-sustaining with a repeatable model for identifying the next round.
+              <div class="story-metric"><span class="m-num">25%</span><span class="m-lbl">&nbsp;more capacity, same team</span></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHERE IT FITS -->
+<section class="where-wrap">
+  <div class="page">
+    <div class="sec-kicker rev">Where the work fits</div>
+    <h2 class="sec-title rev d1">Across the full startup lifecycle.</h2>
+    <p class="sec-sub rev d2">The strongest fit is in the stages where structure, delivery, and scale need to be built simultaneously — not inherited.</p>
+    <div class="stage-line rev d3">
+      <div class="st-block">
+        <div class="st-phase">Pre-product</div>
+        <div class="st-scale">0 → 1</div>
+        <div class="st-desc">Problem definition and initial direction. Most value comes later once there's work to shape.</div>
+      </div>
+      <div class="st-block fit">
+        <div class="st-phase">Building</div>
+        <div class="st-scale">1 → 10</div>
+        <div class="st-desc">Delivery structure, product management, requirements that teams can build from without constant direction.</div>
+        <span class="fit-badge">Strong fit</span>
+      </div>
+      <div class="st-block fit">
+        <div class="st-phase">Traction</div>
+        <div class="st-scale">10 → 100</div>
+        <div class="st-desc">Operational systems, data visibility, cross-functional alignment as complexity grows faster than process.</div>
+        <span class="fit-badge">Strong fit</span>
+      </div>
+      <div class="st-block fit">
+        <div class="st-phase">Scaling</div>
+        <div class="st-scale">100 → 1000</div>
+        <div class="st-desc">Automation programs, process architecture, systems built to absorb growth without breaking every quarter.</div>
+        <span class="fit-badge">Strong fit</span>
+      </div>
+      <div class="st-block">
+        <div class="st-phase">Enterprise</div>
+        <div class="st-scale">1000+</div>
+        <div class="st-desc">Optimising existing infrastructure. Still useful — but the most leverage comes earlier.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR STARTUPS -->
+<section class="startup-wrap" id="startups">
+  <div class="page">
+    <div class="sec-kicker rev">For startup teams</div>
+    <h2 class="sec-title rev d1">Direct answers to the questions founders actually ask.</h2>
+    <div class="qa-grid">
+      <div class="qa-card rev">
+        <div class="qa-q">Why not hire a PM and an ops lead separately?</div>
+        <div class="qa-a">Because at the stage where both are needed, the work bleeds between them constantly. Someone who holds both keeps the team from losing context every time a decision crosses the line.</div>
+      </div>
+      <div class="qa-card rev d1">
+        <div class="qa-q">What does the first 90 days look like?</div>
+        <div class="qa-a">Weeks 1–2: understand how work actually flows and where it breaks. Weeks 3–4: structure and visibility built in. From there: delivery rhythm, automation backlog, and the first round of process improvements.</div>
+      </div>
+      <div class="qa-card rev d2">
+        <div class="qa-q">What kind of environment works best here?</div>
+        <div class="qa-a">Fast-moving, under-defined, and high-stakes. "We're growing but things keep breaking" is the ideal starting point. A fully-staffed, perfectly organised company doesn't need this kind of work.</div>
+      </div>
+      <div class="qa-card rev d3">
+        <div class="qa-q">What makes this different from a consultant?</div>
+        <div class="qa-a">Consultants recommend. This work ships. The deliverable isn't a deck — it's a working system, a delivered roadmap, a team that knows how to run the process without being managed through it every cycle.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-in rev">
+    <div class="sec-kicker" style="justify-content:center;display:flex">Get in Touch</div>
+    <div class="avail"><span class="avail-dot"></span>Available for Remote Opportunities</div>
+    <h2>Open to product, operations, and growth roles at startups.</h2>
+    <p>The right environment: real problems, small teams, work worth doing. If that describes where things are headed, let's find out.</p>
+    <div class="cta-row">
+      <a href="mailto:altafsimavatwala1991@gmail.com" class="btn btn-vi">Send an Email</a>
+      <a href="https://www.linkedin.com/in/altaf-simavatwala-20a46160" class="btn btn-ghost" target="_blank" rel="noreferrer">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-in">
+    <p>Altaf Simavatwala · Product · Operations · Automation</p>
+    <div class="foot-links">
+      <a href="altaf-skills.html" class="foot-link">Skills view →</a>
+      <a href="index.html" class="foot-link">Healthcare experience →</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── Scroll reveal ──
+  const revEls = document.querySelectorAll('.rev');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  revEls.forEach(el => obs.observe(el));
+
+  // ── Journey connector + node animation ──
+  const track = document.getElementById('journey-track');
+  if (track) {
+    new IntersectionObserver(entries => {
+      if (!entries[0].isIntersecting) return;
+      track.classList.add('animated');
+    }, { threshold: 0.25 }).observe(track);
+  }
+
+  // ── Counter animation ──
+  function ease(t) { return 1 - Math.pow(1 - t, 3); }
+  function counter(el) {
+    const target = +el.dataset.target;
+    const suffix = el.dataset.suffix || '';
+    const dur = 1600;
+    const t0 = performance.now();
+    (function tick(now) {
+      const p = Math.min((now - t0) / dur, 1);
+      el.textContent = Math.round(ease(p) * target) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    })(t0);
+  }
+
+  // ── Impact band + sol-card counter ──
+  const countObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.querySelectorAll('[data-target]').forEach(counter);
+      e.target.querySelectorAll('.ic-fill[data-pct]').forEach(b => {
+        setTimeout(() => { b.style.width = b.dataset.pct + '%'; }, 300);
+      });
+      // sol card SVG bar animations
+      const ab = e.target.querySelector('.anim-bar[data-w]');
+      if (ab) {
+        setTimeout(() => {
+          ab.setAttribute('width', ab.dataset.w);
+          const lbl = e.target.querySelector('.anim-label');
+          if (lbl) lbl.style.cssText += ';opacity:1;transition:opacity .4s .8s';
+        }, 400);
+      }
+      const cf = e.target.querySelector('.cap-freed[data-w]');
+      if (cf) {
+        setTimeout(() => {
+          cf.setAttribute('width', cf.dataset.w);
+          const lbl = e.target.querySelector('.cap-lbl');
+          if (lbl) lbl.style.cssText += ';opacity:1;transition:opacity .4s .8s';
+        }, 400);
+      }
+      countObs.unobserve(e.target);
+    });
+  }, { threshold: 0.35 });
+
+  document.querySelectorAll('#impact-grid, .sol-result, .sol-card').forEach(el => countObs.observe(el));
+</script>
+</body>
+</html>
