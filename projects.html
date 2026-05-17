@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects & Tools | Altaf Simavatwala</title>
+  <meta name="description" content="22 tools built and deployed by Altaf Simavatwala — CRM, sales, food, health, learning, and productivity tools you can get built for your business.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <style>
+    :root {
+      --bg: #F7F4EE;
+      --surface: #FFFFFF;
+      --dark: #0C1A28;
+      --dark-2: #13253A;
+      --ink: #18140E;
+      --muted: #6B5D50;
+      --subtle: #A09283;
+      --line: rgba(20,16,10,.09);
+      --coral: #E35535;
+      --teal: #0F7B7C;
+      --teal-2: rgba(15,123,124,.11);
+      --gold: #C98A25;
+      --green: #1AAD6B;
+      --s-sm: 0 2px 8px rgba(20,12,6,.06);
+      --s-md: 0 8px 24px rgba(20,12,6,.09);
+      --r-sm: 12px;
+      --r-md: 18px;
+      --r-lg: 24px;
+      --r-xl: 32px;
+      --max: 1160px;
+      --font-serif: Georgia, "Times New Roman", serif;
+      --font-sans: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--ink);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ── NAV ── */
+    .nav-wrap { padding: 14px 20px 0; position: sticky; top: 14px; z-index: 50; }
+    .nav {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.7);
+      background: rgba(252,249,244,.88);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 4px 24px rgba(20,12,6,.08), 0 1px 0 rgba(255,255,255,.9) inset;
+    }
+    .brand { display: flex; align-items: center; gap: 11px; font-weight: 800; font-size: .9rem; letter-spacing: .02em; flex-shrink: 0; }
+    .brand-mark {
+      width: 38px; height: 38px; border-radius: 12px;
+      background: linear-gradient(135deg, #0C1A28, #0F7B7C);
+      color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .82rem; font-weight: 800; letter-spacing: .06em;
+      box-shadow: 0 8px 20px rgba(15,123,124,.28);
+      flex-shrink: 0;
+    }
+    .brand-copy { display: grid; gap: 1px; }
+    .brand-copy span { color: var(--ink); }
+    .brand-copy small { color: var(--muted); font-size: .64rem; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; }
+    .nav-center { display: flex; gap: 2px; }
+    .nav-center a { padding: 7px 13px; border-radius: 999px; font-size: .88rem; font-weight: 600; color: var(--muted); transition: background .18s, color .18s; }
+    .nav-center a:hover { background: var(--teal-2); color: var(--teal); }
+    .nav-center a.active { background: var(--teal-2); color: var(--teal); }
+    .nav-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+    .avail-pill { display: flex; align-items: center; gap: 7px; padding: 7px 13px; border-radius: 999px; background: rgba(26,173,107,.1); border: 1px solid rgba(26,173,107,.2); color: rgb(21,138,82); font-size: .78rem; font-weight: 700; white-space: nowrap; }
+    .avail-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 3px rgba(26,173,107,.2); animation: pulse 2.4s ease infinite; }
+    @keyframes pulse { 0%,100%{box-shadow:0 0 0 3px rgba(26,173,107,.2)} 50%{box-shadow:0 0 0 5px rgba(26,173,107,.08)} }
+    .nav-icon { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--muted); border: 1px solid var(--line); transition: background .18s, color .18s; }
+    .nav-icon:hover { background: var(--teal-2); color: var(--teal); }
+    .nav-icon svg { width: 16px; height: 16px; }
+
+    /* ── MAIN ── */
+    .main { max-width: var(--max); margin: 0 auto; padding: 60px 20px 80px; }
+
+    /* ── HERO ── */
+    .section-label { font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+    .section-label::before { content: ''; width: 20px; height: 2px; background: var(--teal); border-radius: 2px; }
+    .section-title { font-family: var(--font-serif); font-size: clamp(1.8rem, 3.5vw, 2.8rem); line-height: 1.1; letter-spacing: -.025em; color: var(--ink); margin-bottom: 16px; }
+    .section-title em { color: var(--teal); font-style: italic; }
+    .hero-desc { font-size: 1rem; color: var(--muted); line-height: 1.75; max-width: 560px; }
+    .hero-stats { display: flex; gap: 36px; margin-top: 28px; flex-wrap: wrap; }
+    .stat-num { font-size: 1.6rem; font-weight: 800; color: var(--ink); }
+    .stat-label { font-size: .72rem; color: var(--subtle); font-weight: 600; letter-spacing: .04em; text-transform: uppercase; margin-top: 2px; }
+
+    /* ── FILTERS ── */
+    .filter-bar { display: flex; flex-wrap: wrap; gap: 8px; margin: 40px 0; }
+    .filter-btn { padding: 8px 18px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--muted); font-size: .82rem; font-weight: 600; cursor: pointer; transition: all .18s; box-shadow: var(--s-sm); font-family: var(--font-sans); }
+    .filter-btn:hover { border-color: rgba(15,123,124,.3); color: var(--teal); }
+    .filter-btn.active { background: var(--teal); color: #fff; border-color: var(--teal); box-shadow: 0 6px 20px rgba(15,123,124,.28); }
+
+    /* ── CATEGORY SECTIONS ── */
+    .cat-section { margin-bottom: 52px; }
+    .cat-section.hidden { display: none; }
+    .cat-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+    .cat-header-icon { width: 32px; height: 32px; border-radius: 8px; background: var(--teal-2); display: flex; align-items: center; justify-content: center; color: var(--teal); }
+    .cat-header-icon i { font-size: 16px; }
+    .cat-title { font-family: var(--font-serif); font-size: 1.15rem; font-weight: 700; color: var(--ink); }
+    .cat-count { font-size: .72rem; font-weight: 700; color: var(--subtle); background: var(--bg); border: 1px solid var(--line); padding: 3px 10px; border-radius: 999px; margin-left: auto; }
+
+    /* ── CARD GRID ── */
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 22px; box-shadow: var(--s-sm); display: flex; flex-direction: column; gap: 11px; transition: box-shadow .2s, transform .2s; }
+    .card:hover { box-shadow: var(--s-md); transform: translateY(-2px); }
+    .card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+    .card-icon { width: 36px; height: 36px; border-radius: 10px; background: var(--teal-2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--teal); }
+    .card-icon i { font-size: 17px; }
+    .live-badge { display: flex; align-items: center; gap: 5px; padding: 4px 10px; border-radius: 999px; background: rgba(26,173,107,.08); border: 1px solid rgba(26,173,107,.2); font-size: .7rem; font-weight: 700; color: #158A52; white-space: nowrap; }
+    .live-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green); }
+    .dev-badge { padding: 4px 10px; border-radius: 999px; background: rgba(20,16,10,.04); border: 1px solid var(--line); font-size: .7rem; font-weight: 700; color: var(--subtle); white-space: nowrap; }
+    .card-name { font-family: var(--font-serif); font-size: 1rem; font-weight: 700; color: var(--ink); line-height: 1.3; }
+    .card-desc { font-size: .85rem; color: var(--muted); line-height: 1.68; flex: 1; }
+    .card-features { display: flex; flex-wrap: wrap; gap: 6px; }
+    .feat-chip { display: flex; align-items: center; gap: 4px; padding: 3px 9px; border-radius: 6px; background: rgba(15,123,124,.07); border: 1px solid rgba(15,123,124,.15); font-size: .72rem; font-weight: 600; color: var(--teal); }
+    .feat-chip i { font-size: 11px; }
+    .card-cta { font-size: .8rem; font-weight: 700; color: var(--teal); display: flex; align-items: center; gap: 5px; cursor: pointer; padding-top: 10px; border-top: 1px solid var(--line); transition: gap .15s; }
+    .card-cta:hover { gap: 9px; }
+    .card-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+    .tag { font-size: .7rem; font-weight: 600; color: var(--subtle); background: var(--bg); border: 1px solid var(--line); padding: 3px 9px; border-radius: 6px; }
+
+    /* ── FOOTER CTA ── */
+    .page-footer { margin-top: 64px; padding: 44px 40px; border-radius: var(--r-xl); background: linear-gradient(135deg, var(--dark), var(--dark-2)); color: #fff; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    .footer-text h3 { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 700; margin-bottom: 8px; }
+    .footer-text p { font-size: .88rem; color: rgba(255,255,255,.5); line-height: 1.65; max-width: 440px; }
+    .footer-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 999px; font-size: .88rem; font-weight: 700; cursor: pointer; transition: transform .18s, box-shadow .18s; font-family: var(--font-sans); border: none; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: linear-gradient(135deg, var(--coral), #c94020); color: #fff; box-shadow: 0 8px 24px rgba(227,85,53,.35); }
+    .btn-primary:hover { box-shadow: 0 12px 32px rgba(227,85,53,.45); }
+    .btn-ghost { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.15); color: rgba(255,255,255,.85); }
+    .btn-ghost:hover { background: rgba(255,255,255,.16); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .nav-center { display: none; }
+      .avail-pill { display: none; }
+      .card-grid { grid-template-columns: 1fr; }
+      .page-footer { flex-direction: column; padding: 28px 24px; }
+      .hero-stats { gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="nav-wrap">
+  <nav class="nav">
+    <div class="brand">
+      <span class="brand-mark">AS</span>
+      <span class="brand-copy">
+        <span>ALTAF SIMAVATWALA</span>
+        <small>Operations × Risk Adjustment × Automation</small>
+      </span>
+    </div>
+    <div class="nav-center">
+      <a href="/">Summary</a>
+      <a href="/#experience">Experience</a>
+      <a href="/#impact">Impact</a>
+      <a href="/#skills">Skills</a>
+      <a href="/projects.html" class="active">Projects</a>
+      <a href="/#contact">Contact</a>
+    </div>
+    <div class="nav-right">
+      <div class="avail-pill">
+        <span class="avail-dot"></span>
+        Open to Remote Roles
+      </div>
+      <a class="nav-icon" href="mailto:altafsimavatwala1991@gmail.com" aria-label="Email Altaf">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      </a>
+      <a class="nav-icon" href="https://wa.me/918905196948" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+      </a>
+      <a class="nav-icon" href="https://www.linkedin.com/in/altaf-simavatwala-20a46160" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+    </div>
+  </nav>
+</div>
+
+<main class="main">
+
+  <!-- HERO -->
+  <section style="margin-bottom: 0;">
+    <div class="section-label">Things I have built</div>
+    <h1 class="section-title">Projects &amp; <em>Tools</em></h1>
+    <p class="hero-desc">22 tools across 6 areas — each one solves a real business problem. Browse by category, see what it does, and reach out if you want something similar built for you.</p>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">22</div>
+        <div class="stat-label">Tools built</div>
+      </div>
+      <div>
+        <div class="stat-num">14</div>
+        <div class="stat-label">Live &amp; deployed</div>
+      </div>
+      <div>
+        <div class="stat-num">6</div>
+        <div class="stat-label">Categories</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTERS -->
+  <div class="filter-bar">
+    <button class="filter-btn active" data-f="all">All &nbsp;22</button>
+    <button class="filter-btn" data-f="crm">CRM &amp; Sales &nbsp;6</button>
+    <button class="filter-btn" data-f="biz">Business &amp; Ops &nbsp;4</button>
+    <button class="filter-btn" data-f="prod">Productivity &nbsp;1</button>
+    <button class="filter-btn" data-f="food">Food, Health &amp; Kitchen &nbsp;6</button>
+    <button class="filter-btn" data-f="learn">Learning &amp; Career &nbsp;3</button>
+    <button class="filter-btn" data-f="personal">Personal &amp; Creative &nbsp;2</button>
+  </div>
+
+  <!-- ── CRM & SALES ── -->
+  <div class="cat-section" data-section="crm">
+    <div class="cat-header">
+      <div class="cat-header-icon"><i class="ti ti-chart-dots-3"></i></div>
+      <span class="cat-title">CRM &amp; Sales</span>
+      <span class="cat-count">6 tools</span>
+    </div>
+    <div class="card-grid">
+
+      <div class="card">
+        <div class="card-top"><div class="card-icon"><i class="ti ti-device-mobile-message"></i></div><span class="live-badge"><span class="live-dot"></span>Live</span></div>
+        <div class="card-name">WhatsApp Subscription CRM</div>
+        <div class="card-desc">Tracks who subscribed, who lapsed, who needs a follow-up — all inside WhatsApp. Good for anyone running weekly or monthly memberships.</div>
+        <a class="card-cta" href="mailto:altafsimavatwala1991@gmail.com?subject=WhatsApp CRM Enquiry">Want one for your business? <i class="ti ti-arrow-right" style="font-size:12px"></i></a>
+        <div class="card-tags"><span class="tag">#WhatsApp</span><span class="tag">#CRM</span><span class="tag">#Subscriptions</span><span class="tag">#Automation</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-icon"><i class="ti ti-layout-dashboard"></i></div><span class="live-badge"><span class="live-dot"></span>Live</span></div>
+        <div class="card-name">CRM Dashboard with Analytics</div>
+        <div class="card-desc">One screen to see all leads, messages sent, categories, and conversion numbers. Replaces the messy spreadsheet your sales team is probably using right now.</div>
+        <a class="card-cta" href="mailto:altafsimavatwala1991@gmail.com?subject=CRM Dashboard Enquiry">Want a clean dashboard like this? <i class="ti ti-arrow-right" style="font-size:12px"></i></a>
+        <div class="card-tags"><span class="tag">#CRM</span><span class="tag">#Dashboard</span><span class="tag">#Analytics</span><span class="tag">#Leads</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-icon"><i class="ti ti-filter"></i></div><span class="live-badge"><span class="live-dot"></span>Live</span></div>
+        <div class="card-name">Lead Qualifier &amp; Scoring Tool</div>
+        <div class="card-desc">Enter a lead's details, get a score, a ready DM script, and a red flag check. Your sales team stops wasting time on leads that will never convert.</div>
+        <a class="card-cta" href="mailto:altafsimavatwala1991@gmail.com?subject=Lead Qualifier Enquiry">Want this for your sales team? <i class="ti ti-arrow-right" style="font-size:12px"></i></a>
+        <div class="card-tags"><span class="tag">#LeadGen</span><span class="tag">#Sales</span><span class="tag">#Scoring</span><span class="tag">#DM</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-icon"><i class="ti ti-speakerphone"></i></div><span class="live-badge"><span class="live-dot"></span>Live</span></div>
+        <div class="card-name">Member Outreach Manager</div>
+        <div class="card-desc">Manages who gets contacted, when, and with what message. Automates the follow-up cycle so your team never misses a lead or drops a renewal.</div>
+        <a class="card-cta" href="mailto:altafsimavatwala1991@gmail.com?subject=Outreach Manager Enquiry">Running outreach manually? Let's fix that <i class="ti ti-arrow-right" style="font-size:12px"></i></a>
+        <div class="card-tags"><span class="tag">#Outreach</span><span class="tag">#Marketing</span><span class="tag">#Automation</span><span class="tag">#Retention</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-icon"><i class="ti ti-message-2"></i></div><span class="live-badge"><span class="live-dot"></span>Live</span></div>
+        <div class="card-name">Sales Message Generator</div>
+        <div class="card-desc">Type in product details, get a ready-to-send sales message for WhatsApp, email, or a phone script. Stops your team from writing the same message from scratch every time.</div>
+        <a class="card-cta" href="mailto:altafsimavatwala1991@gmail.com?subject=Sales Generator Enquiry">Want your team to stop blank-page staring? <i class="ti ti-arrow-right" style="font-size:12px"></i></a>
+        <div class="card-tags"><span class="tag">#Sales</span><span class="tag">#Generator</span><span class="tag">#WhatsApp</span><span class="tag">#Email</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-icon"><i class="ti ti-send"></i></div><span class="dev-badge">In dev</span></div>
+        <div class="card-name">WhatsApp Outreach Tool</div>
+        <div class="card-desc">Sends targeted messages to contact lists automatically. Removes the copy-paste grind when doing outreach at scale on WhatsApp.</div>
+        <a class="card-cta" href="mailto:altafsimavatwala1991@gmail.com?subject=WhatsApp Outreach Enquiry">Doing outreach manually on WhatsApp? <i class="ti ti-arrow-right" style="font-size:12px"></i></a>
+        <div class="card-tags"><span class="tag">#WhatsApp</span><span class="tag">#Automation</span><span class="tag">#Outreach</span><span class="tag">#Bulk</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── BUSINESS & OPS ── -->
+  <div class="cat-section" data-section="biz">
+    <div class="cat-header">
+      <div class="cat-header-icon"><i class="ti ti-briefcase"></i></div>
+      <span class="cat-title">Business &amp; Operations</span>
+      <span class="cat-count">4 tools</span>
+    </div>
+    <div class="card-grid">
+
+      <div class="card">
+        <div class="card-top"><div class="card-icon"><i class="ti ti-rocket"></i></div><span class="live-badge"><span class="live-dot"></span>Live</span></div>
+        <div class="card-name">Product Launch Tracker</div>
+        <div class="card-desc">Covers pricing setup, a pre-launch checklist, and a competitor view — all in one place. If you are launching something soon, this keeps you from missing steps.</div>
+        <a class="card-cta" href="mailto:altafsimavatwala1991@gmail.com?subject=Launch Tracker Enquiry">Launching something? Want one of these? <i class="ti ti-arrow-right" style="font-size:12px"></i></a>
+        <div class="card-tags"><span class="tag">#Launch</span><span class="tag">#Product</span><span class="tag">#Tracker</span><span class="tag">#Competitors</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-icon"><i class="ti ti-packages"></i></div><span class="dev-badge">In dev</span></div>
+        <div class="card-name">Bulk Order Manager</div>
+        <div class="card-desc">Tracks large-volume orders — quantities, status, and fulfilment — without a spreadsheet. For businesses that receive bulk orders and need to stay organised.</div>
+        <a class="card-cta" href="mailto:altafsimavatwala1991@gmail.com?subject=Bulk Order Enquiry">Managing bulk orders in spreadsheets? <i class="ti ti-arrow-right" style="font-size:12px"></i></a>
+        <div class="card-tags"><span class="tag">#Orders</span><span class="tag">#Operations</span><span class="tag">#BulkManagement</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-icon"><i class="ti ti-world"></i></div><span class="live-badge"><span class="live-dot"></span>Live</span></div>
+        <div class="card-name">Digital Business Starter Page</div>
+        <div class="card-desc">A ready-to-launch business page — services, pricing, testimonials, and a contact form. If you need a clean online presence fast without a developer, this is for you.</div>
+        <a class="card-cta" href="mailto:altafsimavatwala1991@gmail.com?subject=Business Page Enquiry">No website yet? Let's get one live <i class="ti ti-arrow-right" style="font-size:12px"></i></a>
+        <div class="card-tags"><span class="tag">#Business</span><span class="tag">#Website</span><span class="tag">#Landing</span><span class="tag">#Services</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-icon"><i class="ti ti-users"></i></div><span class="live-badge"><span class="live-dot"></span>Live</span></div>
+        <div class="card-name">Partner Onboarding Landing Page</div>
+        <div class="card-desc">A landing page for onboarding partners or collaborators — benefits, process steps, testimonials, and a sign-up form. Good for any business building a partner or referral network.</div>
+        <a class="card-cta" href="mailto:altafsimavatwala1991@gmail.com?subject=Partner Page Enquiry">Building a partner programme? <i class="ti ti-arrow-right" style="font-size:12px"></i></a>
+        <div class="card-tags"><span class="tag">#Partners</span><span class="tag">#Landing</span><span class="tag">#Onboarding</span><span class="tag">#Referral</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── PRODUCTIVITY ── -->
+  <div class="cat-section" data-section="prod">
+    <div class="cat-header">
+      <div class="cat-header-icon"><i class="ti ti-checkbox"></i></div>
+      <span class="cat-title">Productivity</span>
+      <span class="cat-count">1 tool</span>
+    </div>
+    <div class="card-grid">
+
+      <div class="card" style="grid-column: span 1;">
+        <div class="card-top"><div class="card-icon"><i class="ti ti-checklist"></i></div><span class="dev-badge">In dev</span></div>
+        <div class="card-name">Smart Task &amp; To-Do Manager</div>
+        <div class="card-desc">One page. Everything visible. No learning curve — open it and start adding tasks in under a minute. Drag to reprioritise. Break any task into sub-tasks. Set smart categories so similar work auto-groups itself. Filter by status, category, or due date in one click. Track daily progress so you always know what got done and what did not. Built with a special wide-screen desktop layout that shows your full workload at a glance — no endless scrolling, no switching tabs. If your team is managing work on WhatsApp threads or sticky notes, this replaces all of that in one clean place.</div>
+        <div class="card-features">
+          <span class="feat-chip"><i class="ti ti-drag-drop"></i> Drag to reorder</span>
+          <span class="feat-chip"><i class="ti ti-subtask"></i> Sub-tasks</span>
+          <span class="feat-chip"><i class="ti ti-category"></i> Smart categories</span>
+          <span class="feat-chip"><i class="ti ti-filter"></i> Easy filters</span>
+          <span class="feat-chip"><i class="ti ti-trending-up"></i> Daily progress</span>
+          <span class="feat-chip"><i class="ti ti-device-desktop"></i> Desktop view</span>
+        </div>
+        <a class="card-cta" href="mailto:altafsimavatwala1991@gmail.com?subject=Task Manager Enquiry">Want this for your team or business? <i class="ti ti-arrow-right" style="font-size:12px"></i></a>
+        <div class="card-tags"><span class="tag">#Tasks</span><span class="tag">#Productivity</span><span class="tag">#Todo</span><span class="tag">#Teams</span><span class="tag">#DragDrop</span><span class="tag">#SubTasks</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── FOOD, HEALTH & KITCHEN ── -->
+  <div class="cat-section" data-section="food">
+    <div class="cat-header">
+      <div class="cat-header-icon"><i class="ti ti-salad"></i></div>
+      <span class="cat-title">Food, Health &amp; Kitchen</span>
+      <span class="cat-count">6 tools</span>
+    </div>
+    <div class="card-grid">
+
+      <div class="card">
+        <div class="card-top"><div class="card-icon"><i class="ti ti-file-text"></i></div><span class="dev-badge">In dev</span></div>
+        <div class="card-name">Menu Generator</div>
+        <div class="card-desc">Takes a list of items and auto-generates a formatted menu. Useful for restaurants, caterers, or any food business that updates its menu regularly.</div>
+        <a class="card-cta" href="mailto:altafsimavatwala1991@gmail.com?subject=Menu Generator Enquiry">Updating menus manually? There is a better way <i class="ti ti-arrow-right" style="font-size:12px"></i></a>
+        <div class="card-tags"><span class="tag">#Menu</span><span class="tag">#Food</span><span class="tag">#Generator</span><span class="tag">#Auto</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-icon"><i class="ti ti-calculator"></i></div><span class="dev-badge">In dev</span></div>
+        <div class="card-name">Kitchen Cost &amp; Margin Analyser</div>
+        <div class="card-desc">Calculates cost per dish, ingredient usage, and profit margins. If you run a food business and are not sure if your pricing is right, this tells you in seconds.</div>
+        <a class="card-cta" href="mailto:altafsimavatwala1991@gmail.com?subject=Kitchen Analyser Enquiry">Guessing your margins? This fixes that <i class="ti ti-arrow-right" style="font-size:12px"></i></a>
+        <div class="card-tags"><span class="tag">#Kitchen</span><span class="tag">#FoodBiz</span><span class="tag">#Margins</span><span class="tag">#CostAnalysis</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-icon"><i class="ti ti-apple"></i></div><span class="live-badge"><span class="live-dot"></span>Live</span></div>
+        <div class="card-name">Nutrition Calculator</div>
+        <div class="card-desc">Calculates nutrition values of any meal instantly. Useful for dietitians, fitness coaches, or any health platform that wants a nutrition tool without building from scratch.</div>
+        <a class="card-cta" href="mailto:altafsimavatwala1991@gmail.com?subject=Nutrition Calculator Enquiry">Want this on your health platform? <i class="ti ti-arrow-right" style="font-size:12px"></i></a>
+        <div class="card-tags"><span class="tag">#Nutrition</span><span class="tag">#Health</span><span class="tag">#Calculator</span><span class="tag">#Dietitian</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-icon"><i class="ti ti-star"></i></div><span class="live-badge"><span class="live-dot"></span>Live</span></div>
+        <div class="card-name">Meal Review Tool</div>
+        <div class="card-desc">Lets customers rate and review individual meals — no full review platform needed. Good for food businesses who want simple feedback on what is working and what is not.</div>
+        <a class="card-cta" href="mailto:altafsimavatwala1991@gmail.com?subject=Meal Review Enquiry">Want meal-level feedback from customers? <i class="ti ti-arrow-right" style="font-size:12px"></i></a>
+        <div class="card-tags"><span class="tag">#Meals</span><span class="tag">#Reviews</span><span class="tag">#Food</span><span class="tag">#Feedback</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-icon"><i class="ti ti-list-check"></i></div><span class="live-badge"><span class="live-dot"></span>Live</span></div>
+        <div class="card-name">Ingredient Estimator by Dish</div>
+        <div class="card-desc">Enter a dish and serving count, get the estimated ingredients needed. Removes guesswork for kitchens, caterers, and meal prep businesses planning their purchases.</div>
+        <a class="card-cta" href="mailto:altafsimavatwala1991@gmail.com?subject=Ingredient Estimator Enquiry">Doing kitchen planning manually? <i class="ti ti-arrow-right" style="font-size:12px"></i></a>
+        <div class="card-tags"><span class="tag">#Ingredients</span><span class="tag">#Food</span><span class="tag">#Planning</span><span class="tag">#Catering</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-icon"><i class="ti ti-activity"></i></div><span class="dev-badge">In dev</span></div>
+        <div class="card-name">Personal Health Tracker</div>
+        <div class="card-desc">Tracks health goals and daily progress over time. Useful for wellness coaches, fitness trainers, or anyone who wants a structured way to monitor their health journey.</div>
+        <a class="card-cta" href="mailto:altafsimavatwala1991@gmail.com?subject=Health Tracker Enquiry">Running a wellness programme? <i class="ti ti-arrow-right" style="font-size:12px"></i></a>
+        <div class="card-tags"><span class="tag">#Health</span><span class="tag">#Tracker</span><span class="tag">#Wellness</span><span class="tag">#Goals</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── LEARNING & CAREER ── -->
+  <div class="cat-section" data-section="learn">
+    <div class="cat-header">
+      <div class="cat-header-icon"><i class="ti ti-school"></i></div>
+      <span class="cat-title">Learning &amp; Career</span>
+      <span class="cat-count">3 tools</span>
+    </div>
+    <div class="card-grid">
+
+      <div class="card">
+        <div class="card-top"><div class="card-icon"><i class="ti ti-book-2"></i></div><span class="live-badge"><span class="live-dot"></span>Live</span></div>
+        <div class="card-name">Growth Hub — Learning Centre</div>
+        <div class="card-desc">A 5-track self-learning hub — sales, negotiation, AI for business, persuasion, and communication skills. Good for teams, communities, or coaches who want a structured learning experience.</div>
+        <a class="card-cta" href="mailto:altafsimavatwala1991@gmail.com?subject=Learning Hub Enquiry">Want a learning hub for your team? <i class="ti ti-arrow-right" style="font-size:12px"></i></a>
+        <div class="card-tags"><span class="tag">#Learning</span><span class="tag">#Sales</span><span class="tag">#AI</span><span class="tag">#Negotiation</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-icon"><i class="ti ti-certificate"></i></div><span class="dev-badge">In dev</span></div>
+        <div class="card-name">PMP Exam Prep Tool</div>
+        <div class="card-desc">Practice questions, study tracks, and prep material for PMP certification. Built for people preparing for the exam who want a structured study tool they can access anywhere.</div>
+        <a class="card-cta" href="mailto:altafsimavatwala1991@gmail.com?subject=PMP Prep Enquiry">Preparing for a certification? <i class="ti ti-arrow-right" style="font-size:12px"></i></a>
+        <div class="card-tags"><span class="tag">#PMP</span><span class="tag">#Certification</span><span class="tag">#Learning</span><span class="tag">#Exam</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-icon"><i class="ti ti-briefcase"></i></div><span class="dev-badge">In dev</span></div>
+        <div class="card-name">Career Platform</div>
+        <div class="card-desc">Tracks job applications, interview prep, and skill building in one place. Useful for career coaches running multiple clients or job seekers who want structure in their search.</div>
+        <a class="card-cta" href="mailto:altafsimavatwala1991@gmail.com?subject=Career Platform Enquiry">Career coaching without a system? <i class="ti ti-arrow-right" style="font-size:12px"></i></a>
+        <div class="card-tags"><span class="tag">#Career</span><span class="tag">#Jobs</span><span class="tag">#Coaching</span><span class="tag">#Platform</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── PERSONAL & CREATIVE ── -->
+  <div class="cat-section" data-section="personal">
+    <div class="cat-header">
+      <div class="cat-header-icon"><i class="ti ti-sparkles"></i></div>
+      <span class="cat-title">Personal &amp; Creative</span>
+      <span class="cat-count">2 tools</span>
+    </div>
+    <div class="card-grid">
+
+      <div class="card">
+        <div class="card-top"><div class="card-icon"><i class="ti ti-mail-heart"></i></div><span class="live-badge"><span class="live-dot"></span>Live</span></div>
+        <div class="card-name">Digital Wedding Invitation</div>
+        <div class="card-desc">A custom digital invite with RSVP, separate links for family groups, a wishes wall, and an admin panel. Skip the paper cards — works on any phone, no app needed.</div>
+        <a class="card-cta" href="mailto:altafsimavatwala1991@gmail.com?subject=Wedding Invite Enquiry">Planning a wedding or event? <i class="ti ti-arrow-right" style="font-size:12px"></i></a>
+        <div class="card-tags"><span class="tag">#Wedding</span><span class="tag">#Invite</span><span class="tag">#Digital</span><span class="tag">#RSVP</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><div class="card-icon"><i class="ti ti-diamond"></i></div><span class="live-badge"><span class="live-dot"></span>Live</span></div>
+        <div class="card-name">Jewellery Price Calculator</div>
+        <div class="card-desc">Calculates jewellery price based on weight, metal type, and making charges. Useful for jewellery shop owners, buyers comparing rates, or anyone who wants transparent pricing fast.</div>
+        <a class="card-cta" href="mailto:altafsimavatwala1991@gmail.com?subject=Jewellery Calculator Enquiry">Running a jewellery business? <i class="ti ti-arrow-right" style="font-size:12px"></i></a>
+        <div class="card-tags"><span class="tag">#Jewellery</span><span class="tag">#Calculator</span><span class="tag">#Price</span><span class="tag">#Retail</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER CTA -->
+  <div class="page-footer">
+    <div class="footer-text">
+      <h3>See something you need?</h3>
+      <p>These tools were built to solve real problems. If your business has a similar challenge, reach out — I can build something for you.</p>
+    </div>
+    <div class="footer-actions">
+      <a href="mailto:altafsimavatwala1991@gmail.com" class="btn btn-primary">Send an email</a>
+      <a href="https://wa.me/918905196948" class="btn btn-ghost">Message on WhatsApp</a>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  const btns = document.querySelectorAll('.filter-btn');
+  const secs = document.querySelectorAll('.cat-section');
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.f;
+      secs.forEach(sec => {
+        sec.classList.toggle('hidden', f !== 'all' && sec.dataset.section !== f);
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
